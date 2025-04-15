@@ -8,10 +8,13 @@ public class Hand : MonoBehaviour
 {
     [SerializeField] private GameObject handPrefab;
 
+    [SerializeField] private bool hideHandOnSelect = false;
+    
     public InputDeviceCharacteristics inputDeviceCharacteristics;
 
     private InputDevice _targetDevice;
     private Animator _handAnimator;
+    private SkinnedMeshRenderer _handMesh;
 
     private void Start()
     {
@@ -41,6 +44,7 @@ public class Hand : MonoBehaviour
 
             GameObject spawnedHand = Instantiate(handPrefab, transform);
             _handAnimator = spawnedHand.GetComponent<Animator>();
+            _handMesh = spawnedHand.GetComponentInChildren<SkinnedMeshRenderer>();
         }
     }
 
@@ -61,6 +65,14 @@ public class Hand : MonoBehaviour
         else
         {
             _handAnimator.SetFloat("Grip", 0);
+        }
+    }
+
+    public void HideHandOnSelect()
+    {
+        if (hideHandOnSelect)
+        {
+            _handMesh.enabled = !_handMesh.enabled;
         }
     }
 }
