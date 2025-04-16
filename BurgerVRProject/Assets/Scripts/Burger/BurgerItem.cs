@@ -9,11 +9,11 @@ public class BurgerItem : MonoBehaviour
 {
     public IngredientType ingredientType;
     public Transform attachPoint;
-    public void Attach(Transform parent, Transform point)
+    public void Attach(Transform parent, Vector3 pos, Quaternion rot)
     {
         transform.parent = parent;
-        transform.position = point.position;
-        transform.rotation = point.rotation;
+        transform.position = pos;
+        transform.rotation = rot;
         XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
         if (grab != null)
             grab.enabled = false;
@@ -26,7 +26,6 @@ public class BurgerItem : MonoBehaviour
         Collider col = GetComponent<Collider>();
         if (col != null)
             col.enabled = false;
-
     }
 
     void OnCollisionEnter(Collision collision)

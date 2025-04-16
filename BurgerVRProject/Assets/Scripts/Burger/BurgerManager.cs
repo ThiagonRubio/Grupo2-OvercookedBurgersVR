@@ -7,12 +7,8 @@ public class BurgerManager : MonoBehaviour
     public Transform initialAttachPoint;
     public bool preparingBurger = false;
     public bool burgerReady = false;
-    private Transform currentAttachPoint;
+    private float currentYOffset = 0f;
     private Dictionary<IngredientType, bool> attachedIngredients = new Dictionary<IngredientType, bool>();
-    void Start()
-    {
-        currentAttachPoint = initialAttachPoint;
-    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -28,26 +24,29 @@ public class BurgerManager : MonoBehaviour
         {
             if (item.ingredientType == IngredientType.PanInferior)
             {
-                item.Attach(transform, initialAttachPoint);
+                currentYOffset += 0.02f;
+                Vector3 newPos = new Vector3(initialAttachPoint.position.x, initialAttachPoint.position.y + currentYOffset, initialAttachPoint.position.z);
+                item.Attach(transform, newPos, initialAttachPoint.rotation);
                 preparingBurger = true;
                 attachedIngredients[item.ingredientType] = true;
-                currentAttachPoint = item.attachPoint;
             }
         }
         else if (!burgerReady)
         {
             if (item.ingredientType == IngredientType.PanSuperior)
             {
-                item.Attach(transform, currentAttachPoint);
+                currentYOffset += 0.04f;
+                Vector3 newPos = new Vector3(initialAttachPoint.position.x, initialAttachPoint.position.y + currentYOffset, initialAttachPoint.position.z);
+                item.Attach(transform, newPos, initialAttachPoint.rotation);
                 burgerReady = true;
                 attachedIngredients[item.ingredientType] = true;
-                currentAttachPoint = item.attachPoint;
             }
             else
             {
-                item.Attach(transform, currentAttachPoint);
+                currentYOffset += 0.02f;
+                Vector3 newPos = new Vector3(initialAttachPoint.position.x, initialAttachPoint.position.y + currentYOffset, initialAttachPoint.position.z);
+                item.Attach(transform, newPos, initialAttachPoint.rotation);
                 attachedIngredients[item.ingredientType] = true;
-                currentAttachPoint = item.attachPoint;
             }
         }
     }
