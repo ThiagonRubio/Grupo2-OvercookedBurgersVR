@@ -6,7 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TeleportationController: MonoBehaviour
 {
-    static private bool _teleportIsActive = false;
 
     public enum ControllerType
     {
@@ -15,92 +14,55 @@ public class TeleportationController: MonoBehaviour
     }
 
     public ControllerType targetController;
-
     public InputActionAsset inputAction;
-
     public XRRayInteractor rayInteractor;
-
     public TeleportationProvider teleportationProvider;
     
-    private InputAction _thumbstickInputAction;
-
-    private InputAction _teleportActivate;
-
-    private InputAction _teleportCancel;
+    private InputAction _thumbstickClick;
+    
+    private bool _isTeleportActive = false;
 
     void Start()
     {
         rayInteractor.enabled = false;
 
-        Debug.Log("XRI " + targetController.ToString());
-        _teleportActivate = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("Teleport Mode Activate");
-        _teleportActivate.Enable();
-        _teleportActivate.performed += OnTeleportActivate;
-
-        _teleportCancel = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("Teleport Mode Cancel");
-        _teleportCancel.Enable();
-        _teleportCancel.performed += OnTeleportCancel;
-
-        //Cambiar al input correcto cuando encuentro el input actions para el click
-        _thumbstickInputAction = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("ThumbstickClick");
-        _thumbstickInputAction.Enable();
+        _thumbstickClick = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("ThumbstickClick");
+        _thumbstickClick.Enable();
+        _thumbstickClick.started += OnThumbstickClickStarted;
+        _thumbstickClick.canceled += OnThumbstickClickReleased;
     }
 
     private void OnDestroy()
     {
-        _teleportActivate.performed -= OnTeleportActivate;
-        _teleportCancel.performed -= OnTeleportCancel;
+        _thumbstickClick.started -= OnThumbstickClickStarted;
+        _thumbstickClick.canceled -= OnThumbstickClickReleased;
     }
 
-    void Update()
+    private void OnThumbstickClickStarted(InputAction.CallbackContext context)
     {
-        if (!_teleportIsActive)
+        rayInteractor.enabled = true;
+        _isTeleportActive = true;
+    }
+
+    private void OnThumbstickClickReleased(InputAction.CallbackContext context)
+    {
+        if (!_isTeleportActive || !rayInteractor.enabled)
         {
-            return;
-        }
-        if (!rayInteractor.enabled)
-        {
-            return;
-        }
-        if (_thumbstickInputAction.IsPressed())
-        {
-            return;
-        }
-        if (!rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit raycastHit))
-        {
-            rayInteractor.enabled = false;
-            _teleportIsActive = false;
             return;
         }
 
-        TeleportRequest teleportRequest = new TeleportRequest()
+        if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
-            destinationPosition = raycastHit.point,
-        };
+            var request = new TeleportRequest
+            {
+                destinationPosition = hit.point,
+                matchOrientation = MatchOrientation.None,
+            };
 
-        teleportationProvider.QueueTeleportRequest(teleportRequest);
+            teleportationProvider.QueueTeleportRequest(request);
+        }
 
         rayInteractor.enabled = false;
-        _teleportIsActive = false;
-    }
-
-    private void OnTeleportActivate(InputAction.CallbackContext context)
-    {
-        if (!_teleportIsActive)
-        {
-            rayInteractor.enabled = true;
-            _teleportIsActive = true;
-        }
-
-    }
-
-    private void OnTeleportCancel(InputAction.CallbackContext context)
-    {
-        if (_teleportIsActive && rayInteractor.enabled == true)
-        {
-            rayInteractor.enabled = false;
-            _teleportIsActive = false;
-        }
-
+        _isTeleportActive = false;
     }
 }
