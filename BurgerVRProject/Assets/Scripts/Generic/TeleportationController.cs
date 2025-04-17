@@ -41,7 +41,8 @@ public class TeleportationController: MonoBehaviour
         _teleportCancel.Enable();
         _teleportCancel.performed += OnTeleportCancel;
 
-        _thumbstickInputAction = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("Move");
+        //Cambiar al input correcto cuando encuentro el input actions para el click
+        _thumbstickInputAction = inputAction.FindActionMap("XRI " + targetController.ToString() + " Locomotion").FindAction("ThumbstickClick");
         _thumbstickInputAction.Enable();
     }
 

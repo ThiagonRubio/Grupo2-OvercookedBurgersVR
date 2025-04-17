@@ -1026,6 +1026,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ThumbstickClick",
+                    "type": "Button",
+                    "id": "83f5d547-38f0-40d2-bd9a-224101a04a3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1114,6 +1123,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f0a34a7-3c78-46f3-a505-1ad24fa45fbc",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxisClick}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbstickClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1822,6 +1842,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ThumbstickClick",
+                    "type": "Button",
+                    "id": "e79e7f81-1131-48ad-87fd-728b3198ecd6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1910,6 +1939,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47966038-3eb4-42d5-963b-9c2618e56281",
+                    "path": "<XRController>{RightHand}/{Primary2DAxisClick}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbstickClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
