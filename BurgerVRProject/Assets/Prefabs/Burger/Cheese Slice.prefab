@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2691716485176411719}
   - component: {fileID: 3688551436649992652}
   - component: {fileID: 6776624396558214634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cheese Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7939391597166756214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1798eb65236e72a4ab0b1069f75304e2, type: 3}
       propertyPath: m_Name
       value: cheese-cut
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1798eb65236e72a4ab0b1069f75304e2, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

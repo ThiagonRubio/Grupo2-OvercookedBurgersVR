@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 403591247}
   - component: {fileID: 403591246}
   - component: {fileID: 403591249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1562,7 +1562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846360596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   - component: {fileID: 853049845}
   - component: {fileID: 853049848}
   - component: {fileID: 853049849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Locomotion System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 926369026}
   - component: {fileID: 926369025}
   - component: {fileID: 926369027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2648,7 @@ GameObject:
   - component: {fileID: 1046843311}
   - component: {fileID: 1046843310}
   - component: {fileID: 1046843315}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Teleporting Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3522,7 +3522,7 @@ GameObject:
   - component: {fileID: 1076603421}
   - component: {fileID: 1076603420}
   - component: {fileID: 1076603422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3946,7 +3946,7 @@ GameObject:
   - component: {fileID: 1188759557}
   - component: {fileID: 1188759556}
   - component: {fileID: 1188759555}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Ray Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4740,7 +4740,7 @@ GameObject:
   - component: {fileID: 1277709281}
   - component: {fileID: 1277709280}
   - component: {fileID: 1277709279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Ray Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6577,7 +6577,7 @@ GameObject:
   - component: {fileID: 1623656263}
   - component: {fileID: 1623656264}
   - component: {fileID: 1623656265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 2020578894}
   - component: {fileID: 2020578893}
   - component: {fileID: 2020578898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Teleporting Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}

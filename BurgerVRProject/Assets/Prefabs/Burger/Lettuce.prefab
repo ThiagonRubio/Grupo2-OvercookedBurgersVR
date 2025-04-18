@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1279913485283690435}
   - component: {fileID: 5012552416966978552}
   - component: {fileID: -1430489505509858254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3466562829223130663}
   - component: {fileID: 2144192228487358740}
   - component: {fileID: 4681007694083082821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cabbage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

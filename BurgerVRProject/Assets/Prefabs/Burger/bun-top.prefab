@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3115034489627122709}
   - component: {fileID: -4971136896753087961}
   - component: {fileID: 238604904742313421}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bun-top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

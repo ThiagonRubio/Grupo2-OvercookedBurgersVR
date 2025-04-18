@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3070393617871862207}
   - component: {fileID: 1530093905559355282}
   - component: {fileID: 3087288986992081180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Tomato Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4128520818443873313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7801765328162814276}
   - component: {fileID: 2576838938299038650}
   - component: {fileID: -9115618432130150721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tomato Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1010118079819228454}
   - component: {fileID: 5434005600969884450}
   - component: {fileID: 9033469072694225528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese Wedge
       objectReference: {fileID: 0}
+    - target: {fileID: 2766278661624835727, guid: d26af0ab456ebbd49a85f8d73f94ae9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3253880854959911989, guid: d26af0ab456ebbd49a85f8d73f94ae9d, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.18
@@ -341,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 3253880854959911989, guid: d26af0ab456ebbd49a85f8d73f94ae9d, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190493579899247779, guid: d26af0ab456ebbd49a85f8d73f94ae9d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

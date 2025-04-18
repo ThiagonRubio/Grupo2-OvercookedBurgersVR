@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1219530478535598935}
   - component: {fileID: 1731002594452376407}
   - component: {fileID: 5629622756969306202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bun-top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2367555078403910661}
   - component: {fileID: 7234612928489625479}
   - component: {fileID: 4883858405052920046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bun-bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: -6755492728220273409}
   - component: {fileID: -3690214807678157013}
   - component: {fileID: -195226512858090485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BreadComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}

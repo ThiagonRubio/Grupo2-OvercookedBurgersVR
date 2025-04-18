@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8900938516233310344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: -2290255245020466469}
   - component: {fileID: 9027968766073030929}
   - component: {fileID: -3094355854060384544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bun-bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

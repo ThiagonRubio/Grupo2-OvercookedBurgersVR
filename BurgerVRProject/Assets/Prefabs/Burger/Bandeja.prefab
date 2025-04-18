@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7923621063955424655}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BurgerStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3313377024070005384}
   - component: {fileID: 1864390315748733583}
   - component: {fileID: -3114310875572283475}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bandeja
   m_TagString: Untagged
   m_Icon: {fileID: 0}

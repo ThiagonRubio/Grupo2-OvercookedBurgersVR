@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445019272131566729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7330325622881396516}
   - component: {fileID: -8688117436693161128}
   - component: {fileID: 4990497673066279157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lettuce Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 3737462496713296063}
   - component: {fileID: 1511178801907539270}
   - component: {fileID: 6756174029386440268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
