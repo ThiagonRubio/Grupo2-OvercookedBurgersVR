@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BurgerManager : MonoBehaviour
 {
@@ -29,6 +31,15 @@ public class BurgerManager : MonoBehaviour
                 item.Attach(transform, newPos, initialAttachPoint.rotation);
                 preparingBurger = true;
                 attachedIngredients[item.ingredientType] = true;
+                XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
+                if (grab != null)
+                    grab.enabled = false;
+                XRGeneralGrabTransformer transformer = GetComponent<XRGeneralGrabTransformer>();
+                if (transformer != null)
+                    transformer.enabled = false;
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb != null)
+                    rb.isKinematic = true;
             }
         }
         else if (!burgerReady)
@@ -40,6 +51,16 @@ public class BurgerManager : MonoBehaviour
                 item.Attach(transform, newPos, initialAttachPoint.rotation);
                 burgerReady = true;
                 attachedIngredients[item.ingredientType] = true;
+                XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
+                if (grab != null)
+                    grab.enabled = true;
+                XRGeneralGrabTransformer transformer = GetComponent<XRGeneralGrabTransformer>();
+                if (transformer != null)
+                    transformer.enabled = true;
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb != null)
+                    rb.isKinematic = false;
+
             }
             else
             {
