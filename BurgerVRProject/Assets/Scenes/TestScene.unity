@@ -2211,7 +2211,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 1
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -2303,10 +2303,10 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_ImproveAccuracyWithSphereCollider: 0
+  m_ImproveAccuracyWithSphereCollider: 1
   m_PhysicsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 385
   m_PhysicsTriggerInteraction: 1
 --- !u!114 &926369027
 MonoBehaviour:
@@ -3402,7 +3402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1076065013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,7 +3820,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 1
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -3912,10 +3912,10 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_ImproveAccuracyWithSphereCollider: 0
+  m_ImproveAccuracyWithSphereCollider: 1
   m_PhysicsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 385
   m_PhysicsTriggerInteraction: 1
 --- !u!114 &1076603422
 MonoBehaviour:
@@ -4338,7 +4338,7 @@ MonoBehaviour:
   m_ConeCastAngle: 6
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 385
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
@@ -4348,7 +4348,7 @@ MonoBehaviour:
   m_TimeToAutoDeselect: 3
   m_EnableUIInteraction: 1
   m_BlockUIOnInteractableSelection: 1
-  m_AllowAnchorControl: 1
+  m_AllowAnchorControl: 0
   m_UseForceGrab: 1
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
@@ -5132,7 +5132,7 @@ MonoBehaviour:
   m_ConeCastAngle: 6
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 385
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
@@ -6492,7 +6492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1623656265}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InteractionTypeSelector, Assembly-CSharp
         m_MethodName: ChangeInteractionType
         m_Mode: 1
@@ -6557,12 +6557,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 160, y: 30, z: 1}
+  m_Center: {x: 0, y: 15, z: 0}
 --- !u!1 &1623656259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6682,14 +6682,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1623656259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694673165d3c7604fbdc038dd404cb61, type: 3}
+  m_Script: {fileID: 11500000, guid: 734fd044cbecee448badba7b1ab5e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftControllerDirect: {fileID: 1076603413}
-  rightControllerDirect: {fileID: 926369018}
-  leftControllerRay: {fileID: 1277709277}
-  rightControllerRay: {fileID: 1188759553}
-  text: {fileID: 829023115}
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftRayController: {fileID: 1277709277}
+  rightRayController: {fileID: 1188759553}
 --- !u!1 &1632914310
 GameObject:
   m_ObjectHideFlags: 0
