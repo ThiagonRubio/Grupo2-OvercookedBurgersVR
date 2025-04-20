@@ -21,7 +21,10 @@ public class BurgerManager : MonoBehaviour
     public void HandleCollision(BurgerItem item)
     {
         if (item == null) return;
+        var grab = item.GetComponent<XRGrabInteractable>();
+        if (grab != null && grab.isSelected) return;
         if (attachedIngredients.ContainsKey(item.ingredientType)) return;
+
         if (!preparingBurger)
         {
             if (item.ingredientType == IngredientType.PanInferior)
@@ -31,9 +34,9 @@ public class BurgerManager : MonoBehaviour
                 item.Attach(transform, newPos, initialAttachPoint.rotation);
                 preparingBurger = true;
                 attachedIngredients[item.ingredientType] = true;
-                XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
-                if (grab != null)
-                    grab.enabled = false;
+                XRGrabInteractable managerGrab = GetComponent<XRGrabInteractable>();
+                if (managerGrab != null)
+                    managerGrab.enabled = false;
                 XRGeneralGrabTransformer transformer = GetComponent<XRGeneralGrabTransformer>();
                 if (transformer != null)
                     transformer.enabled = false;
@@ -51,9 +54,9 @@ public class BurgerManager : MonoBehaviour
                 item.Attach(transform, newPos, initialAttachPoint.rotation);
                 burgerReady = true;
                 attachedIngredients[item.ingredientType] = true;
-                XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
-                if (grab != null)
-                    grab.enabled = true;
+                XRGrabInteractable managerGrab = GetComponent<XRGrabInteractable>();
+                if (managerGrab != null)
+                    managerGrab.enabled = true;
                 XRGeneralGrabTransformer transformer = GetComponent<XRGeneralGrabTransformer>();
                 if (transformer != null)
                     transformer.enabled = true;
