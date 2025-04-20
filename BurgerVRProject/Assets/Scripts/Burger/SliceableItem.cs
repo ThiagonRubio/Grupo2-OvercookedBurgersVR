@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class SliceableItem : MonoBehaviour, ISliceable
 {
@@ -9,5 +10,10 @@ public class SliceableItem : MonoBehaviour, ISliceable
             Instantiate(slicePrefabs[i], transform.position, transform.rotation);
         }
         Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log("Me spawnearon");
     }
 }

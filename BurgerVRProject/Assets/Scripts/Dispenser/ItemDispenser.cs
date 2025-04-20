@@ -1,15 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemDispenser : MonoBehaviour
 {
-    [SerializeField] private GameObject itemToSpawn;
+    [SerializeField] private ObjectPool itemPool;
+    [SerializeField] private SpawnableObject itemToSpawn;
     [SerializeField] private Transform spawnPosition;
+
+    private void Awake()
+    {
+        PoolableFactory.InitPool(itemPool, itemToSpawn, itemPool.PoolMaxSize);
+    }
 
     public void SpawnItem()
     {
+        PoolableFactory.TryCreateObject(itemPool, spawnPosition);
+
         //Falta toda la lógica de pool
-        Instantiate(itemToSpawn, spawnPosition.position, spawnPosition.rotation);
+        // Instantiate(itemToSpawn, spawnPosition.position, spawnPosition.rotation);
     }
 }

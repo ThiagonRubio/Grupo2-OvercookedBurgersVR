@@ -545,7 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e83e15faf92ae4faf7e7cfc7b5624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 5809359361346170471, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
+  itemPool: {fileID: 0}
+  itemToSpawn: {fileID: 2091472563572652421, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
   spawnPosition: {fileID: 8579334268499138485}
 --- !u!1 &4324702363044240187
 GameObject:
