@@ -2,18 +2,12 @@ using System;
 using UnityEngine;
 public class SliceableItem : MonoBehaviour, ISliceable
 {
-    public GameObject[] slicePrefabs;
+    [SerializeField] private GameObject cutVersion;
+
     public void Slice()
     {
-        for (int i = 0; i < slicePrefabs.Length; i++)
-        {
-            Instantiate(slicePrefabs[i], transform.position, transform.rotation);
-        }
-        Destroy(gameObject);
-    }
-
-    private void OnEnable()
-    {
-        Debug.Log("Me spawnearon");
+        cutVersion.transform.localPosition = gameObject.transform.localPosition;
+        cutVersion.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

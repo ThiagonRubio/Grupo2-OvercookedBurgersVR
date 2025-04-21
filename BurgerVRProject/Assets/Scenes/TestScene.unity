@@ -1290,51 +1290,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &797402289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 797402290}
-  - component: {fileID: 797402291}
-  m_Layer: 0
-  m_Name: SlicedBreadPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &797402290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797402289}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &797402291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797402289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 20
 --- !u!1 &812108962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,7 +5485,7 @@ GameObject:
   - component: {fileID: 1410171958}
   - component: {fileID: 1410171959}
   m_Layer: 0
-  m_Name: FullBreadPool
+  m_Name: BreadPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5563,7 +5518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 10
+  poolSize: 3
 --- !u!1 &1419957895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6939,12 +6894,11 @@ Transform:
   m_GameObject: {fileID: 1742632968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.952077, y: 0.0034195168, z: -6.627242}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1410171958}
-  - {fileID: 797402290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787078205
@@ -8584,6 +8538,10 @@ PrefabInstance:
       propertyPath: itemPool
       value: 
       objectReference: {fileID: 1410171959}
+    - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 8911938300244259275, guid: afe36cf595a96744baf126121e541f47, type: 3}
     - target: {fileID: 7545464644614118522, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995

@@ -17,8 +17,5 @@ public class ItemDispenser : MonoBehaviour
     public void SpawnItem()
     {
         PoolableFactory.TryCreateObject(itemPool, spawnPosition);
-
-        //Falta toda la lógica de pool
-        // Instantiate(itemToSpawn, spawnPosition.position, spawnPosition.rotation);
     }
 }

@@ -38,6 +38,7 @@ public class ObjectPool : MonoBehaviour
         }
 
         objectPool.Enqueue(pooledObject);
+        
         return pooledObject;
     }
 
@@ -59,7 +60,7 @@ public class ObjectPool : MonoBehaviour
         IPoolable pooledObject = objectPool.Dequeue();
         pooledObject.GameObject.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
         pooledObject.GameObject.SetActive(true);
-
+        
         return pooledObject;
     }
 
