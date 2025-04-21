@@ -24,38 +24,43 @@ public class ObjectPool : MonoBehaviour
         else Debug.LogWarning("Object is not a poolable object.");
     }
 
-    public IPoolable TryGetPooledObject()
+    public IPoolable TryGetPooledObject(Transform spawnTransform = null)
     {
         IPoolable pooledObject = null;
 
         if (objectPool.Count < poolSize)
         {
-            pooledObject = NewObject();
+            pooledObject = NewObject(spawnTransform);
         }
         else
         {
-            pooledObject = ReuseObject();
+            pooledObject = ReuseObject(spawnTransform);
         }
 
         objectPool.Enqueue(pooledObject);
+        
         return pooledObject;
     }
 
-    private IPoolable NewObject()
+    private IPoolable NewObject(Transform spawnTransform = null)
     {
-        GameObject newObject = Instantiate(objectToPool.GameObject, transform.position, transform.rotation);
+        var spawnPoint = spawnTransform != null ? spawnTransform : transform;
+        
+        GameObject newObject = Instantiate(objectToPool.GameObject, spawnPoint.position, spawnPoint.rotation);
         IPoolable pooledObject = newObject.GetComponent<IPoolable>();
         pooledObject.GameObject.name = transform.root.name + "_" + objectToPool.GameObject.name + "_" + objectPool.Count;
         pooledObject.GameObject.transform.SetParent(gameObject.transform);
 
         return pooledObject;
     }
-    private IPoolable ReuseObject()
+    private IPoolable ReuseObject(Transform spawnTransform = null)
     {
+        var spawnPoint = spawnTransform != null ? spawnTransform : transform;
+        
         IPoolable pooledObject = objectPool.Dequeue();
-        pooledObject.GameObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
+        pooledObject.GameObject.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
         pooledObject.GameObject.SetActive(true);
-
+        
         return pooledObject;
     }
 

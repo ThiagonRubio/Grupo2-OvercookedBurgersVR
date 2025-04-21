@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3313377024070005384}
   - component: {fileID: 1864390315748733583}
   - component: {fileID: -3114310875572283475}
+  - component: {fileID: 1332017032339920378}
   m_Layer: 7
   m_Name: Bandeja
   m_TagString: Untagged
@@ -360,3 +361,15 @@ MonoBehaviour:
   initialAttachPoint: {fileID: 7923621063955424655}
   preparingBurger: 0
   burgerReady: 0
+--- !u!114 &1332017032339920378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5879115805230833201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb8a71f60bef3740af048ad9cc20fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
 public class SliceableItem : MonoBehaviour, ISliceable
 {
-    public GameObject[] slicePrefabs;
+    [SerializeField] private GameObject[] cutParts;
+
     public void Slice()
     {
-        for (int i = 0; i < slicePrefabs.Length; i++)
+        for (int i = 0; i < cutParts.Length; i++)
         {
-            Instantiate(slicePrefabs[i], transform.position, transform.rotation);
+            cutParts[i].transform.localPosition = new Vector3(gameObject.transform.localPosition.x, (gameObject.transform.localPosition.y + (i * 0.015f)), gameObject.transform.localPosition.z);
+            cutParts[i].SetActive(true);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

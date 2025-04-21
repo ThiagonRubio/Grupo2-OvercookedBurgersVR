@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,5 +74,11 @@ public class BurgerManager : MonoBehaviour
                 attachedIngredients[item.ingredientType] = true;
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        preparingBurger = false;
+        burgerReady = false;
     }
 }
