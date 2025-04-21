@@ -8,7 +8,6 @@ public enum IngredientType { PanInferior, Paty, Queso, Lechuga, Tomate, PanSuper
 public class BurgerItem : MonoBehaviour
 {
     public IngredientType ingredientType;
-    public Transform attachPoint;
     public void Attach(Transform parent, Vector3 pos, Quaternion rot)
     {
         transform.parent = parent;
@@ -25,7 +24,7 @@ public class BurgerItem : MonoBehaviour
             rb.isKinematic = true;
         Collider col = GetComponent<Collider>();
         if (col != null)
-            col.enabled = false;
+            col.isTrigger = true;
     }
 
     void OnCollisionEnter(Collision collision)

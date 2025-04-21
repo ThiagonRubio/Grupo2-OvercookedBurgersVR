@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5448620152066735226}
   - component: {fileID: 1507942598956574009}
   m_Layer: 8
-  m_Name: Cheese
+  m_Name: cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,15 +138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769934385201991162, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6419837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769934385201991162, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769934385201991162, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.691587
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769934385201991162, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalRotation.w
