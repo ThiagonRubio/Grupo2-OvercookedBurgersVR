@@ -5,17 +5,19 @@ using UnityEngine;
 public class SliceableSpawnableObject : SpawnableObject
 {
     [SerializeField] private GameObject fullVersion;
-    [SerializeField] private GameObject cutVersion;
-    [SerializeField] private GameObject cutTop;
-    [SerializeField] private GameObject cutBottom;
+    [SerializeField] private GameObject[] cutParts;
     
     public override void OnPoolableObjectEnable()
     {
         base.OnPoolableObjectEnable();
-        cutTop.transform.localPosition = new Vector3(0, 0.015f, 0);
-        cutBottom.transform.localPosition = Vector3.zero;
+
+        for (int i = 0; i < cutParts.Length; i++)
+        {
+            cutParts[i].transform.localPosition = new Vector3(0, (i * 0.015f), 0);
+            cutParts[i].SetActive(false);
+        }
+        
         fullVersion.transform.localPosition = Vector3.zero;
-        cutVersion.SetActive(false);
         fullVersion.SetActive(true);
     }
 }

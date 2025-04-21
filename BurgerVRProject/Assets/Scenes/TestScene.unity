@@ -8541,7 +8541,7 @@ PrefabInstance:
     - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: itemToSpawn
       value: 
-      objectReference: {fileID: 8911938300244259275, guid: afe36cf595a96744baf126121e541f47, type: 3}
+      objectReference: {fileID: 4149158831772342603, guid: afe36cf595a96744baf126121e541f47, type: 3}
     - target: {fileID: 7545464644614118522, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
