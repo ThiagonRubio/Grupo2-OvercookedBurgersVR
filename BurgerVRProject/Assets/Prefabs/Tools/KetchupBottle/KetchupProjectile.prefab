@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8880653282274471189}
   - component: {fileID: 8072865886172435295}
   - component: {fileID: 6972570453630994986}
+  - component: {fileID: -3972330125513595652}
+  - component: {fileID: 3777340083456714033}
   m_Layer: 0
   m_Name: KetchupProjectile
   m_TagString: Untagged
@@ -106,7 +108,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -135,3 +137,27 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3972330125513595652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086944802415937624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb8a71f60bef3740af048ad9cc20fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3777340083456714033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086944802415937624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a6ab7a74b77ad428deb4ae38631cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
