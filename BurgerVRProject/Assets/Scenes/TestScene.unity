@@ -745,6 +745,96 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &412669510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412669511}
+  - component: {fileID: 412669512}
+  m_Layer: 0
+  m_Name: MeatPattyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412669511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412669510}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742632969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412669512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412669510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+--- !u!1 &480500449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480500450}
+  - component: {fileID: 480500451}
+  m_Layer: 0
+  m_Name: LettucePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480500450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480500449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742632969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480500451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480500449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
 --- !u!1 &572569857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,6 +5474,96 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1636515391019944688, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &1291722924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1291722925}
+  - component: {fileID: 1291722926}
+  m_Layer: 0
+  m_Name: CheesePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1291722925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291722924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742632969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291722926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291722924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+--- !u!1 &1307773259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307773260}
+  - component: {fileID: 1307773261}
+  m_Layer: 0
+  m_Name: TomatoPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1307773260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307773259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742632969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307773261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307773259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 3
 --- !u!1 &1344508108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5518,7 +5698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 3
+  poolSize: 10
 --- !u!1 &1419957895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6899,6 +7079,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1410171958}
+  - {fileID: 1866947878}
+  - {fileID: 412669511}
+  - {fileID: 1291722925}
+  - {fileID: 480500450}
+  - {fileID: 1307773260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787078205
@@ -6976,6 +7161,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787078205}
   m_CullTransparentMesh: 1
+--- !u!1 &1866947877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1866947878}
+  - component: {fileID: 1866947879}
+  m_Layer: 0
+  m_Name: TrayPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1866947878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866947877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742632969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866947879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866947877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 5
 --- !u!1001 &1913224475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8134,8 +8364,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693485994177046378, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 412669512}
+    - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 5344828520200236560, guid: 695cc432721285841a3d8826ae78593a, type: 3}
     - target: {fileID: 4890860312988076206, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
@@ -8189,13 +8427,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1307773261}
+    - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 300353704817696718, guid: 7559538dba4f3e3468c82a6991cca0b3, type: 3}
     - target: {fileID: 3538604043899695753, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tomato
       objectReference: {fileID: 0}
     - target: {fileID: 3538604043899695753, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5155990252998075043, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8375,13 +8621,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1866947879}
+    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 1332017032339920378, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tray
       objectReference: {fileID: 0}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8436,13 +8690,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 480500451}
+    - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 424557107349892024, guid: 3ed831c889dae6c46aeb4942f304c0df, type: 3}
     - target: {fileID: 7696644778971216765, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: m_Name
       value: Dispenser_Lettuce
       objectReference: {fileID: 0}
     - target: {fileID: 7696644778971216765, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8463,8 +8725,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091144189953993254, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1291722926}
+    - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
+      propertyPath: itemToSpawn
+      value: 
+      objectReference: {fileID: 1507942598956574009, guid: cd6b06560139b374eb46b987b94cc353, type: 3}
     - target: {fileID: 7025693864571494461, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995

@@ -78,5 +78,7 @@ public class BurgerManager : MonoBehaviour
 
     private void OnEnable()
     {
+        preparingBurger = false;
+        burgerReady = false;
     }
 }
