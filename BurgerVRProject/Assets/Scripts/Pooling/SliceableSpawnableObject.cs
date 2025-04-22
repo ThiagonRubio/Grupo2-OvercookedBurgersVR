@@ -7,6 +7,8 @@ public class SliceableSpawnableObject : SpawnableObject
     [SerializeField] private GameObject fullVersion;
     [SerializeField] private GameObject[] cutParts;
     
+    
+    
     public override void OnPoolableObjectEnable()
     {
         base.OnPoolableObjectEnable();

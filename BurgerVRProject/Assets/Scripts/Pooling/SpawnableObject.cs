@@ -6,6 +6,12 @@ using UnityEngine;
 public class SpawnableObject : MonoBehaviour, IPoolable
 {
     public GameObject GameObject => this.gameObject;
+    public Transform poolParent;
+    
+    private void Start()
+    {
+        poolParent = transform.parent;
+    }
 
     public virtual void OnPoolableObjectEnable()
     {
@@ -14,6 +20,7 @@ public class SpawnableObject : MonoBehaviour, IPoolable
 
     public virtual void OnPoolableObjectDisable()
     {
+        transform.SetParent(poolParent);
         gameObject.SetActive(false);
     }
 }
