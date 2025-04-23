@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class BurgerManager : MonoBehaviour
 {
+    //Attach variables
     public Transform initialAttachPoint;
-    private BurgerItem lastAttachedItem;
+    public float stackHeight;
+    private Dictionary<IngredientType, bool> attachedIngredients = new Dictionary<IngredientType, bool>();
+    
+    //Bools
     public bool preparingBurger = false;
     public bool burgerReady = false;
-    public float pilaHeight;
-    private Dictionary<IngredientType, bool> attachedIngredients = new Dictionary<IngredientType, bool>();
 
     void OnCollisionEnter(Collision collision)
     {
@@ -23,37 +26,36 @@ public class BurgerManager : MonoBehaviour
 
     public void HandleCollision(BurgerItem item)
     {
-        if (item == null) return;
+        if (item == null) return; //No puede pasar porque ya se chequea arriba
+        
+        //Chequeo, si la hamburguesa no se está preparando el primer item tiene que ser si o si un pan inferior, sino no debe calcular nada más
+        if (!preparingBurger && item.ingredientType != IngredientType.PanInferior) return;
+        
+        //Si el jugador no soltó el item, no calculo nada más
         var grab = item.GetComponent<XRGrabInteractable>();
-        if (grab != null && grab.isSelected) return;
-        if (attachedIngredients.ContainsKey(item.ingredientType)) return;
-
-        MeshRenderer mr = item.GetComponent<MeshRenderer>();
-        if (mr == null) mr = item.GetComponentInChildren<MeshRenderer>();
-        if (mr == null)
-            return;
-
-        float alto = mr.bounds.size.y;
-
-        float yOffset = item.ingredientType == IngredientType.PanSuperior
-        ? alto * 0.15f
-        : alto * 0.25f;
-
-
+        if (grab != null && grab.isSelected) return; //Capaz es poco óptimo que esto esté acá
+        
+        //Si la hamburguesa ya tiene el ingrediente, no calculo nada más
+        if (attachedIngredients.ContainsKey(item.ingredientType)) return; //Esto hay que modificarlo porque en un futuro no va a funcionar así
+        
+        //Crea el vector de posición al que se va a asignar el item
         Vector3 pos = new Vector3(
             initialAttachPoint.position.x,
-            pilaHeight + yOffset,
+            initialAttachPoint.position.y + stackHeight,
             initialAttachPoint.position.z
         );
 
+        //Le paso la data para que el item gestione su posición
         item.Attach(transform, pos, initialAttachPoint.rotation);
-        pilaHeight += alto;
-        attachedIngredients[item.ingredientType] = true;
-        lastAttachedItem = item;
-
+        stackHeight += item.itemHeight; //Es por acá la idea
+        attachedIngredients[item.ingredientType] = true; //Esto no va a funcionar así
+        
         if (!preparingBurger && item.ingredientType == IngredientType.PanInferior)
         {
+            //La preparación de la hamburguesa empieza siempre por un par inferior
             preparingBurger = true;
+            
+            //Desactiva sus interacciones y sus físicas dinámicas (Es para que no se rompa, pero si lo podemos evitar sería ideal)
             var g = GetComponent<XRGrabInteractable>();
             if (g != null) g.enabled = false;
             var t = GetComponent<XRGeneralGrabTransformer>();
@@ -63,7 +65,10 @@ public class BurgerManager : MonoBehaviour
         }
         else if (!burgerReady && item.ingredientType == IngredientType.PanSuperior)
         {
+            //La preparación de la hamburguesa termina siempre por un pan superior
             burgerReady = true;
+            
+            //Vuelve a activar sus interacciones y sus físicas dinámicas.
             var g = GetComponent<XRGrabInteractable>();
             if (g != null) g.enabled = true;
             var t = GetComponent<XRGeneralGrabTransformer>();
@@ -75,10 +80,10 @@ public class BurgerManager : MonoBehaviour
 
     private void OnEnable()
     {
+        //Reseteo de variables
+        stackHeight = 0;
         preparingBurger = false;
         burgerReady = false;
-        lastAttachedItem = null;
-        pilaHeight = initialAttachPoint.position.y;
-        attachedIngredients.Clear();
+        attachedIngredients.Clear(); //Limpia la lista pero falta desactivar todos los items internos
     }
 }

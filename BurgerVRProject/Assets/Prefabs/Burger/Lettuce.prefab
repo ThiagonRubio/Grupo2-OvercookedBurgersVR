@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolParent: {fileID: 0}
   fullVersion: {fileID: 7622655516602151778}
   cutParts:
   - {fileID: 8570759375270853408}
@@ -96,6 +97,14 @@ PrefabInstance:
     - target: {fileID: 4036945837459684574, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990497673066279157, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 5260222646837750196}
+    - target: {fileID: 4990497673066279157, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: heightCorrection
+      value: -0.0025
       objectReference: {fileID: 0}
     - target: {fileID: 7536557467356615809, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
       propertyPath: m_Name

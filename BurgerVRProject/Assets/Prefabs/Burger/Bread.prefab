@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolParent: {fileID: 0}
   fullVersion: {fileID: 341239653359152165}
   cutParts:
   - {fileID: 7081600599029398396}
@@ -59,6 +60,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8211068386650307668}
     m_Modifications:
+    - target: {fileID: -3094355854060384544, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 5809359361346170471}
     - target: {fileID: 3182679943833329042, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -209,6 +214,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8211068386650307668}
     m_Modifications:
+    - target: {fileID: 238604904742313421, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 5809359361346170471}
+    - target: {fileID: 238604904742313421, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: itemHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 238604904742313421, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: ingredientType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 238604904742313421, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: heightCorrection
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 782721889224778024, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5

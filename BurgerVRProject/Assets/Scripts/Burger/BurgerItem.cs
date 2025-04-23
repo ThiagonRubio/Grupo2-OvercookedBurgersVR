@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,32 @@ public enum IngredientType { PanInferior, Paty, Queso, Lechuga, Tomate, PanSuper
 public class BurgerItem : MonoBehaviour
 {
     public IngredientType ingredientType;
+
+    public float itemHeight;
+    [SerializeField] private float heightCorrection;
+
+    private void Start()
+    {
+        if (GetComponent<MeshRenderer>())
+        {
+            itemHeight = GetComponent<MeshRenderer>().bounds.size.y;
+        }
+        else
+        {
+            itemHeight = GetComponentInChildren<MeshRenderer>().bounds.size.y;
+        }
+
+        itemHeight += heightCorrection;
+    }
+
     public void Attach(Transform parent, Vector3 pos, Quaternion rot)
     {
-        transform.parent = parent;
+        //Coloca el item en la bandeja
+        transform.parent = parent; 
         transform.position = pos;
         transform.rotation = rot;
+        
+        //Desactiva sus interacciones y físicas
         XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
         if (grab != null)
             grab.enabled = false;
@@ -25,17 +47,5 @@ public class BurgerItem : MonoBehaviour
         Collider col = GetComponent<Collider>();
         if (col != null)
             col.isTrigger = true;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (transform.parent == null) return;
-        BurgerManager manager = transform.parent.GetComponent<BurgerManager>();
-        if (manager == null) return;
-        BurgerItem otherItem = collision.gameObject.GetComponent<BurgerItem>();
-        if (otherItem != null && otherItem.transform.parent == null)
-        {
-            manager.HandleCollision(otherItem);
-        }
     }
 }

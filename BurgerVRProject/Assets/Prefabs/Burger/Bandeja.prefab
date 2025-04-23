@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 753671135242786386}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.081, y: 0.0222, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 5879115805230833201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.58466923, y: 0.7499999, z: 4.290561}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialAttachPoint: {fileID: 7923621063955424655}
+  stackHeight: 0
   preparingBurger: 0
   burgerReady: 0
 --- !u!114 &1332017032339920378
@@ -373,3 +374,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb8a71f60bef3740af048ad9cc20fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolParent: {fileID: 0}
