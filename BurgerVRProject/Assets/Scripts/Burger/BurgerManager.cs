@@ -54,27 +54,11 @@ public class BurgerManager : MonoBehaviour
         {
             //La preparación de la hamburguesa empieza siempre por un par inferior
             preparingBurger = true;
-            
-            //Desactiva sus interacciones y sus físicas dinámicas (Es para que no se rompa, pero si lo podemos evitar sería ideal)
-            var g = GetComponent<XRGrabInteractable>();
-            if (g != null) g.enabled = false;
-            var t = GetComponent<XRGeneralGrabTransformer>();
-            if (t != null) t.enabled = false;
-            var rb = GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = true;
         }
         else if (!burgerReady && item.ingredientType == IngredientType.PanSuperior)
         {
             //La preparación de la hamburguesa termina siempre por un pan superior
             burgerReady = true;
-            
-            //Vuelve a activar sus interacciones y sus físicas dinámicas.
-            var g = GetComponent<XRGrabInteractable>();
-            if (g != null) g.enabled = true;
-            var t = GetComponent<XRGeneralGrabTransformer>();
-            if (t != null) t.enabled = true;
-            var rb = GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = false;
         }
     }
 
