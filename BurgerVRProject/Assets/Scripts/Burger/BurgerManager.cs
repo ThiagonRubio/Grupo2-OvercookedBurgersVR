@@ -11,7 +11,8 @@ public class BurgerManager : MonoBehaviour
     //Attach variables
     public Transform initialAttachPoint;
     public float stackHeight;
-    private Dictionary<IngredientType, bool> attachedIngredients = new Dictionary<IngredientType, bool>();
+    // private Dictionary<IngredientType, bool> _attachedIngredients = new Dictionary<IngredientType, bool>();
+    public Dictionary<BurgerItem, IngredientType> AttachedIngredients = new Dictionary<BurgerItem, IngredientType>();
     
     //Bools
     public bool preparingBurger = false;
@@ -26,17 +27,12 @@ public class BurgerManager : MonoBehaviour
 
     public void HandleCollision(BurgerItem item)
     {
-        if (item == null) return; //No puede pasar porque ya se chequea arriba
-        
         //Chequeo, si la hamburguesa no se está preparando el primer item tiene que ser si o si un pan inferior, sino no debe calcular nada más
         if (!preparingBurger && item.ingredientType != IngredientType.PanInferior) return;
         
         //Si el jugador no soltó el item, no calculo nada más
         var grab = item.GetComponent<XRGrabInteractable>();
         if (grab != null && grab.isSelected) return; //Capaz es poco óptimo que esto esté acá
-        
-        //Si la hamburguesa ya tiene el ingrediente, no calculo nada más
-        if (attachedIngredients.ContainsKey(item.ingredientType)) return; //Esto hay que modificarlo porque en un futuro no va a funcionar así
         
         //Crea el vector de posición al que se va a asignar el item
         Vector3 pos = new Vector3(
@@ -47,8 +43,12 @@ public class BurgerManager : MonoBehaviour
 
         //Le paso la data para que el item gestione su posición
         item.Attach(transform, pos, initialAttachPoint.rotation);
-        stackHeight += item.itemHeight; //Es por acá la idea
-        attachedIngredients[item.ingredientType] = true; //Esto no va a funcionar así
+        
+        //Actualizo la altura actual de la hamburguesa
+        stackHeight += item.itemHeight;
+        
+        //Trackeo de los items que están en la hamburguesa
+        AttachedIngredients.Add(item, item.ingredientType); //Todavía no se hace nada con esto pero sería parte del chequeo de la entrega del pedido
         
         if (!preparingBurger && item.ingredientType == IngredientType.PanInferior)
         {
@@ -84,6 +84,6 @@ public class BurgerManager : MonoBehaviour
         stackHeight = 0;
         preparingBurger = false;
         burgerReady = false;
-        attachedIngredients.Clear(); //Limpia la lista pero falta desactivar todos los items internos
+        AttachedIngredients.Clear(); //Limpia la lista pero falta desactivar todos los items internos
     }
 }

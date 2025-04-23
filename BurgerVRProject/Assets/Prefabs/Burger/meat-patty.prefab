@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientType: 1
   itemHeight: 0
-  heightCorrection: 0.005
+  heightCorrection: 0.0025
 --- !u!54 &7360447431975252774
 Rigidbody:
   m_ObjectHideFlags: 0
