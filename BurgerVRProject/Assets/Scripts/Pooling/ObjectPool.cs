@@ -21,47 +21,72 @@ public class ObjectPool : MonoBehaviour
             this.poolSize = poolMaxSize;
 
         }
-        else Debug.LogWarning("Object is not a poolable object.");
+        else 
+        {
+#if UNITY_EDITOR
+            Debug.LogWarning("Object is not a poolable object bro.");
+#endif
+        }
+
     }
 
-    public IPoolable TryGetPooledObject(Transform spawnTransform = null)
+    public IPoolable TryGetPooledObject(out bool success)
     {
         IPoolable pooledObject = null;
 
         if (objectPool.Count < poolSize)
         {
-            pooledObject = NewObject(spawnTransform);
+            pooledObject = NewObject();
+            success = true;
         }
         else
         {
-            pooledObject = ReuseObject(spawnTransform);
+            pooledObject = ReuseObject(out success);
         }
 
-        objectPool.Enqueue(pooledObject);
-        
+        if (success)
+        {
+            objectPool.Enqueue(pooledObject);
+        }
+
         return pooledObject;
     }
 
-    private IPoolable NewObject(Transform spawnTransform = null)
+    private IPoolable NewObject()
     {
-        var spawnPoint = spawnTransform != null ? spawnTransform : transform;
-        
-        GameObject newObject = Instantiate(objectToPool.GameObject, spawnPoint.position, spawnPoint.rotation);
+        GameObject newObject = Instantiate(objectToPool.GameObject, transform.position, transform.rotation);
         IPoolable pooledObject = newObject.GetComponent<IPoolable>();
         pooledObject.GameObject.name = transform.root.name + "_" + objectToPool.GameObject.name + "_" + objectPool.Count;
         pooledObject.GameObject.transform.SetParent(gameObject.transform);
 
         return pooledObject;
     }
-    private IPoolable ReuseObject(Transform spawnTransform = null)
+    private IPoolable ReuseObject(out bool success)
     {
-        var spawnPoint = spawnTransform != null ? spawnTransform : transform;
-        
-        IPoolable pooledObject = objectPool.Dequeue();
-        pooledObject.GameObject.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
-        pooledObject.GameObject.SetActive(true);
-        
-        return pooledObject;
+        // Solo vamos a intentar reusar cuantos objetos haya en la pool
+        int maxAttempts = objectPool.Count;
+        int attemptCount = 0;
+
+        while (objectPool.Count > 0 && attemptCount < maxAttempts)
+        {
+            attemptCount++;
+            IPoolable pooledObject = objectPool.Dequeue();
+
+            if (pooledObject.CanBePooled)
+            {
+                success = true;
+                return pooledObject;
+            }
+            else
+            {
+                objectPool.Enqueue(pooledObject);
+            }
+        }
+
+        // Si sale del loop no hay nada disponible para agarrar del pool en este momento - intente denuevo mas tarde
+        success = false;
+        return null;
+
     }
 
     // --- AUX HELPER METHODS ---- (Por si las dudas porque los conozco)

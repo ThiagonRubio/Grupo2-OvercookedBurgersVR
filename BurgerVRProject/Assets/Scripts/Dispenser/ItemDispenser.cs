@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class ItemDispenser : MonoBehaviour
 {
+    public Transform ItemSpawnPoint => itemSpawnPosition;
+
     [SerializeField] private ObjectPool itemPool;
     [SerializeField] private SpawnableObject itemToSpawn;
-    [SerializeField] private Transform spawnPosition;
+    [SerializeField] private Transform itemSpawnPosition;
 
     private void Awake()
     {
@@ -16,6 +18,14 @@ public class ItemDispenser : MonoBehaviour
 
     public void SpawnItem()
     {
-        PoolableFactory.TryCreateObject(itemPool, spawnPosition);
+        bool spawnSuccess = false;
+        PoolableFactory.TryRetrieveObject(itemPool, out spawnSuccess);
+
+        if (spawnSuccess)
+        {
+        }
+        else
+        {
+        }
     }
 }

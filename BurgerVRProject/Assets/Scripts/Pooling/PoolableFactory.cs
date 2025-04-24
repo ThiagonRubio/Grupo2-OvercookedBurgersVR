@@ -9,10 +9,13 @@ public static class PoolableFactory
         pool.InitPool(poolableToCreate, poolSize);
     }
 
-    public static IPoolable TryCreateObject(ObjectPool pool, Transform spawnPoint = null)
+    public static IPoolable TryRetrieveObject(ObjectPool pool, out bool success)
     {
-        IPoolable product = pool.TryGetPooledObject(spawnPoint);
-        product.OnPoolableObjectEnable();
+        IPoolable product = pool.TryGetPooledObject(out success);
+        if (success)
+        {
+            product.OnPoolableObjectEnable();
+        }
         return product;
     }
 }

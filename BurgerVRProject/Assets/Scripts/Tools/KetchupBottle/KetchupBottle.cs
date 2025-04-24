@@ -11,6 +11,10 @@ public class KetchupBottle : MonoBehaviour
     [SerializeField] private float projectileSpeed;
     [SerializeField] private Transform bottlePoint;
 
+    // README: SUPER IMPORTANTE
+    // POR QUE ESTO NO HEREDA DE ITEMDISPENSER SI SON LITERALMENTE LO MISMO SALVO 1 LINEA DE CODIGO? NO ME HAGAN VIOLENTAR
+    // <<<<----------------------------------------------
+
     private void Awake()
     {
         PoolableFactory.InitPool(projectilePool, ketchupProjectile, projectilePool.PoolMaxSize);
@@ -18,7 +22,15 @@ public class KetchupBottle : MonoBehaviour
 
     public void Use()
     {
-        var spawnedProjectile = PoolableFactory.TryCreateObject(projectilePool, bottlePoint);
-        spawnedProjectile.GameObject.GetComponent<Rigidbody>().velocity = projectileSpeed * bottlePoint.forward;
+        bool spawnSuccess = false;
+        IPoolable spawnedProjectile = PoolableFactory.TryRetrieveObject(projectilePool, out spawnSuccess);
+
+        if (spawnSuccess)
+        {
+            spawnedProjectile.GameObject.GetComponent<Rigidbody>().velocity = projectileSpeed * bottlePoint.forward;
+        }
+        else
+        {
+        }
     }
 }
