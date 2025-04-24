@@ -19,7 +19,6 @@ public class ObjectPool : MonoBehaviour
         {
             this.objectToPool = objectToPool;
             this.poolSize = poolMaxSize;
-
         }
         else 
         {
@@ -72,7 +71,7 @@ public class ObjectPool : MonoBehaviour
             attemptCount++;
             IPoolable pooledObject = objectPool.Dequeue();
 
-            if (pooledObject.CanBePooled)
+            if (pooledObject.IsAvailable)
             {
                 success = true;
                 return pooledObject;

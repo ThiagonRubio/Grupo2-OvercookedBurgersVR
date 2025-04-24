@@ -6,10 +6,10 @@ using UnityEngine;
 public class SpawnableObject : MonoBehaviour, IPoolable
 {
     public GameObject GameObject => this.gameObject;
-    public bool CanBePooled { get { return canBePooled; } set { canBePooled = value; } }
+    public bool IsAvailable { get { return isAvailable; } set { isAvailable = value; } }
 
     public ItemDispenser poolParent;
-    private bool canBePooled = true;
+    private bool isAvailable = true;
 
     private void Start()
     {

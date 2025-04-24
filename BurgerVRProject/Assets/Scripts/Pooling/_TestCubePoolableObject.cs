@@ -6,9 +6,9 @@ public class _TestCubePoolableObject : MonoBehaviour, IPoolable
 {
     // Esto es un objeto pooleable random para meter y probar los pools, por si no se dieron cuenta.
     public GameObject GameObject => this.gameObject;
-    public bool CanBePooled { get { return canBePooled; } set { canBePooled = value; } }
+    public bool IsAvailable { get { return isAvailable; } set { isAvailable = value; } }
 
-    private bool canBePooled = true;
+    private bool isAvailable = true;
     private Vector3 spawnPoint = new Vector3(0, 0, 0); 
     // Totalmente arbitrario porque si - despues implementan la logica que se les canta la cola DENTRO DEL OBJETO
 

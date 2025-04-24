@@ -5,7 +5,7 @@ using UnityEngine;
 public class _TestCubeSpawner : MonoBehaviour
 {
     // Esto es un contraldor para spwanear cosas para probar los pools, por si no se dieron cuenta.
-    // Cada segundo dejamos caer una cajita para probar
+    // Cada segundo dejamos caer una cajita para probar. Como el nombre implica, solo es para TESTEAR 
 
 
     [SerializeField] private ObjectPool testCubePool;
@@ -55,7 +55,7 @@ public class _TestCubeSpawner : MonoBehaviour
         {
             foreach (IPoolable poolable in testCubePool.ObjectsInPool)
             {
-                poolable.CanBePooled = !poolable.CanBePooled;
+                poolable.IsAvailable = !poolable.IsAvailable;
             }
             testDisableCounter = 0.0f;
         }
