@@ -10,15 +10,11 @@ public class SpawnableObject : MonoBehaviour, IPoolable
 
     public ItemDispenser poolParent;
     private bool isAvailable = true;
-
-    private void Start()
-    {
-        poolParent = transform.parent.GetComponent<ItemDispenser>();
-    }
-
+    
     public virtual void OnPoolableObjectEnable()
     {
-        transform.position = poolParent.ItemSpawnPoint.transform.position;
+        if (poolParent == null) poolParent = transform.parent.GetComponent<ItemDispenser>(); 
+        transform.position = poolParent.ItemSpawnPoint.position; //Se ejecutaba antes del start y daba error, por eso geteo el componente en el método
         gameObject.SetActive(true);
     }
 

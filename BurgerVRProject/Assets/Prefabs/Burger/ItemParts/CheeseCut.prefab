@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8041376626081569891}
   - component: {fileID: -2691716485176411719}
   - component: {fileID: 3688551436649992652}
-  - component: {fileID: 6776624396558214634}
+  - component: {fileID: 8471843257698794202}
   m_Layer: 8
   m_Name: CheeseCut
   m_TagString: Untagged
@@ -260,7 +260,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12111462, y: 0.0044465372, z: 0.121590056}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6776624396558214634
+--- !u!114 &8471843257698794202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,10 +269,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 358474164711132855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e211f633a1b22a04e9cd838af530ae44, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientType: 2
+  itemHeight: 0
+  heightCorrection: 0
+  originalParent: {fileID: 0}
 --- !u!1 &7435464490346804229
 GameObject:
   m_ObjectHideFlags: 0

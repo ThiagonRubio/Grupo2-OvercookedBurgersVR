@@ -595,6 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333612206431565220}
   - component: {fileID: 5454330856863358300}
+  - component: {fileID: 4567185683468460343}
   m_Layer: 0
   m_Name: Dispenser_Lettuce
   m_TagString: Untagged
@@ -633,9 +634,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e83e15faf92ae4faf7e7cfc7b5624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPool: {fileID: 0}
+  itemPool: {fileID: 4567185683468460343}
   itemToSpawn: {fileID: 424557107349892024, guid: 3ed831c889dae6c46aeb4942f304c0df, type: 3}
-  spawnPosition: {fileID: 3395592217998413666}
+  itemSpawnPosition: {fileID: 3395592217998413666}
+--- !u!114 &4567185683468460343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696644778971216765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 3
 --- !u!1 &8029336834013971536
 GameObject:
   m_ObjectHideFlags: 0

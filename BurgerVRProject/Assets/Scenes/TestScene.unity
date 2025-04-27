@@ -7163,7 +7163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1742632969
 Transform:
   m_ObjectHideFlags: 0
@@ -8586,14 +8586,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 412669512}
-    - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 5344828520200236560, guid: 695cc432721285841a3d8826ae78593a, type: 3}
     - target: {fileID: 4890860312988076206, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
@@ -8647,14 +8639,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 1307773261}
-    - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 300353704817696718, guid: 7559538dba4f3e3468c82a6991cca0b3, type: 3}
     - target: {fileID: 3538604043899695753, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tomato
@@ -8845,14 +8829,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 1866947879}
-    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 1332017032339920378, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tray
@@ -8914,14 +8890,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 480500451}
-    - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 424557107349892024, guid: 3ed831c889dae6c46aeb4942f304c0df, type: 3}
     - target: {fileID: 7696644778971216765, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: m_Name
       value: Dispenser_Lettuce
@@ -8951,14 +8919,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 1291722926}
-    - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 1507942598956574009, guid: cd6b06560139b374eb46b987b94cc353, type: 3}
     - target: {fileID: 7025693864571494461, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
@@ -9028,14 +8988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dispenser_Bread
       objectReference: {fileID: 0}
-    - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 1410171959}
-    - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: 4149158831772342603, guid: afe36cf595a96744baf126121e541f47, type: 3}
     - target: {fileID: 7545464644614118522, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995

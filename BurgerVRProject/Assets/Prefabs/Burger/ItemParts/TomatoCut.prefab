@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4877947248743134580}
   - component: {fileID: 7801765328162814276}
   - component: {fileID: 2576838938299038650}
-  - component: {fileID: -9115618432130150721}
+  - component: {fileID: 620357044230512664}
   m_Layer: 8
   m_Name: TomatoCut
   m_TagString: Untagged
@@ -345,7 +345,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.079105005, y: 0.010537833, z: 0.065503}
   m_Center: {x: 0.0030003414, y: 0.0014766008, z: 0.000105559826}
---- !u!114 &-9115618432130150721
+--- !u!114 &620357044230512664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,7 +354,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8376664853184748171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e211f633a1b22a04e9cd838af530ae44, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientType: 4
+  itemHeight: 0
+  heightCorrection: 0
+  originalParent: {fileID: 0}

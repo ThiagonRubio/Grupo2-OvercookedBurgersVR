@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9185188651560869026}
   - component: {fileID: 7330325622881396516}
   - component: {fileID: -8688117436693161128}
-  - component: {fileID: 4990497673066279157}
+  - component: {fileID: 2667758947213412077}
   m_Layer: 8
   m_Name: LettuceCut
   m_TagString: Untagged
@@ -260,7 +260,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.08398877, y: 0.006439998, z: 0.12555534}
   m_Center: {x: -0.0016563386, y: 0.0013608508, z: -0.0092032775}
---- !u!114 &4990497673066279157
+--- !u!114 &2667758947213412077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,10 +269,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7536557467356615809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e211f633a1b22a04e9cd838af530ae44, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientType: 3
+  itemHeight: 0
+  heightCorrection: 0
+  originalParent: {fileID: 0}
 --- !u!1 &7662996997438574909
 GameObject:
   m_ObjectHideFlags: 0

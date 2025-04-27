@@ -27,7 +27,7 @@ public class BurgerItem : MonoBehaviour
         itemHeight += heightCorrection;
     }
 
-    public void Attach(Transform parent, Vector3 pos, Quaternion rot)
+    public virtual void Attach(Transform parent, Vector3 pos, Quaternion rot)
     {
         //Coloca el item en la bandeja
         transform.parent = parent; 

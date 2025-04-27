@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1510980866417350574}
   - component: {fileID: -2290255245020466469}
   - component: {fileID: 9027968766073030929}
-  - component: {fileID: -3094355854060384544}
+  - component: {fileID: 6201797461148411504}
   m_Layer: 8
   m_Name: BreadCut1
   m_TagString: Untagged
@@ -313,7 +313,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35999998, y: 0.04, z: 0.35999998}
   m_Center: {x: 0, y: 0.02, z: 0}
---- !u!114 &-3094355854060384544
+--- !u!114 &6201797461148411504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,7 +322,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6733271038022342466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e211f633a1b22a04e9cd838af530ae44, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientType: 0
+  itemHeight: 0
+  heightCorrection: 0
+  originalParent: {fileID: 0}

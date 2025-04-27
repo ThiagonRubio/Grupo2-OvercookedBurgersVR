@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4890860312988076206}
   - component: {fileID: 2694755914287513355}
+  - component: {fileID: 2385003210060080763}
   m_Layer: 0
   m_Name: Dispenser_Meat-Patty
   m_TagString: Untagged
@@ -48,9 +49,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e83e15faf92ae4faf7e7cfc7b5624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPool: {fileID: 0}
-  itemToSpawn: {fileID: 5344828520200236560, guid: 695cc432721285841a3d8826ae78593a, type: 3}
-  spawnPosition: {fileID: 5624772883833823367}
+  itemPool: {fileID: 2385003210060080763}
+  itemToSpawn: {fileID: 4049619870210828845, guid: af3d4637bdc819f46986a63b39f6343c, type: 3}
+  itemSpawnPosition: {fileID: 5624772883833823367}
+--- !u!114 &2385003210060080763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693485994177046378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 3
 --- !u!1 &4241279501804063649
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,8 +50,8 @@ MonoBehaviour:
   poolParent: {fileID: 0}
   fullVersion: {fileID: 341239653359152165}
   cutParts:
-  - {fileID: 7081600599029398396}
-  - {fileID: 3993741872113204815}
+  - {fileID: 7576938597404887630}
+  - {fileID: 6248599948928980226}
 --- !u!1001 &4555255148572077118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6201797461148411504, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
+      propertyPath: originalParent
+      value: 
+      objectReference: {fileID: 4149158831772342603}
     - target: {fileID: 6733271038022342466, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
       propertyPath: m_Name
       value: BreadCut1
@@ -123,6 +127,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6733271038022342466, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
   m_PrefabInstance: {fileID: 4555255148572077118}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7576938597404887630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6201797461148411504, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
+  m_PrefabInstance: {fileID: 4555255148572077118}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081600599029398396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6062599532802146882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2904209327333059583, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: originalParent
+      value: 
+      objectReference: {fileID: 4149158831772342603}
     - target: {fileID: 5302479901232103602, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
       propertyPath: m_Name
       value: BreadCut2
@@ -288,6 +307,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5302479901232103602, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
   m_PrefabInstance: {fileID: 9149817401741655805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6248599948928980226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2904209327333059583, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+  m_PrefabInstance: {fileID: 9149817401741655805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993741872113204815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a368cd7b41aa84480888a97cb9ed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8369490326185172949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 782721889224778024, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
