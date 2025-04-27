@@ -13,6 +13,11 @@ public class BurgerItem : MonoBehaviour
     public float itemHeight;
     [SerializeField] private float heightCorrection;
 
+    private XRGrabInteractable _grabInteractable;
+    private XRGeneralGrabTransformer _grabTransformer;
+    private Rigidbody _rigidbody;
+    private Collider _collider;
+    
     private void Start()
     {
         if (GetComponent<MeshRenderer>())
@@ -25,6 +30,11 @@ public class BurgerItem : MonoBehaviour
         }
 
         itemHeight += heightCorrection;
+        
+        _grabInteractable = GetComponent<XRGrabInteractable>();
+        _grabTransformer = GetComponent<XRGeneralGrabTransformer>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
     }
 
     public virtual void Attach(Transform parent, Vector3 pos, Quaternion rot)
@@ -35,17 +45,25 @@ public class BurgerItem : MonoBehaviour
         transform.rotation = rot;
         
         //Desactiva sus interacciones y físicas
-        XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
-        if (grab != null)
-            grab.enabled = false;
-        XRGeneralGrabTransformer transformer = GetComponent<XRGeneralGrabTransformer>();
-        if (transformer != null)
-            transformer.enabled = false;
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-            rb.isKinematic = true;
-        Collider col = GetComponent<Collider>();
-        if (col != null)
-            col.isTrigger = true;
+        if (_grabInteractable != null)
+            _grabInteractable.enabled = false;
+        if (_grabTransformer != null)
+            _grabTransformer.enabled = false;
+        if (_rigidbody != null)
+            _rigidbody.isKinematic = true;
+        if (_collider != null)
+            _collider.isTrigger = true;
+    }
+
+    public virtual void Detach()
+    {
+        if (_grabInteractable != null)
+            _grabInteractable.enabled = true;
+        if (_grabTransformer != null)
+            _grabTransformer.enabled = true;
+        if (_rigidbody != null)
+            _rigidbody.isKinematic = false;
+        if (_collider != null)
+            _collider.isTrigger = false;
     }
 }

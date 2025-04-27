@@ -18,9 +18,10 @@ public class MeatPatty : BurgerItem
         base.Attach(parent, pos, rot);
         _spawnableObject.IsAvailable = false;
     }
-
+    
     private void OnDisable()
     {
+        Detach();
         _spawnableObject.IsAvailable = true;
     }
 

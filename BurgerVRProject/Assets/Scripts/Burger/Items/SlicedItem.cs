@@ -18,6 +18,7 @@ public class SlicedItem : BurgerItem
 
     public void ReattachToOriginalParent()
     {
+        Detach();
         transform.SetParent(originalParent.transform);
         OnSlicedItemReattachedToOriginalParent?.Invoke();
         gameObject.SetActive(false);
