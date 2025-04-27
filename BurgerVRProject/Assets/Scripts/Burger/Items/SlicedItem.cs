@@ -8,7 +8,7 @@ public class SlicedItem : BurgerItem
     [SerializeField] private SpawnableObject originalParent;
     
     public Action OnSlicedItemAttached;
-    public Action OnSlicedItemDetached;
+    public Action OnSlicedItemReattachedToOriginalParent;
     
     public override void Attach(Transform parent, Vector3 pos, Quaternion rot)
     {
@@ -16,9 +16,10 @@ public class SlicedItem : BurgerItem
         OnSlicedItemAttached?.Invoke();
     }
 
-    private void OnDisable()
+    public void ReattachToOriginalParent()
     {
         transform.SetParent(originalParent.transform);
-        OnSlicedItemDetached?.Invoke();
+        OnSlicedItemReattachedToOriginalParent?.Invoke();
+        gameObject.SetActive(false);
     }
 }

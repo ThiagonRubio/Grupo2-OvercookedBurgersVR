@@ -14,7 +14,7 @@ public class SliceableSpawnableObject : SpawnableObject
         for (int i = 0; i < cutParts.Length; i++)
         {
             cutParts[i].OnSlicedItemAttached += OnChildDetached;
-            cutParts[i].OnSlicedItemDetached += CheckPoolAvailability;
+            cutParts[i].OnSlicedItemReattachedToOriginalParent += CheckPoolAvailability;
             
             cutParts[i].transform.localPosition = new Vector3(0, (i * 0.015f), 0);
             cutParts[i].transform.localRotation = Quaternion.Euler(0,0,0);
@@ -33,7 +33,7 @@ public class SliceableSpawnableObject : SpawnableObject
         for (int i = 0; i < cutParts.Length; i++)
         {
             cutParts[i].OnSlicedItemAttached -= OnChildDetached;
-            cutParts[i].OnSlicedItemDetached -= CheckPoolAvailability;
+            cutParts[i].OnSlicedItemReattachedToOriginalParent -= CheckPoolAvailability;
         }
     }
 

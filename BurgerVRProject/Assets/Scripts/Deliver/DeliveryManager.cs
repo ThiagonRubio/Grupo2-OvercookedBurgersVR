@@ -12,18 +12,25 @@ public class DeliveryManager : MonoBehaviour
     }
     private void ReturnToPool(BurgerManager manager)
     {
-        var poolables = new List<IPoolable>();
-        foreach (Transform child in manager.transform)
+        for (int i = manager.transform.childCount - 1; i >= 0; i--)
         {
-            var poolable =
-              child.GetComponent<IPoolable>()
-              ?? child.GetComponentInParent<IPoolable>(includeInactive: true);
+            Transform child = manager.transform.GetChild(i);
+            
+            var poolable = child.GetComponent<IPoolable>();
+            
             if (poolable != null)
+            {
                 poolable.OnPoolableObjectDisable();
+            }
             else
-                child.gameObject.SetActive(false);
+            {
+                var slicedItem = child.GetComponent<SlicedItem>();
+                
+                if(slicedItem != null)
+                    slicedItem.ReattachToOriginalParent();
+            }
         }
-
+        
         var managerPoolable = manager.GetComponent<IPoolable>();
         if (managerPoolable != null)
             managerPoolable.OnPoolableObjectDisable();
