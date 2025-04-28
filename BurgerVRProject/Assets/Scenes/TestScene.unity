@@ -2181,7 +2181,7 @@ GameObject:
   - component: {fileID: 909964705}
   - component: {fileID: 909964706}
   m_Layer: 0
-  m_Name: ProjectilePool
+  m_Name: KetchupPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,7 +2214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 5
+  poolSize: 10
 --- !u!1 &926369018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,17 +2938,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021319198}
   m_CullTransparentMesh: 1
---- !u!114 &1043305924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3586736706773790110, guid: 11548f373c8355546907dce6711e1381, type: 3}
-  m_PrefabInstance: {fileID: 4222940578126570032}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064454509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac0b503c7587a642b557986f3293559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1046843308
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,7 +7259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1742632969
 Transform:
   m_ObjectHideFlags: 0
@@ -8693,6 +8682,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 412669512}
     - target: {fileID: 4890860312988076206, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
@@ -8746,6 +8739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1307773261}
     - target: {fileID: 3538604043899695753, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tomato
@@ -8808,6 +8805,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3586736706773790110, guid: 11548f373c8355546907dce6711e1381, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 909964706}
+    - target: {fileID: 3586736706773790110, guid: 11548f373c8355546907dce6711e1381, type: 3}
       propertyPath: projectilePool
       value: 
       objectReference: {fileID: 909964706}
@@ -8850,34 +8851,6 @@ PrefabInstance:
     - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1043305924}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Use
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: KetchupBottle, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251735781813095063, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9037747693038998646, guid: 11548f373c8355546907dce6711e1381, type: 3}
       propertyPath: m_Name
@@ -8936,6 +8909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1866947879}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tray
@@ -8997,6 +8974,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 480500451}
     - target: {fileID: 7696644778971216765, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: m_Name
       value: Dispenser_Lettuce
@@ -9026,6 +9007,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1291722926}
     - target: {fileID: 7025693864571494461, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995
@@ -9095,6 +9080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dispenser_Bread
       objectReference: {fileID: 0}
+    - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
+      propertyPath: itemPool
+      value: 
+      objectReference: {fileID: 1410171959}
     - target: {fileID: 7545464644614118522, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.995

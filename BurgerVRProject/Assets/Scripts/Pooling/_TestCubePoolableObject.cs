@@ -33,4 +33,8 @@ public class _TestCubePoolableObject : MonoBehaviour, IPoolable
         gameObject.SetActive(false);
     }
 
+    public void SetPoolablePositionAndRotation(Transform newTransform)
+    {
+        throw new System.NotImplementedException();
+    }
 }

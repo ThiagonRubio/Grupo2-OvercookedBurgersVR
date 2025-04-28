@@ -3,31 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KetchupBottle : MonoBehaviour
+public class KetchupBottle : ItemDispenser
 {
-    [SerializeField] private ObjectPool projectilePool;
-    [SerializeField] private SpawnableObject ketchupProjectile;
-
     [SerializeField] private float projectileSpeed;
-    [SerializeField] private Transform bottlePoint;
-
-    // README: SUPER IMPORTANTE
-    // POR QUE ESTO NO HEREDA DE ITEMDISPENSER SI SON LITERALMENTE LO MISMO SALVO 1 LINEA DE CODIGO? NO ME HAGAN VIOLENTAR
-    // <<<<----------------------------------------------
-
+    
     private void Awake()
     {
-        PoolableFactory.InitPool(projectilePool, ketchupProjectile, projectilePool.PoolMaxSize);
+        PoolableFactory.InitPool(itemPool, itemToSpawn, itemPool.PoolMaxSize);
     }
 
-    public void Use()
+    public override void SpawnItem()
     {
         bool spawnSuccess = false;
-        IPoolable spawnedProjectile = PoolableFactory.TryRetrieveObject(projectilePool, out spawnSuccess);
+        IPoolable spawnedProjectile = PoolableFactory.TryRetrieveObject(itemPool, out spawnSuccess);
 
         if (spawnSuccess)
         {
-            spawnedProjectile.GameObject.GetComponent<Rigidbody>().velocity = projectileSpeed * bottlePoint.forward;
+            spawnedProjectile.GameObject.GetComponent<Rigidbody>().velocity = projectileSpeed * itemSpawnPosition.forward;
         }
         else
         {

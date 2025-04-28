@@ -7,22 +7,24 @@ public class ItemDispenser : MonoBehaviour
 {
     public Transform ItemSpawnPoint => itemSpawnPosition;
 
-    [SerializeField] private ObjectPool itemPool;
-    [SerializeField] private SpawnableObject itemToSpawn;
-    [SerializeField] private Transform itemSpawnPosition;
+    [SerializeField] protected ObjectPool itemPool;
+    [SerializeField] protected SpawnableObject itemToSpawn;
+    [SerializeField] protected Transform itemSpawnPosition;
 
     private void Awake()
     {
         PoolableFactory.InitPool(itemPool, itemToSpawn, itemPool.PoolMaxSize);
     }
 
-    public void SpawnItem()
+    public virtual void SpawnItem()
     {
         bool spawnSuccess = false;
-        PoolableFactory.TryRetrieveObject(itemPool, out spawnSuccess);
-
+        
+        IPoolable item = PoolableFactory.TryRetrieveObject(itemPool, out spawnSuccess);
+        
         if (spawnSuccess)
         {
+            item.SetPoolablePositionAndRotation(itemSpawnPosition);
         }
         else
         {

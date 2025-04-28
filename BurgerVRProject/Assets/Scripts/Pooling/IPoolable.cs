@@ -8,4 +8,5 @@ public interface IPoolable
     bool IsAvailable { get; set; }
     void OnPoolableObjectEnable();
     void OnPoolableObjectDisable();
+    void SetPoolablePositionAndRotation(Transform newTransform);
 }

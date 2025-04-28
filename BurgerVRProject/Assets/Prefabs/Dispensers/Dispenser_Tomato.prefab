@@ -230,7 +230,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5155990252998075043}
   - component: {fileID: 3137092790838717447}
-  - component: {fileID: 1263825343148007387}
   m_Layer: 0
   m_Name: Dispenser_Tomato
   m_TagString: Untagged
@@ -269,22 +268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e83e15faf92ae4faf7e7cfc7b5624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPool: {fileID: 1263825343148007387}
+  itemPool: {fileID: 0}
   itemToSpawn: {fileID: 300353704817696718, guid: 7559538dba4f3e3468c82a6991cca0b3, type: 3}
   itemSpawnPosition: {fileID: 335550889690396541}
---- !u!114 &1263825343148007387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3538604043899695753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 3
 --- !u!1 &4365322720181047882
 GameObject:
   m_ObjectHideFlags: 0
