@@ -19,6 +19,7 @@ public class KetchupBottle : ItemDispenser
 
         if (spawnSuccess)
         {
+            spawnedProjectile.SetPoolablePositionAndRotation(itemSpawnPosition);
             spawnedProjectile.GameObject.GetComponent<Rigidbody>().velocity = projectileSpeed * itemSpawnPosition.forward;
         }
         else

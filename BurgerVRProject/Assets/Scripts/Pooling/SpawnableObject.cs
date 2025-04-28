@@ -21,7 +21,7 @@ public class SpawnableObject : MonoBehaviour, IPoolable
 
     public virtual void OnPoolableObjectDisable()
     {
-        transform.SetParent(parentTransform);
+        transform.SetParent(parentTransform); //Necesario para los items cuyo parent cambia en runtime
         gameObject.SetActive(false);
     }
 
