@@ -18,7 +18,7 @@ public class BurgerItem : MonoBehaviour
     private Rigidbody _rigidbody;
     private Collider _collider;
     
-    private void Start()
+    public virtual void Start()
     {
         if (GetComponent<MeshRenderer>())
         {

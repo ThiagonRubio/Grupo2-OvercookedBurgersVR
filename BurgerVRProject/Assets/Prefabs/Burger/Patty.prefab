@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb8a71f60bef3740af048ad9cc20fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 0}
 --- !u!114 &4870103519175005312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientType: 1
-  itemHeight: 0
+  itemHeight: 1
   heightCorrection: 0.0025
 --- !u!54 &5206191353590734792
 Rigidbody:

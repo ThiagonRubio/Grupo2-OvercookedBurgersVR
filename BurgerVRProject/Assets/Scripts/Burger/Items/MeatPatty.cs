@@ -8,8 +8,9 @@ public class MeatPatty : BurgerItem
     //Necesario para anular el pooleo cuando esté siendo utilizado
     private SpawnableObject _spawnableObject;
     
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         if(_spawnableObject == null) _spawnableObject = GetComponent<SpawnableObject>();
     }
 
