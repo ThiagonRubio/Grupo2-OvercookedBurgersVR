@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BurgerCooking : MonoBehaviour
 {
+    Renderer rend;
+
     [SerializeField] float cookingTimeRequired = 5f;
     [SerializeField] float burnTimeAfterCooked = 3f;
 
@@ -11,7 +13,12 @@ public class BurgerCooking : MonoBehaviour
     private bool isInCookingZone = false;
     private bool isCooked = false;
     private bool isBurnt = false;
-    
+
+    private void Awake()
+    {
+        rend = GetComponent<Renderer>();
+    }
+
     void Update()
     {
         if (isBurnt)
@@ -24,12 +31,14 @@ public class BurgerCooking : MonoBehaviour
             if (!isCooked && currentCookingTime >= cookingTimeRequired)
             {
                 isCooked = true;
+                rend.material.SetColor("_BaseColor", new Color(0.6f, 0.3f, 0.1f));
                 Debug.Log($"{gameObject.name} is cooked!");
             }
 
             if (isCooked && currentCookingTime >= cookingTimeRequired + burnTimeAfterCooked)
             {
                 isBurnt = true;
+                rend.material.SetColor("_BaseColor", Color.black);
                 Debug.Log($"{gameObject.name} is burnt!");
             }
         }
