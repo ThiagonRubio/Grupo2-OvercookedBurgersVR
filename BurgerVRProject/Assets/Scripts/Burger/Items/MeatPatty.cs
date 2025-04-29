@@ -15,8 +15,8 @@ public class MeatPatty : BurgerItem
 
     private float currentCookingTime = 0f;
     private bool isInCookingZone = false;
-    private bool isCooked = false;
-    private bool isBurnt = false;
+    [SerializeField] private bool isCooked = false;
+    [SerializeField] private bool isBurnt = false;
 
     private void Awake()
     {
@@ -66,8 +66,13 @@ public class MeatPatty : BurgerItem
     private void OnDisable()
     {
         Detach();
-        _spawnableObject.IsAvailable = true;
-        rend.material.SetColor("_BaseColor", Color.white);
+        
+        if(_spawnableObject != null)
+            _spawnableObject.IsAvailable = true;
+        
+        if(rend!= null)
+            rend.material.SetColor("_BaseColor", Color.white);
+        
         currentCookingTime = 0f;
         isInCookingZone = false; 
         isCooked = false;

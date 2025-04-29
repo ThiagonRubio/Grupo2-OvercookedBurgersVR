@@ -14,8 +14,8 @@ public class SpawnableObject : MonoBehaviour, IPoolable
 
     public virtual void OnPoolableObjectEnable()
     {
-        // if (itemDispenser == null) itemDispenser = transform.parent.GetComponent<ItemDispenser>(); //La primera vez que lo spawneo registro el parent original
         if (parentTransform == null) parentTransform = transform.parent.transform;
+        gameObject.SetActive(false); //Forzar el OnEnable de los items
         gameObject.SetActive(true);
     }
 
