@@ -5,19 +5,32 @@ using UnityEngine;
 public class BurgerCooking : MonoBehaviour
 {
     [SerializeField] float cookingTimeRequired = 5f;
+    [SerializeField] float burnTimeAfterCooked = 3f;
+
     private float currentCookingTime = 0f;
     private bool isInCookingZone = false;
+    private bool isCooked = false;
+    private bool isBurnt = false;
     
     void Update()
     {
+        if (isBurnt)
+            return;
+
         if (isInCookingZone)
         {
             currentCookingTime += Time.deltaTime;
 
-            if (currentCookingTime >= cookingTimeRequired)
+            if (!isCooked && currentCookingTime >= cookingTimeRequired)
             {
-                isInCookingZone = false;
-                //Agregar que se queme la hamburguesa si se queda mas tiempo
+                isCooked = true;
+                Debug.Log($"{gameObject.name} is cooked!");
+            }
+
+            if (isCooked && currentCookingTime >= cookingTimeRequired + burnTimeAfterCooked)
+            {
+                isBurnt = true;
+                Debug.Log($"{gameObject.name} is burnt!");
             }
         }
     }
@@ -27,6 +40,7 @@ public class BurgerCooking : MonoBehaviour
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = true;
+            Debug.Log($"{gameObject.name} has entered the CookingZone");
         }
     }
 
@@ -35,6 +49,7 @@ public class BurgerCooking : MonoBehaviour
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = false;
+            Debug.Log($"{gameObject.name} has exit the CookingZone");
         }
     }
 }
