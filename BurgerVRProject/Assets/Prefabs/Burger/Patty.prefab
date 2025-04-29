@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2985836856136546150}
   - component: {fileID: 4049619870210828845}
   - component: {fileID: 4870103519175005312}
-  - component: {fileID: -1523703791718440872}
   - component: {fileID: 5206191353590734792}
   - component: {fileID: 1765077492750999217}
   m_Layer: 8
@@ -295,19 +294,8 @@ MonoBehaviour:
   ingredientType: 1
   itemHeight: 1
   heightCorrection: 0.0025
---- !u!114 &-1523703791718440872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811631184778348621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ac98cd23cc0fd4d859c0377118031d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   cookingTimeRequired: 5
+  burnTimeAfterCooked: 3
 --- !u!54 &5206191353590734792
 Rigidbody:
   m_ObjectHideFlags: 0
