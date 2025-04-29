@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Button
+  - CookingZone
   layers:
   - Default
   - TransparentFX
