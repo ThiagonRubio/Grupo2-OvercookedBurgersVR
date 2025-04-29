@@ -39,9 +39,12 @@ public class BurgerManager : MonoBehaviour
         //Chequeo, si la hamburguesa no se está preparando el primer item tiene que ser si o si un pan inferior, sino no debe calcular nada más
         if (!preparingBurger && item.ingredientType != IngredientType.PanInferior) return;
         
-        //Si el jugador no soltó el item, no calculo nada más
+        //Si el jugador no soltó el item no calculo nada más
         var grab = item.GetComponent<XRGrabInteractable>();
         if (grab != null && grab.isSelected) return; //Capaz es poco óptimo que esto esté acá
+        
+        //Si el item no está listo para usarse no calculo nada más.
+        if (!item.canBeUsed) return;
         
         //Crea el vector de posición al que se va a asignar el item
         Vector3 pos = new Vector3(

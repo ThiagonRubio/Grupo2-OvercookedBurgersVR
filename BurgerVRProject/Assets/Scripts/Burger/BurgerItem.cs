@@ -17,9 +17,13 @@ public class BurgerItem : MonoBehaviour
     private XRGeneralGrabTransformer _grabTransformer;
     private Rigidbody _rigidbody;
     private Collider _collider;
+
+    public bool canBeUsed;
     
     public virtual void Start()
     {
+        canBeUsed = true;
+        
         if (GetComponent<MeshRenderer>())
         {
             itemHeight = GetComponent<MeshRenderer>().bounds.size.y;
