@@ -77,7 +77,8 @@ public class BurgerManager : MonoBehaviour
 
     private void OnDisable()
     {
-        _spawnableObject.IsAvailable = true;
+        if(_spawnableObject != null)
+            _spawnableObject.IsAvailable = true;
     }
 
     private void OnEnable()
