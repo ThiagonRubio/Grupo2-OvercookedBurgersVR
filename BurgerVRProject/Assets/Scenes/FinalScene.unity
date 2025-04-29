@@ -5842,6 +5842,7 @@ GameObject:
   - component: {fileID: 1623656263}
   - component: {fileID: 1623656264}
   - component: {fileID: 1623656265}
+  - component: {fileID: 1623656266}
   m_Layer: 9
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -5953,6 +5954,21 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   leftRayController: {fileID: 1277709277}
   rightRayController: {fileID: 1188759553}
+--- !u!114 &1623656266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623656259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0a0c486488d4c4da328441f2373f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  snapTurn: {fileID: 853049845}
+  continuousTurn: {fileID: 853049848}
 --- !u!1 &1742632968
 GameObject:
   m_ObjectHideFlags: 0
