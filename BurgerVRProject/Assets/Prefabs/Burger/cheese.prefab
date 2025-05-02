@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 0}
   fullVersion: {fileID: 6016866170818416178}
   cutParts:
   - {fileID: 70465724915769711}
@@ -109,6 +108,10 @@ PrefabInstance:
     - target: {fileID: 8160467744593963268, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
       propertyPath: m_Name
       value: CheeseFull
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_MovementType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -187,6 +190,10 @@ PrefabInstance:
       objectReference: {fileID: 8160467744593963268}
     - target: {fileID: 6776624396558214634, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: heightCorrection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051457791612994827, guid: 771f89582ac9fae47bc57463405065f2, type: 3}

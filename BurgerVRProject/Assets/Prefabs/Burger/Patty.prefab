@@ -202,7 +202,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -294,8 +294,11 @@ MonoBehaviour:
   ingredientType: 1
   itemHeight: 1
   heightCorrection: 0.0025
+  canBeUsed: 0
   cookingTimeRequired: 5
   burnTimeAfterCooked: 3
+  isCooked: 0
+  isBurnt: 0
 --- !u!54 &5206191353590734792
 Rigidbody:
   m_ObjectHideFlags: 0

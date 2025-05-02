@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 0}
   fullVersion: {fileID: 1739057114317596173}
   cutParts:
   - {fileID: 8504044672824646612}
@@ -58,6 +57,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5455627446132090059}
     m_Modifications:
+    - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677791285361414539, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
       propertyPath: cutParts.Array.size
       value: 1
@@ -179,6 +182,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2480896051474557191, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
+      propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8376664853184748171, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}

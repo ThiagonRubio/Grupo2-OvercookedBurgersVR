@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5770d1cc97abd354f999a2877a4e6e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slicePrefabs:
-  - {fileID: 358474164711132855, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+  cutParts: []
 --- !u!54 &-2281436935279066664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -232,7 +231,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

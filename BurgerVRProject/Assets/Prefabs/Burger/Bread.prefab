@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 0}
   fullVersion: {fileID: 341239653359152165}
   cutParts:
   - {fileID: 7576938597404887630}
@@ -64,6 +63,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 5809359361346170471}
+    - target: {fileID: 1510980866417350574, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3182679943833329042, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -158,6 +161,10 @@ PrefabInstance:
       propertyPath: 'cutParts.Array.data[1]'
       value: 
       objectReference: {fileID: 3993741872113204815}
+    - target: {fileID: -195226512858090485, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5809359361346170471, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
       propertyPath: m_Name
       value: FullVersion
@@ -287,6 +294,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 782721889224778024, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080856417309166779, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2904209327333059583, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}

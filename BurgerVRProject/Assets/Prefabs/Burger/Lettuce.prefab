@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513feab71a8f274ab67a2e2f83a1d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 0}
   fullVersion: {fileID: 7622655516602151778}
   cutParts:
   - {fileID: 4279413102912694604}
@@ -114,6 +113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LettuceCut
       objectReference: {fileID: 0}
+    - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -156,6 +159,10 @@ PrefabInstance:
       propertyPath: 'cutParts.Array.data[0]'
       value: 
       objectReference: {fileID: 8570759375270853408}
+    - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5260222646837750196, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
       propertyPath: m_Name
       value: LettuceFull

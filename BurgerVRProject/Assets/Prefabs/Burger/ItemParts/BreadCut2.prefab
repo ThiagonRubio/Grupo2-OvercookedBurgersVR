@@ -227,7 +227,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -328,4 +328,5 @@ MonoBehaviour:
   ingredientType: 5
   itemHeight: 0
   heightCorrection: 0
+  canBeUsed: 0
   originalParent: {fileID: 0}
