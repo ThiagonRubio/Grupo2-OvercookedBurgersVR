@@ -111,7 +111,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033469072694225528, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -194,7 +210,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041376626081569891, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8051457791612994827, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalScale.y

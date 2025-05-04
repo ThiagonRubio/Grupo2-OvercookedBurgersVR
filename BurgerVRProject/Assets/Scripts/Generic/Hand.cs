@@ -15,6 +15,7 @@ public class Hand : MonoBehaviour
     private InputDevice _targetDevice;
     private Animator _handAnimator;
     private SkinnedMeshRenderer _handMesh;
+    private GameObject spawnedHand;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class Hand : MonoBehaviour
         {
             _targetDevice = devices[0];
 
-            GameObject spawnedHand = Instantiate(handPrefab, transform);
+            spawnedHand = Instantiate(handPrefab, transform);
             _handAnimator = spawnedHand.GetComponent<Animator>();
             _handMesh = spawnedHand.GetComponentInChildren<SkinnedMeshRenderer>();
         }
@@ -73,6 +74,7 @@ public class Hand : MonoBehaviour
         if (hideHandOnSelect)
         {
             _handMesh.enabled = !_handMesh.enabled;
+            spawnedHand.SetActive(!spawnedHand.activeSelf);
         }
     }
 }

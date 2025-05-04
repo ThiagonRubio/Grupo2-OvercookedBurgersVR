@@ -46,4 +46,13 @@ public class PoolReturnManager : MonoBehaviour
         else
             item.gameObject.SetActive(false);
     }
+    
+    protected virtual void ReturnToPool(SpawnableObject item)
+    {
+        var poolable = item.GetComponent<IPoolable>();
+        if (poolable != null)
+            poolable.OnPoolableObjectDisable();
+        else
+            item.gameObject.SetActive(false);
+    }
 }

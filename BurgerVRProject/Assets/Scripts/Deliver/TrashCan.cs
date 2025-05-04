@@ -6,6 +6,8 @@ public class TrashCan : PoolReturnManager
 {
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Colision con tacho");
+        
         var manager = collision.gameObject.GetComponent<BurgerManager>();
         if (manager != null)
         {
@@ -22,8 +24,17 @@ public class TrashCan : PoolReturnManager
 
         var sliceableItem = collision.gameObject.GetComponent<SliceableItem>();
         if (sliceableItem != null)
+        {
             ReturnToPool(sliceableItem);
-
+            return;
+        }
+        
+        var spawnableItem = collision.gameObject.GetComponent<SpawnableObject>();
+        if (spawnableItem != null)
+        {
+            ReturnToPool(spawnableItem);
+            return;
+        }
     }
 
     protected override void ReturnToPool(BurgerManager manager)
@@ -35,6 +46,10 @@ public class TrashCan : PoolReturnManager
         base.ReturnToPool(item);
     }
     protected override void ReturnToPool(SliceableItem item)
+    {
+        base.ReturnToPool(item);
+    }
+    protected override void ReturnToPool(SpawnableObject item)
     {
         base.ReturnToPool(item);
     }

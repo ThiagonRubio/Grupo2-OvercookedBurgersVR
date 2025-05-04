@@ -59,7 +59,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8568103458418445390, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1677791285361414539, guid: 596c01934fb35f9449ce7bed0790f2f4, type: 3}
       propertyPath: cutParts.Array.size
@@ -186,7 +202,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877947248743134580, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8376664853184748171, guid: 998bd0d9099229c41bbf3a2d8ab1871e, type: 3}
       propertyPath: m_Name

@@ -115,7 +115,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185188651560869026, guid: e272f54afd8b0b345af654b77ed36342, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -161,7 +177,23 @@ PrefabInstance:
       objectReference: {fileID: 8570759375270853408}
     - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
       propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_isTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1430489505509858254, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5260222646837750196, guid: 1e5e2161532fc2449aca10fed4ca976f, type: 3}
       propertyPath: m_Name
