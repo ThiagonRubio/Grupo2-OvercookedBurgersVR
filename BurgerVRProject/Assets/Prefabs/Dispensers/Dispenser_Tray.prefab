@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPool: {fileID: 0}
-  itemToSpawn: {fileID: 1332017032339920378, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
+  itemToSpawn: {fileID: -3114310875572283475, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
   itemSpawnPosition: {fileID: 3902153131077595643}
 --- !u!1 &7720580360847594750
 GameObject:

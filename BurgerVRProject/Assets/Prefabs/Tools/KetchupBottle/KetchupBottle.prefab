@@ -370,6 +370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPool: {fileID: 0}
-  itemToSpawn: {fileID: -3972330125513595652, guid: 4df7e81949b9a124dae577924945f7bd, type: 3}
+  itemToSpawn: {fileID: 3777340083456714033, guid: 4df7e81949b9a124dae577924945f7bd, type: 3}
   itemSpawnPosition: {fileID: 2748186387122744914}
   projectileSpeed: 10

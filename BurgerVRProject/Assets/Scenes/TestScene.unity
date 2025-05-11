@@ -8913,10 +8913,6 @@ PrefabInstance:
       propertyPath: itemPool
       value: 
       objectReference: {fileID: 1866947879}
-    - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
-      propertyPath: itemToSpawn
-      value: 
-      objectReference: {fileID: -3114310875572283475, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tray
