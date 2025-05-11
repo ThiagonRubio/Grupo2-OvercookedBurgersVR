@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class SpawnableObject : MonoBehaviour, IPoolable
+public abstract class SpawnableObject : MonoBehaviour, IPoolable
 {
     public GameObject GameObject => this.gameObject;
     public bool IsAvailable { get { return isAvailable; } set { isAvailable = value; } }
@@ -15,7 +15,6 @@ public class SpawnableObject : MonoBehaviour, IPoolable
     public virtual void OnPoolableObjectEnable()
     {
         if (parentTransform == null) parentTransform = transform.parent.transform;
-        //gameObject.SetActive(false); //Forzar el OnEnable de los items
         gameObject.SetActive(true);
     }
 

@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class MeatPatty : BurgerItem
 {
-    //Necesario para anular el pooleo cuando esté siendo utilizado
-    private SpawnableObject _spawnableObject;
-
     private Renderer rend;
 
     [SerializeField] float cookingTimeRequired = 5f;
@@ -27,11 +24,10 @@ public class MeatPatty : BurgerItem
     {
         base.Start();
         canBeUsed = false;
-        if (_spawnableObject == null) _spawnableObject = GetComponent<SpawnableObject>();
     }
 
     // TODO: Repensar
-    void Update()
+    private void Update()
     {
         if (isBurnt)
             return;
@@ -58,27 +54,27 @@ public class MeatPatty : BurgerItem
         }
     }
 
-    public override void Attach(Transform parent, Vector3 pos, Quaternion rot)
-    {
-        base.Attach(parent, pos, rot);
-        _spawnableObject.IsAvailable = false;
-    }
-
-    private void OnDisable()
+    public override void OnPoolableObjectDisable()
     {
         Detach();
-        
-        if(_spawnableObject != null)
-            _spawnableObject.IsAvailable = true;
-        
-        if(rend!= null)
+
+        IsAvailable = true;
+
+        if (rend != null)
             rend.material.SetColor("_BaseColor", Color.white);
-        
+
         currentCookingTime = 0f;
-        isInCookingZone = false; 
+        isInCookingZone = false;
         isCooked = false;
         isBurnt = false;
         canBeUsed = false;
+        base.OnPoolableObjectDisable();
+    }
+
+    public override void Attach(Transform parent, Vector3 pos, Quaternion rot)
+    {
+        base.Attach(parent, pos, rot);
+        IsAvailable = false;
     }
 
     private void OnTriggerEnter(Collider other)

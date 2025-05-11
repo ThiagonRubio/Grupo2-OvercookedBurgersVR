@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 // TODO: Español
 public enum IngredientType { PanInferior, Paty, Queso, Lechuga, Tomate, PanSuperior }
 
-public class BurgerItem : MonoBehaviour
+public class BurgerItem : SpawnableObject
 {
     public IngredientType ingredientType;
 
