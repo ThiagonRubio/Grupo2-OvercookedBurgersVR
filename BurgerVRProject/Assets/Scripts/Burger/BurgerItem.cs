@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using UnityEngine.XR.Interaction.Toolkit;
+
+// TODO: Español
 public enum IngredientType { PanInferior, Paty, Queso, Lechuga, Tomate, PanSuperior }
 
 public class BurgerItem : MonoBehaviour

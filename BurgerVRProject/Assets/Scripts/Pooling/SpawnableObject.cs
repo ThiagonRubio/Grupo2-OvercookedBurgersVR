@@ -15,7 +15,7 @@ public class SpawnableObject : MonoBehaviour, IPoolable
     public virtual void OnPoolableObjectEnable()
     {
         if (parentTransform == null) parentTransform = transform.parent.transform;
-        gameObject.SetActive(false); //Forzar el OnEnable de los items
+        //gameObject.SetActive(false); //Forzar el OnEnable de los items
         gameObject.SetActive(true);
     }
 

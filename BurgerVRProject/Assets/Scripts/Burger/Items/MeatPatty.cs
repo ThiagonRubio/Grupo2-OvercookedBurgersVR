@@ -30,6 +30,7 @@ public class MeatPatty : BurgerItem
         if (_spawnableObject == null) _spawnableObject = GetComponent<SpawnableObject>();
     }
 
+    // TODO: Repensar
     void Update()
     {
         if (isBurnt)

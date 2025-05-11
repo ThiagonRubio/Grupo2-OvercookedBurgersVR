@@ -7,11 +7,8 @@ using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class BurgerManager : MonoBehaviour
+public class BurgerManager : SpawnableObject
 {
-    //Necesario para anular el pooleo cuando esté siendo utilizada
-    private SpawnableObject _spawnableObject;
-    
     //Attach variables
     public Transform initialAttachPoint;
     public float stackHeight;
@@ -21,11 +18,6 @@ public class BurgerManager : MonoBehaviour
     //Bools
     public bool preparingBurger = false;
     public bool burgerReady = false;
-
-    private void Start()
-    {
-        if(_spawnableObject == null) _spawnableObject = GetComponent<SpawnableObject>();
-    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -66,7 +58,7 @@ public class BurgerManager : MonoBehaviour
         {
             //La preparación de la hamburguesa empieza siempre por un par inferior
             preparingBurger = true;
-            _spawnableObject.IsAvailable = false;
+            IsAvailable = false;
         }
         else if (!burgerReady && item.ingredientType == IngredientType.PanSuperior)
         {
@@ -75,18 +67,17 @@ public class BurgerManager : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    public override void OnPoolableObjectEnable()
     {
-        if(_spawnableObject != null)
-            _spawnableObject.IsAvailable = true;
-    }
-
-    private void OnEnable()
-    {
-        //Reseteo de variables
         stackHeight = 0;
         preparingBurger = false;
         burgerReady = false;
-        AttachedIngredients.Clear(); //Limpia la lista 
+        AttachedIngredients.Clear();
+        base.OnPoolableObjectEnable();
+    }
+    public override void OnPoolableObjectDisable()
+    {
+        IsAvailable = true;
+        base.OnPoolableObjectDisable();
     }
 }
