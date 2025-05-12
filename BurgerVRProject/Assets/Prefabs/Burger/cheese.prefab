@@ -65,6 +65,10 @@ PrefabInstance:
       propertyPath: 'cutParts.Array.data[0]'
       value: 
       objectReference: {fileID: 8183567051720119554}
+    - target: {fileID: -2281436935279066664, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
+      propertyPath: m_Mass
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5448620152066735226, guid: a7b8a12aa49fac04dac2101dfc423935, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -199,6 +203,10 @@ PrefabInstance:
     - target: {fileID: 4769934385201991162, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571471978172179831, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
+      propertyPath: m_Mass
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: 6776624396558214634, guid: 771f89582ac9fae47bc57463405065f2, type: 3}
       propertyPath: parent

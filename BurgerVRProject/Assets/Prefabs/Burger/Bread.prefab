@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4403977877930167257, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
+      propertyPath: m_Mass
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 6201797461148411504, guid: 7b2399d6d9c436a4391764a040d58e68, type: 3}
       propertyPath: originalParent
       value: 
@@ -169,6 +173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8211068386650307668}
     m_Modifications:
+    - target: {fileID: -5224844644188477971, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
+      propertyPath: m_Mass
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: -949316997497434841, guid: 85a32a9cc7096074cba967bf240fc5c0, type: 3}
       propertyPath: cutParts.Array.size
       value: 2
@@ -272,6 +280,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8211068386650307668}
     m_Modifications:
+    - target: {fileID: -2071657162266901651, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
+      propertyPath: m_Mass
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 238604904742313421, guid: 79153b7ee5a199a458aeb44db8acf452, type: 3}
       propertyPath: parent
       value: 

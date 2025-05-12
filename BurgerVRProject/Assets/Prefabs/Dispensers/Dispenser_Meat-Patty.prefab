@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPool: {fileID: 0}
-  itemToSpawn: {fileID: 4049619870210828845, guid: af3d4637bdc819f46986a63b39f6343c, type: 3}
+  itemToSpawn: {fileID: 4870103519175005312, guid: af3d4637bdc819f46986a63b39f6343c, type: 3}
   itemSpawnPosition: {fileID: 5624772883833823367}
 --- !u!1 &4241279501804063649
 GameObject:
