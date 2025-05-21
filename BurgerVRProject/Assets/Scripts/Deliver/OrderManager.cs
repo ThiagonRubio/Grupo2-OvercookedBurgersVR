@@ -19,7 +19,7 @@ public class OrderManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(GenerateOrder), timeBetweenOrders, timeBetweenOrders);
+        InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
     }
 
     private void GenerateOrder()
@@ -58,6 +58,11 @@ public class OrderManager : MonoBehaviour
             if (match) return true;
         }
         return false;
+    }
+
+    public bool OrderExistsOrdered(List<IngredientType> burgerIngredients)
+    {
+        return currentOrders.Any(o => o.ingredients.SequenceEqual(burgerIngredients));
     }
 
     public void RemoveOrder(List<IngredientType> burgerIngredients)

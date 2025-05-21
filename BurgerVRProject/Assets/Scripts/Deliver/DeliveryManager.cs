@@ -12,6 +12,11 @@ public class DeliveryManager : PoolReturnManager
         List<IngredientType> ingredients = new List<IngredientType>(manager.AttachedIngredients.Values);
         if (orderManager.OrderExists(ingredients))
         {
+            if (orderManager.OrderExistsOrdered(ingredients))
+                Debug.Log("Pedido entregado en orden CORRECTA");
+            else
+                Debug.Log("Pedido entregado CORRECTO pero DESORDENADO");
+
             orderManager.RemoveOrder(ingredients);
             ReturnToPool(manager);
         }

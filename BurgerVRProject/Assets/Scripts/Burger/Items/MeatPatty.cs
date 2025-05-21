@@ -41,7 +41,6 @@ public class MeatPatty : BurgerItem
                 isCooked = true;
                 canBeUsed = true;
                 rend.material.SetColor("_BaseColor", new Color(0.6f, 0.3f, 0.1f));
-                Debug.Log($"{gameObject.name} is cooked!");
             }
 
             if (isCooked && currentCookingTime >= cookingTimeRequired + burnTimeAfterCooked)
@@ -49,7 +48,6 @@ public class MeatPatty : BurgerItem
                 isBurnt = true;
                 canBeUsed = false;
                 rend.material.SetColor("_BaseColor", Color.black);
-                Debug.Log($"{gameObject.name} is burnt!");
             }
         }
     }
@@ -82,7 +80,6 @@ public class MeatPatty : BurgerItem
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = true;
-            Debug.Log($"{gameObject.name} has entered the CookingZone");
         }
     }
 
@@ -91,7 +88,6 @@ public class MeatPatty : BurgerItem
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = false;
-            Debug.Log($"{gameObject.name} has exit the CookingZone");
         }
     }
 }
