@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 372431776}
   - component: {fileID: 372431775}
   - component: {fileID: 372431774}
+  - component: {fileID: 372431778}
   m_Layer: 0
   m_Name: DeliveryZone
   m_TagString: Untagged
@@ -1083,6 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90d81f20f975f74a87843b3facc4a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orderManager: {fileID: 372431778}
 --- !u!65 &372431775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1156,6 +1158,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372431772}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &372431778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372431772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd073d876c6272e48b58e36bd9a79ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenOrders: 60
+  minIngredients: 1
+  maxIngredients: 5
 --- !u!1 &403591244
 GameObject:
   m_ObjectHideFlags: 0
