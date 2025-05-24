@@ -147,7 +147,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8069109d2fe0617439608fefb2774690, type: 2}
+  - {fileID: 2100000, guid: 4be3755cde3c0ba4dbad21d989e1a555, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,6 +273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5064803492353064682, guid: a438b1137545f374b910159a8a41a139, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dfe1a7a54ddf65247bdbe78e7ea283f4, type: 2}
     - target: {fileID: 7570995451883527904, guid: a438b1137545f374b910159a8a41a139, type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
