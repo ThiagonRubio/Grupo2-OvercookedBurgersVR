@@ -10,9 +10,7 @@ public class Order
 }
 
 public class OrderManager : MonoBehaviour
-{
-    // public List<Order> CurrentOrders => currentOrders;
-    
+{    
     [SerializeField] private float timeBetweenOrders;
     [SerializeField] private int maxOrders;
     [SerializeField] private int minIngredients;
@@ -51,44 +49,37 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public bool OrderExists(List<IngredientType> burgerIngredients)
+    public bool OrderExists(List<IngredientType> burgerIngredients, out int orderId, out bool isOrdered)
     {
         foreach (var order in currentOrders)
         {
             if (order.ingredients.Count != burgerIngredients.Count) continue;
+
             var remaining = new List<IngredientType>(order.ingredients);
-            bool match = true;
+            bool unorderedMatch = true;
             foreach (var ing in burgerIngredients)
             {
                 if (remaining.Contains(ing)) remaining.Remove(ing);
-                else { match = false; break; }
+                else { unorderedMatch = false; break; }
             }
-            if (match) return true;
+            if (unorderedMatch)
+            {
+                orderId = order.id;
+                isOrdered = order.ingredients.SequenceEqual(burgerIngredients);
+                return true;
+            }
         }
+        orderId = -1;
+        isOrdered = false;
         return false;
     }
-
-    public bool OrderExistsOrdered(List<IngredientType> burgerIngredients)
+    public void RemoveOrderById(int orderId)
     {
-        return currentOrders.Any(o => o.ingredients.SequenceEqual(burgerIngredients));
-    }
-
-    public void RemoveOrder(List<IngredientType> burgerIngredients)
-    {
-        var toRemove = currentOrders.FirstOrDefault(o =>
-        {
-            if (o.ingredients.Count != burgerIngredients.Count) return false;
-            var remaining = new List<IngredientType>(o.ingredients);
-            foreach (var ing in burgerIngredients)
-                if (remaining.Contains(ing)) remaining.Remove(ing);
-                else return false;
-            return true;
-        });
-
+        var toRemove = currentOrders.FirstOrDefault(o => o.id == orderId);
         if (toRemove != null)
         {
             currentOrders.Remove(toRemove);
-            OrderRemoved?.Invoke(toRemove.id);
+            OrderRemoved?.Invoke(orderId);
         }
     }
 }

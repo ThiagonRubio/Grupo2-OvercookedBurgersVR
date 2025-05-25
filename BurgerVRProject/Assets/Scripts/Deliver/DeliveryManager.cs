@@ -10,14 +10,17 @@ public class DeliveryManager : PoolReturnManager
         var manager = collision.gameObject.GetComponent<BurgerManager>();
         if (manager == null) return;
         List<IngredientType> ingredients = new List<IngredientType>(manager.AttachedIngredients.Values);
-        if (orderManager.OrderExists(ingredients))
+
+        int orderId;
+        bool isOrdered;
+        if (orderManager.OrderExists(ingredients, out orderId, out isOrdered))
         {
-            if (orderManager.OrderExistsOrdered(ingredients))
+            if (isOrdered)
                 Debug.Log("Pedido entregado en orden CORRECTA");
             else
                 Debug.Log("Pedido entregado CORRECTO pero DESORDENADO");
 
-            orderManager.RemoveOrder(ingredients);
+            orderManager.RemoveOrderById(orderId);
             ReturnToPool(manager);
         }
         else

@@ -40,9 +40,9 @@ public class OrderUIManager : MonoBehaviour
             if (orderUIs[i].CurrentOrderId == orderId)
             {
                 orderUIs[i].gameObject.SetActive(false);
+                orderUIs[i].transform.SetAsLastSibling();
                 return;
             }
         }
     }
-
 }
