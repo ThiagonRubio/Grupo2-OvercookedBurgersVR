@@ -20,7 +20,8 @@ public class OrderManager : MonoBehaviour
     private List<Order> currentOrders = new List<Order>();
     private int nextOrderId = 1;
     public Action<Order> OrderCreated;
-    
+    public Action<int> OrderRemoved;
+
     private void Start()
     {
         InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
@@ -74,7 +75,7 @@ public class OrderManager : MonoBehaviour
 
     public void RemoveOrder(List<IngredientType> burgerIngredients)
     {
-        currentOrders.RemoveAll(o =>
+        var toRemove = currentOrders.FirstOrDefault(o =>
         {
             if (o.ingredients.Count != burgerIngredients.Count) return false;
             var remaining = new List<IngredientType>(o.ingredients);
@@ -83,5 +84,11 @@ public class OrderManager : MonoBehaviour
                 else return false;
             return true;
         });
+
+        if (toRemove != null)
+        {
+            currentOrders.Remove(toRemove);
+            OrderRemoved?.Invoke(toRemove.id);
+        }
     }
 }

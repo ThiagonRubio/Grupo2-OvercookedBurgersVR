@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [Serializable]
 public class IngredientImagePair
@@ -13,28 +14,30 @@ public class IngredientImagePair
 
 public class OrderUI : MonoBehaviour
 {
-    private OrderManager _orderManager;
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
-    private void Start()
-    {
-        _orderManager = FindFirstObjectByType<OrderManager>();
-        _orderManager.OrderCreated += OnOrderCreated;
-    }
+    [SerializeField] private TextMeshProUGUI orderText;
+    public int CurrentOrderId { get; private set; }
 
-    private void OnDisable()
+    public void SetOrder(Order order)
     {
-        _orderManager.OrderCreated -= OnOrderCreated;
-    }
+        CurrentOrderId = order.id;
 
-    private void OnOrderCreated(Order order)
-    {
+        for (int i = 0; i < imagesLayoutGroup.childCount; i++)
+            imagesLayoutGroup.GetChild(i).gameObject.SetActive(false);
+
+        for (int i = 0; i < order.ingredients.Count && i < imagesLayoutGroup.childCount; i++)
+        {
+            var ingredientType = order.ingredients[i];
+            var child = imagesLayoutGroup.GetChild(i).gameObject;
+            child.SetActive(true);
+
+            var image = child.GetComponent<Image>();
+            var sprite = ingredientImages.ingredientImagesList
+                .Find(x => x.ingredientType == ingredientType)?.ingredientSprite;
+            image.sprite = sprite;
+        }
+        orderText.text = $"#{order.id}";
         Debug.Log($"Nuevo pedido #{order.id}: {string.Join(", ", order.ingredients)}");
-
-        // for (int i = 0; i <= order.ingredients.Count; i++)
-        // {
-        //     imagesLayoutGroup.GetChild(i).gameObject.SetActive(true);
-        //     imagesLayoutGroup.GetChild(i).GetComponent<Image>().sprite = ingredientImages.ingredientImagesList.Find(e => e.ingredientType == order.ingredients[i])
-        // }
     }
 }
