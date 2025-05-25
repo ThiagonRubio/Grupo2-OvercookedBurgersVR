@@ -9,6 +9,7 @@ TagManager:
   - CookingZone
   - Knife
   - Ketchup
+  - DeliveryZone
   layers:
   - Default
   - TransparentFX

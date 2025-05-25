@@ -11,14 +11,16 @@ public class Order
 
 public class OrderManager : MonoBehaviour
 {
-    public List<Order> CurrentOrders => currentOrders;
+    // public List<Order> CurrentOrders => currentOrders;
     
     [SerializeField] private float timeBetweenOrders;
+    [SerializeField] private int maxOrders;
     [SerializeField] private int minIngredients;
     [SerializeField] private int maxIngredients;
     private List<Order> currentOrders = new List<Order>();
     private int nextOrderId = 1;
-
+    public Action<Order> OrderCreated;
+    
     private void Start()
     {
         InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
@@ -26,7 +28,7 @@ public class OrderManager : MonoBehaviour
 
     private void GenerateOrder()
     {
-        if (currentOrders.Count <= 5)
+        if (currentOrders.Count < maxOrders)
         {
             int midCount = UnityEngine.Random.Range(minIngredients, maxIngredients + 1);
             List<IngredientType> ingredients = new List<IngredientType>();
@@ -44,7 +46,7 @@ public class OrderManager : MonoBehaviour
 
             Order order = new Order { id = nextOrderId++, ingredients = ingredients };
             currentOrders.Add(order);
-            Debug.Log($"Nuevo pedido #{order.id}: {string.Join(", ", ingredients)}");
+            OrderCreated?.Invoke(order);
         }
     }
 
