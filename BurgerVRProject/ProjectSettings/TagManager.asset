@@ -7,6 +7,8 @@ TagManager:
   - Anchor
   - Button
   - CookingZone
+  - Knife
+  - Ketchup
   layers:
   - Default
   - TransparentFX

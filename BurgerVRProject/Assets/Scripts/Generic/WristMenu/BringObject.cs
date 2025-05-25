@@ -1,14 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BringObject : MonoBehaviour
 {
     //Este script es placeholder por el momento
-    [SerializeField] private GameObject tool;
-    
+    [SerializeField] private string toolTag;
+    private GameObject _tool;
+
+    private void Start()
+    {
+        _tool = GameObject.FindGameObjectWithTag(toolTag);
+    }
+
     public void BringToolToPlayer(Transform playerHand)
     {
-        tool.transform.position = playerHand.transform.position;
+        _tool.transform.position = playerHand.transform.position;
     }
 }

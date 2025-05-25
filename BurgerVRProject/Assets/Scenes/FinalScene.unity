@@ -1142,9 +1142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd073d876c6272e48b58e36bd9a79ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenOrders: 60
+  timeBetweenOrders: 3
   minIngredients: 1
-  maxIngredients: 5
+  maxIngredients: 1
 --- !u!1 &403591244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,6 +8323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 5489145493786919654, guid: c331d4509e2a94446b4dedf64fcae8dd, type: 3}
+      propertyPath: m_TagString
+      value: Knife
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10342,6 +10346,10 @@ PrefabInstance:
     - target: {fileID: 9037747693038998646, guid: 11548f373c8355546907dce6711e1381, type: 3}
       propertyPath: m_Name
       value: KetchupBottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037747693038998646, guid: 11548f373c8355546907dce6711e1381, type: 3}
+      propertyPath: m_TagString
+      value: Ketchup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

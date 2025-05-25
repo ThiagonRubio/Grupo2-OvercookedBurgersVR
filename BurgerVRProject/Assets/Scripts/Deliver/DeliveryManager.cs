@@ -22,7 +22,7 @@ public class DeliveryManager : PoolReturnManager
         }
         else
         {
-            Debug.Log("Pedido no v·lido o inexistente");
+            Debug.Log("Pedido no v√°lido o inexistente");
         }
     }
 

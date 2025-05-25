@@ -11,6 +11,8 @@ public class Order
 
 public class OrderManager : MonoBehaviour
 {
+    public List<Order> CurrentOrders => currentOrders;
+    
     [SerializeField] private float timeBetweenOrders;
     [SerializeField] private int minIngredients;
     [SerializeField] private int maxIngredients;
@@ -24,23 +26,26 @@ public class OrderManager : MonoBehaviour
 
     private void GenerateOrder()
     {
-        int midCount = UnityEngine.Random.Range(minIngredients, maxIngredients + 1);
-        List<IngredientType> ingredients = new List<IngredientType>();
-        ingredients.Add(IngredientType.PanInferior);
+        if (currentOrders.Count <= 5)
+        {
+            int midCount = UnityEngine.Random.Range(minIngredients, maxIngredients + 1);
+            List<IngredientType> ingredients = new List<IngredientType>();
+            ingredients.Add(IngredientType.PanInferior);
 
-        IngredientType[] allTypes = (IngredientType[])Enum.GetValues(typeof(IngredientType));
-        List<IngredientType> pool = allTypes
-            .Where(i => i != IngredientType.PanInferior && i != IngredientType.PanSuperior)
-            .ToList();
+            IngredientType[] allTypes = (IngredientType[])Enum.GetValues(typeof(IngredientType));
+            List<IngredientType> pool = allTypes
+                .Where(i => i != IngredientType.PanInferior && i != IngredientType.PanSuperior)
+                .ToList();
 
-        for (int i = 0; i < midCount; i++)
-            ingredients.Add(pool[UnityEngine.Random.Range(0, pool.Count)]);
+            for (int i = 0; i < midCount; i++)
+                ingredients.Add(pool[UnityEngine.Random.Range(0, pool.Count)]);
 
-        ingredients.Add(IngredientType.PanSuperior);
+            ingredients.Add(IngredientType.PanSuperior);
 
-        Order order = new Order { id = nextOrderId++, ingredients = ingredients };
-        currentOrders.Add(order);
-        Debug.Log($"Nuevo pedido #{order.id}: {string.Join(", ", ingredients)}");
+            Order order = new Order { id = nextOrderId++, ingredients = ingredients };
+            currentOrders.Add(order);
+            Debug.Log($"Nuevo pedido #{order.id}: {string.Join(", ", ingredients)}");
+        }
     }
 
     public bool OrderExists(List<IngredientType> burgerIngredients)
