@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeliveryManager : PoolReturnManager
 {
     [SerializeField] private OrderManager orderManager;
+    public static event Action<bool> OnOrderDelivered;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,11 +17,7 @@ public class DeliveryManager : PoolReturnManager
         bool isOrdered;
         if (orderManager.OrderExists(ingredients, out orderId, out isOrdered))
         {
-            if (isOrdered)
-                Debug.Log("Pedido entregado en orden CORRECTA");
-            else
-                Debug.Log("Pedido entregado CORRECTO pero DESORDENADO");
-
+            OnOrderDelivered?.Invoke(isOrdered);
             orderManager.RemoveOrderById(orderId);
             ReturnToPool(manager);
         }
