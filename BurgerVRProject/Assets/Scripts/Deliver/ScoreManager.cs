@@ -12,14 +12,15 @@ public class ScoreManager : MonoBehaviour
     private void OnEnable()
     {
         DeliveryManager.OnOrderDelivered += HandleOrderDelivered;
+        OrderUI.OnOrderExpired += ReduceScore;
         UpdateScoreDisplay();
     }
 
     private void OnDisable()
     {
         DeliveryManager.OnOrderDelivered -= HandleOrderDelivered;
+        OrderUI.OnOrderExpired -= ReduceScore;
     }
-
     private void HandleOrderDelivered(bool isOrdered)
     {
         currentScore += isOrdered ? normalScore : perfectScore;
@@ -35,7 +36,9 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateScoreDisplay()
     {
+        Debug.Log("score actual: " + currentScore);
+
         if (scoreText != null)
-            scoreText.text = "Score: " + currentScore.ToString();
+            scoreText.text = "$" + currentScore.ToString();
     }
 }

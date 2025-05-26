@@ -8,8 +8,10 @@ public class RegisterUI : MonoBehaviour
     void Start()
     {
         _registerUIAnimator = GetComponent<Animator>();
+        _registerUIAnimator.SetTrigger("ButtonPressed");
+
     }
-    
+
     public void ToggleMenu()
     {
         _registerUIAnimator.SetTrigger("ButtonPressed");
