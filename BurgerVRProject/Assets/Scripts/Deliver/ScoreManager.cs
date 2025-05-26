@@ -6,8 +6,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int normalScore = 10;
     [SerializeField] private int perfectScore = 5;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI ordersDeliveredText;
 
     private int currentScore;
+    private int currentsOrdersDelivered;
 
     private void OnEnable()
     {
@@ -24,6 +26,7 @@ public class ScoreManager : MonoBehaviour
     private void HandleOrderDelivered(bool isOrdered)
     {
         currentScore += isOrdered ? normalScore : perfectScore;
+        currentsOrdersDelivered++;
         UpdateScoreDisplay();
     }
 
@@ -40,5 +43,9 @@ public class ScoreManager : MonoBehaviour
 
         if (scoreText != null)
             scoreText.text = "$" + currentScore.ToString();
+
+        if(ordersDeliveredText != null)
+            ordersDeliveredText.text = "Orders Delivered: " + currentsOrdersDelivered.ToString();
+
     }
 }
