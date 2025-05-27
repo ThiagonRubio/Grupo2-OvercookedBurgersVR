@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1977594559446094288}
   - component: {fileID: 5798655654313140170}
   - component: {fileID: 5178886320117975441}
+  - component: {fileID: 3779726848221707085}
   m_Layer: 5
   m_Name: KetchupButton
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.47621366, a: 0.627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -99,8 +100,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6862745, g: 0.9921569, b: 0.7803922, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.3076923, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -133,6 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3779726848221707085}
+        m_TargetAssemblyTypeName: ButtonsDeselect, Assembly-CSharp
+        m_MethodName: Deselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5178886320117975441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +159,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTag: Ketchup
+--- !u!114 &3779726848221707085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902273575346260224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601f64da47775794d81db7efce25336c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6396088194863577975
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +270,7 @@ GameObject:
   - component: {fileID: 694808676846179108}
   - component: {fileID: 3536271910206527766}
   - component: {fileID: 6315533715799551511}
+  - component: {fileID: 7575114486442943272}
   m_Layer: 5
   m_Name: KnifeButton
   m_TagString: Untagged
@@ -292,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.47621366, a: 0.627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -331,8 +357,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6862745, g: 0.9921569, b: 0.7803922, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.3076923, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -365,6 +391,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3779726848221707085}
+        m_TargetAssemblyTypeName: ButtonsDeselect, Assembly-CSharp
+        m_MethodName: Deselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6315533715799551511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +416,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTag: Knife
+--- !u!114 &7575114486442943272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444616212618076044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601f64da47775794d81db7efce25336c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7928207422623747080
 GameObject:
   m_ObjectHideFlags: 0
