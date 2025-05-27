@@ -16,7 +16,8 @@ public class OrderUI : MonoBehaviour
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
     [SerializeField] private Image timerFillImage;
-    [SerializeField] private float orderDuration = 10f;
+    [SerializeField] private float baseOrderDuration = 10f;
+    [SerializeField] private float extraOrderDuration = 5f;
     [SerializeField] private int penaltyPoints = 3;
 
     public static event Action<int> OnOrderExpired;
@@ -42,31 +43,31 @@ public class OrderUI : MonoBehaviour
             image.sprite = sprite;
         }
 
+        float adjustedDuration = baseOrderDuration + order.ingredients.Count * extraOrderDuration;
+
         if (timerRoutine != null) StopCoroutine(timerRoutine);
-        timerRoutine = StartCoroutine(StartTimer());
+        timerRoutine = StartCoroutine(StartTimer(adjustedDuration));
     }
 
-    private IEnumerator StartTimer()
+    private IEnumerator StartTimer(float duration)
     {
-        while (true)
+        float timeLeft = duration;
+
+        while (timeLeft > 0f)
         {
-            float timeLeft = orderDuration;
-            while (timeLeft > 0f)
+            timeLeft -= Time.deltaTime;
+            float percent = timeLeft / duration;
+
+            if (timerFillImage != null)
             {
-                timeLeft -= Time.deltaTime;
-                float percent = timeLeft / orderDuration;
-
-                if (timerFillImage != null)
-                {
-                    timerFillImage.fillAmount = percent;
-                    timerFillImage.color = GetColorForPercent(percent);
-                }
-
-                yield return null;
+                timerFillImage.fillAmount = percent;
+                timerFillImage.color = GetColorForPercent(percent);
             }
 
-            OnOrderExpired?.Invoke(penaltyPoints);
+            yield return null;
         }
+
+        OnOrderExpired?.Invoke(penaltyPoints);
     }
 
     private Color GetColorForPercent(float percent)
