@@ -461,7 +461,8 @@ MonoBehaviour:
   ingredientImages: {fileID: 11400000, guid: 878165b2b9935e0458785e5a6da23c6e, type: 2}
   imagesLayoutGroup: {fileID: 2107600729105275206}
   timerFillImage: {fileID: 3577131545799662643}
-  orderDuration: 90
+  baseOrderDuration: 90
+  extraOrderDuration: 5
   penaltyPoints: 1
 --- !u!1 &4645530585935045957
 GameObject:

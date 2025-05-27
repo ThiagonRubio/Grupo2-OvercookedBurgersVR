@@ -89,6 +89,12 @@ public class OrderManager : MonoBehaviour
         {
             currentOrders.Remove(toRemove);
             OrderRemoved?.Invoke(orderId);
+
+            if (currentOrders.Count == 0)
+            {
+                CancelInvoke(nameof(GenerateOrder));
+                InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
+            }
         }
     }
 }
