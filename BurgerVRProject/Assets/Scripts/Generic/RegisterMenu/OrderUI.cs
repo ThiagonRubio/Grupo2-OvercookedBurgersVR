@@ -15,7 +15,6 @@ public class OrderUI : MonoBehaviour
 {
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
-    [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private Image timerFillImage;
     [SerializeField] private float orderDuration = 10f;
     [SerializeField] private int penaltyPoints = 3;
@@ -43,7 +42,6 @@ public class OrderUI : MonoBehaviour
             image.sprite = sprite;
         }
 
-        orderText.text = $"#{order.id}";
         if (timerRoutine != null) StopCoroutine(timerRoutine);
         timerRoutine = StartCoroutine(StartTimer());
     }

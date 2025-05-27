@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientImagesList:
   - ingredientType: 0
-    ingredientSprite: {fileID: 21300000, guid: b742347995883274a92635f7c7a21708, type: 3}
+    ingredientSprite: {fileID: 1969957429, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
   - ingredientType: 1
-    ingredientSprite: {fileID: 21300000, guid: c9468fa2e462eb84fa3d97b692e60bd2, type: 3}
+    ingredientSprite: {fileID: -935502241, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
   - ingredientType: 2
-    ingredientSprite: {fileID: 21300000, guid: f94aedb58d9ac6449aa578bfbb22d840, type: 3}
+    ingredientSprite: {fileID: -761808565, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
   - ingredientType: 3
-    ingredientSprite: {fileID: 21300000, guid: 52cdfe7945a43c44dba3909070fa34ac, type: 3}
+    ingredientSprite: {fileID: -1477247683, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
   - ingredientType: 4
-    ingredientSprite: {fileID: 21300000, guid: 3ecc173b52e976049848e41e60e1b1fd, type: 3}
+    ingredientSprite: {fileID: -61886933, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
   - ingredientType: 5
-    ingredientSprite: {fileID: 21300000, guid: d21567fbd982b0241b0bd65f35f947b6, type: 3}
+    ingredientSprite: {fileID: 1130719582, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
