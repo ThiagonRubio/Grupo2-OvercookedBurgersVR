@@ -20,11 +20,20 @@ public class OrderManager : MonoBehaviour
     public Action<Order> OrderCreated;
     public Action<int> OrderRemoved;
 
-    private void Start()
+    private void OnEnable()
+    {
+        RegisterUI.OnRegisterUIToggled += StartGeneratingOrders;
+    }
+
+    private void OnDisable()
+    {
+        RegisterUI.OnRegisterUIToggled -= StartGeneratingOrders;
+    }
+
+    private void StartGeneratingOrders()
     {
         InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
     }
-
     private void GenerateOrder()
     {
         if (currentOrders.Count < maxOrders)
