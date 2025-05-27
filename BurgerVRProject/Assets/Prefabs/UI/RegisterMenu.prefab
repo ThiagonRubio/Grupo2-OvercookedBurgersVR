@@ -171,7 +171,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -4, y: -2}
-  m_SizeDelta: {x: 284.131, y: 50}
+  m_SizeDelta: {x: 313.49, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7390642434743349950
 CanvasRenderer:
@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 3239410450039571635}
   - component: {fileID: 4571887304623266189}
   - component: {fileID: 5825671774967500457}
+  - component: {fileID: 1440304460707854870}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -408,6 +409,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1440304460707854870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492502988630268309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9601241eac5ab4d49b3eb3d7eb8514d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalScore: 10
+  perfectScore: 5
+  scoreText: {fileID: 5825671774967500457}
+  ordersDeliveredText: {fileID: 9098461899052812092}
 --- !u!1 &2872730186348424992
 GameObject:
   m_ObjectHideFlags: 0
