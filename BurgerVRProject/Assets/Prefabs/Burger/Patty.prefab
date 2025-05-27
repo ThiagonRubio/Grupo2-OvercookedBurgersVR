@@ -307,7 +307,7 @@ MonoBehaviour:
   heightCorrection: 0.0025
   canBeUsed: 0
   cookingTimeRequired: 5
-  burnTimeAfterCooked: 3
+  burnTimeAfterCooked: 45
   isCooked: 0
   isBurnt: 0
 --- !u!54 &5206191353590734792
