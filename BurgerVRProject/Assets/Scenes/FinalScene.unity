@@ -1142,7 +1142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd073d876c6272e48b58e36bd9a79ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenOrders: 35
+  timeBetweenOrders: 0
+  baseTimeBetweenOrders: 1
+  extraTimePerIngredient: 1
   maxOrders: 5
   minIngredients: 1
   maxIngredients: 7

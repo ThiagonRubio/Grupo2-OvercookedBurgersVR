@@ -12,11 +12,15 @@ public class Order
 public class OrderManager : MonoBehaviour
 {    
     [SerializeField] private float timeBetweenOrders;
+    [SerializeField] private float baseTimeBetweenOrders;
+    [SerializeField] private float extraTimePerIngredient;
     [SerializeField] private int maxOrders;
     [SerializeField] private int minIngredients;
     [SerializeField] private int maxIngredients;
+
     private List<Order> currentOrders = new List<Order>();
     private int nextOrderId = 1;
+
     public Action<Order> OrderCreated;
     public Action<int> OrderRemoved;
 
@@ -32,8 +36,9 @@ public class OrderManager : MonoBehaviour
 
     private void StartGeneratingOrders()
     {
-        InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
+        GenerateOrder();
     }
+
     private void GenerateOrder()
     {
         if (currentOrders.Count < maxOrders)
@@ -55,6 +60,14 @@ public class OrderManager : MonoBehaviour
             Order order = new Order { id = nextOrderId++, ingredients = ingredients };
             currentOrders.Add(order);
             OrderCreated?.Invoke(order);
+
+            timeBetweenOrders = baseTimeBetweenOrders + extraTimePerIngredient * midCount;
+            Invoke(nameof(GenerateOrder), timeBetweenOrders);
+
+        }
+        else
+        {
+            Invoke(nameof(GenerateOrder), 0.1f);
         }
     }
 
@@ -93,7 +106,7 @@ public class OrderManager : MonoBehaviour
             if (currentOrders.Count == 0)
             {
                 CancelInvoke(nameof(GenerateOrder));
-                InvokeRepeating(nameof(GenerateOrder), 0, timeBetweenOrders);
+                GenerateOrder();
             }
         }
     }
