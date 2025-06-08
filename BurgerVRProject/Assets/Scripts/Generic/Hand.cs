@@ -16,7 +16,7 @@ public class Hand : MonoBehaviour, IUpdatable
     private SkinnedMeshRenderer _handMesh;
     private GameObject spawnedHand;
 
-    private void Start()
+    private void Awake()
     {
         InitializeHands();
         CustomUpdateManager.Instance.Register(this);
@@ -28,13 +28,13 @@ public class Hand : MonoBehaviour, IUpdatable
 
     public void OnUpdate()
     {
-        if (!_targetDevice.isValid)
+        if (_targetDevice.isValid)
         {
-            InitializeHands();
+            UpdateHand();
         }
         else
         {
-            UpdateHand();
+            InitializeHands();
         }
     }
 
@@ -63,6 +63,7 @@ public class Hand : MonoBehaviour, IUpdatable
         {
             _handAnimator.SetFloat("Trigger", 0);
         }
+
         if (_targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
             _handAnimator.SetFloat("Grip", gripValue);
