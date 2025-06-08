@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeatPatty : BurgerItem
+public class MeatPatty : BurgerItem, IUpdatable
 {
     private Renderer rend;
 
@@ -27,7 +27,7 @@ public class MeatPatty : BurgerItem
     }
 
     // TODO: Repensar
-    private void Update()
+    public void OnUpdate()
     {
         if (isBurnt)
             return;
@@ -52,6 +52,11 @@ public class MeatPatty : BurgerItem
         }
     }
 
+    public override void OnPoolableObjectEnable()
+    {
+        base.OnPoolableObjectEnable();
+        CustomUpdateManager.Instance.Register(this);
+    }
     public override void OnPoolableObjectDisable()
     {
         Detach();
@@ -66,6 +71,7 @@ public class MeatPatty : BurgerItem
         isCooked = false;
         isBurnt = false;
         canBeUsed = false;
+        CustomUpdateManager.Instance.Unregister(this);
         base.OnPoolableObjectDisable();
     }
 
