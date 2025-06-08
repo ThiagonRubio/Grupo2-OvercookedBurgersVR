@@ -46,7 +46,7 @@ public class CustomUpdateManager : MonoBehaviour
     {
         for(int i = 0; i < methodsList.Count; i++)
         {
-            methodsList[i].CustomFixedUpdate();
+            methodsList[i].FixedUpdate();
         }
     }
 
