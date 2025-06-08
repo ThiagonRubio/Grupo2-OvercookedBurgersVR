@@ -6,7 +6,15 @@ public class CustomUpdateManager : MonoBehaviour
 {
     public static CustomUpdateManager Instance
     {
-        get { return instance; }
+        get 
+        {
+            if (instance == null)
+            {
+                GameObject lazilyCreated = new GameObject("CustomUpdateManager");
+                instance = lazilyCreated.AddComponent<CustomUpdateManager>();
+            }
+            return instance; 
+        }
     }
     private static CustomUpdateManager instance;
 

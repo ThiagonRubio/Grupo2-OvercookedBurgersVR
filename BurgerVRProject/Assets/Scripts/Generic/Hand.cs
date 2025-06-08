@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class Hand : MonoBehaviour
+public class Hand : MonoBehaviour, IUpdatable
 {
     [SerializeField] private GameObject handPrefab;
-
     [SerializeField] private bool hideHandOnSelect = false;
     
     public InputDeviceCharacteristics inputDeviceCharacteristics;
@@ -20,9 +19,14 @@ public class Hand : MonoBehaviour
     private void Start()
     {
         InitializeHands();
+        CustomUpdateManager.Instance.Register(this);
+    }
+    private void OnDestroy()
+    {
+        CustomUpdateManager.Instance.Unregister(this);
     }
 
-    private void Update()
+    public void OnUpdate()
     {
         if (!_targetDevice.isValid)
         {
