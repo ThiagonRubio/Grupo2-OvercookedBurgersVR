@@ -12,7 +12,7 @@ public class BurgerManager : SpawnableObject
     //Attach variables
     public Transform initialAttachPoint;
     public float stackHeight;
-    // private Dictionary<IngredientType, bool> _attachedIngredients = new Dictionary<IngredientType, bool>();
+    
     public Dictionary<BurgerItem, IngredientType> AttachedIngredients = new Dictionary<BurgerItem, IngredientType>();
     
     //Bools

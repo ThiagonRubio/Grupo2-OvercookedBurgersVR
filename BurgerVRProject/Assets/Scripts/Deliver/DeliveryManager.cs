@@ -26,9 +26,4 @@ public class DeliveryManager : PoolReturnManager
             Debug.Log("Pedido no válido o inexistente");
         }
     }
-
-    protected override void ReturnToPool(BurgerManager manager)
-    {
-        base.ReturnToPool(manager);
-    }
 }

@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 
 public class BringObject : MonoBehaviour
 {
-    //Este script es placeholder por el momento
     [SerializeField] private string toolTag;
     private GameObject _tool;
 

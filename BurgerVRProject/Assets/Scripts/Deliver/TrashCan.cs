@@ -36,21 +36,4 @@ public class TrashCan : PoolReturnManager
             return;
         }
     }
-
-    protected override void ReturnToPool(BurgerManager manager)
-    {
-        base.ReturnToPool(manager);
-    }
-    protected override void ReturnToPool(SlicedItem item)
-    {
-        base.ReturnToPool(item);
-    }
-    protected override void ReturnToPool(SliceableItem item)
-    {
-        base.ReturnToPool(item);
-    }
-    protected override void ReturnToPool(SpawnableObject item)
-    {
-        base.ReturnToPool(item);
-    }
 }
