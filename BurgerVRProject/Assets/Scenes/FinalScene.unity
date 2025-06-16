@@ -4095,11 +4095,6 @@ MonoBehaviour:
   inputAction: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rayInteractor: {fileID: 1046843313}
   teleportationProvider: {fileID: 853049846}
---- !u!4 &1064454516 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-  m_PrefabInstance: {fileID: 4222940578126570032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1076603413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +5477,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1064454516}
   - {fileID: 104044602}
   - {fileID: 133000661}
   - {fileID: 1037486588}
@@ -10436,75 +10430,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4157291973769868276, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
   m_PrefabInstance: {fileID: 5497076839673086317}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4222940578126570032
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1253504425}
-    m_Modifications:
-    - target: {fileID: 3586736706773790110, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: itemPool
-      value: 
-      objectReference: {fileID: 909964706}
-    - target: {fileID: 3586736706773790110, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: projectilePool
-      value: 
-      objectReference: {fileID: 909964706}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0036
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.137
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986747143693702926, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9037747693038998646, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_Name
-      value: KetchupBottle
-      objectReference: {fileID: 0}
-    - target: {fileID: 9037747693038998646, guid: 11548f373c8355546907dce6711e1381, type: 3}
-      propertyPath: m_TagString
-      value: Ketchup
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11548f373c8355546907dce6711e1381, type: 3}
 --- !u!1001 &5194188756663380504
 PrefabInstance:
   m_ObjectHideFlags: 0
