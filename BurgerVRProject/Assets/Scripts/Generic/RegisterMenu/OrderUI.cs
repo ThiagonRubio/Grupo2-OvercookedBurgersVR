@@ -68,6 +68,7 @@ public class OrderUI : MonoBehaviour
         }
 
         OnOrderExpired?.Invoke(penaltyPoints);
+        StartCoroutine(StartTimer(duration));
     }
 
     private Color GetColorForPercent(float percent)
