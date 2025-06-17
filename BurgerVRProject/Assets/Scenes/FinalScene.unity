@@ -7509,6 +7509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle_Table
       objectReference: {fileID: 0}
+    - target: {fileID: 6425545213354755008, guid: 1b47fb0da35357d439b0e508d77d3377, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7261335202138703009, guid: 03aa99419670d9840a32509ff44e82f8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
