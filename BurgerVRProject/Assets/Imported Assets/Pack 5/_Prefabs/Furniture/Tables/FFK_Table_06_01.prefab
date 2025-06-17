@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 810418362030106482}
   - component: {fileID: 9176195871111131504}
   - component: {fileID: 7397024158091739670}
-  - component: {fileID: 1310815923814640705}
   m_Layer: 0
   m_Name: Table Top.003
   m_TagString: Untagged
@@ -86,27 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1310815923814640705
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608571704791654427}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.2498755, y: 0.10049021, z: 1.2691569}
-  m_Center: {x: 0, y: 1.415324, z: -0.0000009536743}
 --- !u!1 &3424761440708275952
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +96,6 @@ GameObject:
   - component: {fileID: 3329325441353999514}
   - component: {fileID: 6425545213354755008}
   - component: {fileID: 6053739356522821292}
-  - component: {fileID: 3385506244461903526}
   m_Layer: 0
   m_Name: FFK_Table_06_01
   m_TagString: Untagged
@@ -194,24 +171,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3385506244461903526
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3424761440708275952}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9556727, y: 1.3650789, z: 0.9704155}
-  m_Center: {x: 0, y: 0.68253946, z: -0.00000011920929}
