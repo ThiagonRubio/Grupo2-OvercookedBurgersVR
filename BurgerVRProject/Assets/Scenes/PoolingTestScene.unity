@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 758555945}
   m_Layer: 0
-  m_Name: ________CAMERA_AND_LIGHTS_______________
+  m_Name: ________CAMERA_AND_LIGHTS______________
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879004683}
   m_Layer: 0
-  m_Name: _______________POOLS________________________
+  m_Name: _______________POOLS_______________________
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231997759}
   m_Layer: 0
-  m_Name: '_______________TESTSPAWNER_______________ '
+  m_Name: _______________TESTSPAWNER_______________
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
