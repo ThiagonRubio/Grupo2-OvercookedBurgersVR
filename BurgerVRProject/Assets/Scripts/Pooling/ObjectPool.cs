@@ -11,7 +11,36 @@ public class ObjectPool : MonoBehaviour
     private IPoolable objectToPool;
     [SerializeField] private int poolSize = 10;
 
+    [SerializeField] private bool initAllSpawnablesOnAwake = false;
+    [SerializeField] private GameObject onAwakePoolPrefabOverride;
+
     //-----------------------METHODS----------------------------------
+
+    private void Awake()
+    {
+        if (initAllSpawnablesOnAwake)
+        {
+            if (onAwakePoolPrefabOverride != null)
+            {
+                IPoolable asPoolable = onAwakePoolPrefabOverride.GetComponent<IPoolable>();
+                if (asPoolable != null)
+                {
+                    InitPool(asPoolable, poolSize);
+                    for (int i = 0; i < poolSize; i++)
+                    {
+                        bool success;
+                        TryGetPooledObject(out success);
+                    }
+                }
+            }
+#if UNITY_EDITOR
+            else
+            {
+                Debug.LogWarning("Tried to pass a Poolable to init on Pool Awake but is not a valid IPoolable");
+            }
+#endif
+        }
+    }
 
     public void InitPool(IPoolable objectToPool, int poolMaxSize = 10)
     {
