@@ -6,13 +6,16 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private int normalScore = 10;
     [SerializeField] private int perfectScore = 5;
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI ordersDeliveredText;
+    [SerializeField] private TextMeshProUGUI scoreText, finalScoreText;
+    [SerializeField] private TextMeshProUGUI ordersDeliveredText, finalOrdersDeliveredText;
+    [SerializeField] private TextMeshProUGUI angryCustomersText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float gameDurationSeconds = 300f;
+    [SerializeField] private GameObject gamePanel, finishPanel;
 
     private int currentScore;
     private int currentsOrdersDelivered;
+    private int angryCustomers;
 
     private float remainingTime;
     private bool timerActive;
@@ -56,7 +59,17 @@ public class ScoreManager : MonoBehaviour
             timerActive = false;
             CancelInvoke(nameof(TimerTick));
             OnTimerEnded?.Invoke();
+            FinishScreen();
         }
+    }
+
+    private void FinishScreen()
+    {
+        gamePanel.SetActive(false);
+        finishPanel.SetActive(true);
+        finalScoreText.text = "Score: " + currentScore;
+        finalOrdersDeliveredText.text = "Orders Delivered: " + currentsOrdersDelivered;
+        angryCustomersText.text = "Angry Customers: " + angryCustomers;
     }
 
     private void HandleOrderDelivered(bool isOrdered)
@@ -69,6 +82,7 @@ public class ScoreManager : MonoBehaviour
     public void ReduceScore(int amount)
     {
         currentScore -= amount;
+        angryCustomers += amount;
         if (currentScore < 0) currentScore = 0;
         UpdateScoreDisplay();
     }

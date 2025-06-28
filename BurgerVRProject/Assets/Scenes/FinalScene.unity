@@ -10678,6 +10678,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 96063305}
     m_Modifications:
+    - target: {fileID: 2502135166207035420, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: gameDurationSeconds
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3304031114744683427, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0

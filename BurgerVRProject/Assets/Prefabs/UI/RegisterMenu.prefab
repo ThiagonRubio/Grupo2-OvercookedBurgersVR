@@ -946,9 +946,14 @@ MonoBehaviour:
   normalScore: 10
   perfectScore: 5
   scoreText: {fileID: 5825671774967500457}
+  finalScoreText: {fileID: 8136984280897537075}
   ordersDeliveredText: {fileID: 9098461899052812092}
+  finalOrdersDeliveredText: {fileID: 7158264627801098469}
+  angryCustomersText: {fileID: 2199568693923238489}
   timerText: {fileID: 4590431877352695305}
   gameDurationSeconds: 300
+  gamePanel: {fileID: 6998553614452362701}
+  finishPanel: {fileID: 4500896503049402303}
 --- !u!1 &6996259684971636049
 GameObject:
   m_ObjectHideFlags: 0
