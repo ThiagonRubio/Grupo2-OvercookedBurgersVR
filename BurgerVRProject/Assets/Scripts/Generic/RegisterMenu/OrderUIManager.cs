@@ -11,8 +11,7 @@ public class OrderUIManager : MonoBehaviour
     {
         orderManager = FindFirstObjectByType<OrderManager>();
         orderUIs = GetComponentsInChildren<OrderUI>(true);
-        wristOrderUI = Resources.FindObjectsOfTypeAll<WristOrderUI>()
-            .FirstOrDefault(w => w.gameObject.scene.IsValid());
+        wristOrderUI = FindAnyObjectByType<WristOrderUI>();
 
         orderManager.OrderCreated += OnOrderCreated;
         orderManager.OrderRemoved += OnOrderRemoved;
@@ -26,6 +25,9 @@ public class OrderUIManager : MonoBehaviour
 
     private void OnOrderCreated(Order order)
     {
+        if(wristOrderUI == null)
+            wristOrderUI = FindAnyObjectByType<WristOrderUI>();
+
         for (int i = 0; i < orderUIs.Length; i++)
         {
             if (!orderUIs[i].gameObject.activeSelf)
