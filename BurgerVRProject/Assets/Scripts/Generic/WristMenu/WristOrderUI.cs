@@ -7,6 +7,7 @@ public class WristOrderUI : MonoBehaviour
 {
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
+    [SerializeField] private GameObject progressBar;
     [SerializeField] private Image timerFillImage;
 
     public Order currentOrder;
@@ -18,6 +19,9 @@ public class WristOrderUI : MonoBehaviour
 
     public void SetOrder(Order order, OrderUI orderUI)
     {
+        imagesLayoutGroup.gameObject.SetActive(true);
+        progressBar.SetActive(true);
+
         currentOrder = order;
         trackedOrderUI = orderUI;
 

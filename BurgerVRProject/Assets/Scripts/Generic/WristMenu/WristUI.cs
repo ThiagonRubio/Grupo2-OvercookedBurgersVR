@@ -17,8 +17,6 @@ public class WristUI : MonoBehaviour
         _menu =  inputActions.FindActionMap("XRI LeftHand Interaction").FindAction("ActivateWristMenu");
         _menu.Enable();
         _menu.performed += ToggleMenu;
-        _wristUIAnimator.SetTrigger("ButtonPressed");
-
     }
 
     private void OnDestroy()
