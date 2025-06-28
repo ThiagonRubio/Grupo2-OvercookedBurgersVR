@@ -60,36 +60,40 @@ public class OrderUIManager : MonoBehaviour
         {
             if (orderUIs[i].CurrentOrderId == orderId)
             {
-                bool wasWristOrder = wristOrderUI.currentOrder.id == orderUIs[i].CurrentOrderId;
-                orderUIs[i].gameObject.SetActive(false);
-                orderUIs[i].transform.SetAsLastSibling();
-
-                if (wasWristOrder )
+                if(wristOrderUI != null)
                 {
-                    OrderUI minOrderUI = null;
-                    float minTime = float.MaxValue;
+                    bool wasWristOrder = wristOrderUI.currentOrder.id == orderUIs[i].CurrentOrderId;
 
-                    for (int j = 0; j < orderUIs.Length; j++)
+                    if (wasWristOrder)
                     {
-                        if (orderUIs[j].gameObject.activeSelf && orderUIs[j].CurrentTimeLeft > 0f)
+                        OrderUI minOrderUI = null;
+                        float minTime = float.MaxValue;
+
+                        for (int j = 0; j < orderUIs.Length; j++)
                         {
-                            if (orderUIs[j].CurrentTimeLeft < minTime)
+                            if (orderUIs[j].gameObject.activeSelf && orderUIs[j].CurrentTimeLeft > 0f)
                             {
-                                minTime = orderUIs[j].CurrentTimeLeft;
-                                minOrderUI = orderUIs[j];
+                                if (orderUIs[j].CurrentTimeLeft < minTime)
+                                {
+                                    minTime = orderUIs[j].CurrentTimeLeft;
+                                    minOrderUI = orderUIs[j];
+                                }
                             }
                         }
-                    }
 
-                    if (minOrderUI != null)
-                    {
-                        wristOrderUI.SetOrder(minOrderUI.CurrentOrder, minOrderUI);
-                    }
-                    else
-                    {
-                        wristOrderUI.gameObject.SetActive(false);
+                        if (minOrderUI != null)
+                        {
+                            wristOrderUI.SetOrder(minOrderUI.CurrentOrder, minOrderUI);
+                        }
+                        else
+                        {
+                            wristOrderUI.gameObject.SetActive(false);
+                        }
                     }
                 }
+
+                orderUIs[i].gameObject.SetActive(false);
+                orderUIs[i].transform.SetAsLastSibling();
                 return;
             }
         }

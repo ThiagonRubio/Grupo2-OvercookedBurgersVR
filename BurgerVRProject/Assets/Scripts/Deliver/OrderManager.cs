@@ -20,6 +20,7 @@ public class OrderManager : MonoBehaviour
 
     private List<Order> currentOrders = new List<Order>();
     private int nextOrderId = 1;
+    private bool generatingOrders;
 
     public Action<Order> OrderCreated;
     public Action<int> OrderRemoved;
@@ -27,20 +28,29 @@ public class OrderManager : MonoBehaviour
     private void OnEnable()
     {
         RegisterUI.OnRegisterUIToggled += StartGeneratingOrders;
+        ScoreManager.OnTimerEnded += StopGeneratingOrders;
+
     }
 
     private void OnDisable()
     {
         RegisterUI.OnRegisterUIToggled -= StartGeneratingOrders;
+        ScoreManager.OnTimerEnded -= StopGeneratingOrders;
+
     }
 
     private void StartGeneratingOrders()
     {
+        if (generatingOrders) return;
+        generatingOrders = true;
         GenerateOrder();
     }
 
     private void GenerateOrder()
     {
+        if (!generatingOrders)
+            return;
+
         if (currentOrders.Count < maxOrders)
         {
             int midCount = UnityEngine.Random.Range(minIngredients, maxIngredients + 1);
@@ -70,6 +80,23 @@ public class OrderManager : MonoBehaviour
             Invoke(nameof(GenerateOrder), 0.1f);
         }
     }
+
+    private void StopGeneratingOrders()
+    {
+        generatingOrders = false;
+        CancelInvoke(nameof(GenerateOrder));
+        ClearAllOrders();
+    }
+
+    private void ClearAllOrders()
+    {
+        foreach (var order in currentOrders.ToList())
+        {
+            OrderRemoved?.Invoke(order.id);
+        }
+        currentOrders.Clear();
+    }
+
 
     public bool OrderExists(List<IngredientType> burgerIngredients, out int orderId, out bool isOrdered)
     {
