@@ -1,37 +1,26 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-[Serializable]
-public class IngredientImagePair
-{
-    public IngredientType ingredientType;
-    public Sprite ingredientSprite;
-}
-
-public class OrderUI : MonoBehaviour
+public class WristOrderUI : MonoBehaviour
 {
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
     [SerializeField] private Image timerFillImage;
-    [SerializeField] private float baseOrderDuration = 10f;
-    [SerializeField] private float extraOrderDuration = 5f;
-    [SerializeField] private int penaltyPoints = 3;
-    private Order currentOrder;
-    public Order CurrentOrder => currentOrder;
 
-    public static event Action<int> OnOrderExpired;
-    private Coroutine timerRoutine;
-    public int CurrentOrderId { get; private set; }
-    public float CurrentTimeLeft { get; private set; }
-    public float TotalDuration { get; private set; }
-    public void SetOrder(Order order)
+    public Order currentOrder;
+    private OrderUI trackedOrderUI;
+    private float baseOrderDuration = 10f;
+    private float extraOrderDuration = 5f;
+    private float totalDuration;
+    private Coroutine uiRoutine;
+
+    public void SetOrder(Order order, OrderUI orderUI)
     {
-        CurrentOrderId = order.id;
         currentOrder = order;
-    
+        trackedOrderUI = orderUI;
+
         for (int i = 0; i < imagesLayoutGroup.childCount; i++)
             imagesLayoutGroup.GetChild(i).gameObject.SetActive(false);
 
@@ -47,32 +36,43 @@ public class OrderUI : MonoBehaviour
             image.sprite = sprite;
         }
 
-        TotalDuration = baseOrderDuration + order.ingredients.Count * extraOrderDuration;
+        totalDuration = baseOrderDuration + order.ingredients.Count * extraOrderDuration;
 
-        if (timerRoutine != null) StopCoroutine(timerRoutine);
-        timerRoutine = StartCoroutine(StartTimer(TotalDuration));
+        if (uiRoutine != null)
+            StopCoroutine(uiRoutine);
+        uiRoutine = StartCoroutine(UpdateBarRoutine());
     }
 
-    private IEnumerator StartTimer(float duration)
+    private IEnumerator UpdateBarRoutine()
     {
-        CurrentTimeLeft = duration;
-
-        while (CurrentTimeLeft > 0f)
+        while (trackedOrderUI != null && trackedOrderUI.CurrentTimeLeft > 0f)
         {
-            CurrentTimeLeft -= Time.deltaTime;
-            float percent = CurrentTimeLeft / duration;
-
+            float percent = trackedOrderUI.TotalDuration > 0f
+                ? Mathf.Clamp01(trackedOrderUI.CurrentTimeLeft / trackedOrderUI.TotalDuration)
+                : 0f;
             if (timerFillImage != null)
             {
                 timerFillImage.fillAmount = percent;
                 timerFillImage.color = GetColorForPercent(percent);
             }
-
-            yield return null;
+            yield return new WaitForSeconds(0.05f);
         }
+        if (timerFillImage != null)
+        {
+            timerFillImage.fillAmount = 0f;
+            timerFillImage.color = GetColorForPercent(0f);
+        }
+    }
 
-        OnOrderExpired?.Invoke(penaltyPoints);
-        StartCoroutine(StartTimer(duration));
+    public bool HasCurrentOrder()
+    {
+        return currentOrder != null && trackedOrderUI != null && trackedOrderUI.CurrentTimeLeft > 0f;
+    }
+
+    public float GetCurrentOrderTimeLeft()
+    {
+        if (trackedOrderUI == null) return 0f;
+        return trackedOrderUI.CurrentTimeLeft;
     }
 
     private Color GetColorForPercent(float percent)

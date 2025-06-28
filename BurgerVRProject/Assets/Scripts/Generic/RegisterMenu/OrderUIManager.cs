@@ -1,14 +1,19 @@
+using System.Linq;
 using UnityEngine;
 
 public class OrderUIManager : MonoBehaviour
 {
     [SerializeField] private OrderManager orderManager;
     [SerializeField] private OrderUI[] orderUIs;
+    private WristOrderUI wristOrderUI;
 
     private void Start()
     {
         orderManager = FindFirstObjectByType<OrderManager>();
         orderUIs = GetComponentsInChildren<OrderUI>(true);
+        wristOrderUI = Resources.FindObjectsOfTypeAll<WristOrderUI>()
+            .FirstOrDefault(w => w.gameObject.scene.IsValid());
+
         orderManager.OrderCreated += OnOrderCreated;
         orderManager.OrderRemoved += OnOrderRemoved;
     }
@@ -27,9 +32,23 @@ public class OrderUIManager : MonoBehaviour
             {
                 orderUIs[i].gameObject.SetActive(true);
                 orderUIs[i].SetOrder(order);
+
+                if (wristOrderUI != null)
+                {
+                    float newOrderDuration = orderUIs[i].CurrentTimeLeft;
+                    bool hasCurrent = wristOrderUI.HasCurrentOrder();
+                    float currentOrderTimeLeft = hasCurrent ? wristOrderUI.GetCurrentOrderTimeLeft() : float.MaxValue;
+
+                    if (!hasCurrent || newOrderDuration < currentOrderTimeLeft)
+                    {
+                        wristOrderUI.gameObject.SetActive(true);
+                        wristOrderUI.SetOrder(order, orderUIs[i]);
+                    }
+                }
                 return;
             }
         }
+
         Debug.LogWarning("No hay más espacios libres para mostrar nuevas órdenes.");
     }
 
@@ -39,8 +58,36 @@ public class OrderUIManager : MonoBehaviour
         {
             if (orderUIs[i].CurrentOrderId == orderId)
             {
+                bool wasWristOrder = wristOrderUI.currentOrder.id == orderUIs[i].CurrentOrderId;
                 orderUIs[i].gameObject.SetActive(false);
                 orderUIs[i].transform.SetAsLastSibling();
+
+                if (wasWristOrder )
+                {
+                    OrderUI minOrderUI = null;
+                    float minTime = float.MaxValue;
+
+                    for (int j = 0; j < orderUIs.Length; j++)
+                    {
+                        if (orderUIs[j].gameObject.activeSelf && orderUIs[j].CurrentTimeLeft > 0f)
+                        {
+                            if (orderUIs[j].CurrentTimeLeft < minTime)
+                            {
+                                minTime = orderUIs[j].CurrentTimeLeft;
+                                minOrderUI = orderUIs[j];
+                            }
+                        }
+                    }
+
+                    if (minOrderUI != null)
+                    {
+                        wristOrderUI.SetOrder(minOrderUI.CurrentOrder, minOrderUI);
+                    }
+                    else
+                    {
+                        wristOrderUI.gameObject.SetActive(false);
+                    }
+                }
                 return;
             }
         }
