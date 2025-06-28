@@ -17,6 +17,16 @@ public class WristOrderUI : MonoBehaviour
     private float totalDuration;
     private Coroutine uiRoutine;
 
+    private void OnEnable()
+    {
+        ScoreManager.OnTimerEnded += HandleTimerEnded;
+    }
+
+    private void OnDisable()
+    {
+        ScoreManager.OnTimerEnded -= HandleTimerEnded;
+    }
+
     public void SetOrder(Order order, OrderUI orderUI)
     {
         imagesLayoutGroup.gameObject.SetActive(true);
@@ -89,5 +99,11 @@ public class WristOrderUI : MonoBehaviour
             return new Color(1f, 0.5f, 0f);
         else
             return Color.red;
+    }
+
+    private void HandleTimerEnded()
+    {
+        imagesLayoutGroup.gameObject.SetActive(false);
+        progressBar.SetActive(false);
     }
 }
