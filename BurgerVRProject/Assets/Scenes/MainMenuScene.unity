@@ -1167,18 +1167,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Basic Guide:
 
-    1) Burgers are prepared on trays.
+    1) Start the game by pressing the counter button.
 
-    2) Burger preparation
-    starts with bread''s inferior part.
+    2)
+    Burgers are prepared on trays.
 
-    3) Player can add as many ingredients
-    as they want.
+    3) Burger preparation starts with bread''s
+    inferior part.
 
-    2) Burger preparation ends with bread''s superior part.
+    4) Player can add as many ingredients as they want.
 
     5)
-    Once the burger is finished, deliver it at the "Delivery Zone"'
+    Burger preparation ends with bread''s superior part.
+
+    6) Once the burger
+    is finished, deliver it at the "Delivery Zone"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1284,7 +1287,7 @@ RectTransform:
   m_GameObject: {fileID: 751741856}
   m_LocalRotation: {x: 0, y: -0.2337847, z: 0, w: 0.9722884}
   m_LocalPosition: {x: 0, y: 0, z: -468}
-  m_LocalScale: {x: 36.83, y: 26.058764, z: 0}
+  m_LocalScale: {x: 45, y: 26.058764, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 633476148}
@@ -1314,7 +1317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb9b8027deb13864480846465405a846, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56e4d806cf8d02849a024b6946b9065e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
