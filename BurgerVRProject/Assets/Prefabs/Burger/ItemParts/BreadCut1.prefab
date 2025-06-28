@@ -351,6 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientType: 0
   itemHeight: 0
-  heightCorrection: 0
+  heightCorrection: 0.0005
   canBeUsed: 0
   originalParent: {fileID: 0}
