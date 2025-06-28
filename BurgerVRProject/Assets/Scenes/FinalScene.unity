@@ -4038,6 +4038,17 @@ MonoBehaviour:
   inputAction: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rayInteractor: {fileID: 1046843313}
   teleportationProvider: {fileID: 853049846}
+--- !u!114 &1047499769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8845065371183645437, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+  m_PrefabInstance: {fileID: 5497076839673086317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076603413
 GameObject:
   m_ObjectHideFlags: 0
@@ -10667,6 +10678,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 96063305}
     m_Modifications:
+    - target: {fileID: 3304031114744683427, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304031114744683427, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15.42
+      objectReference: {fileID: 0}
     - target: {fileID: 3673631573148319227, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
       propertyPath: m_Name
       value: Register
@@ -10710,6 +10729,22 @@ PrefabInstance:
     - target: {fileID: 4157291973769868276, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266613924382695138, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1047499769}
+    - target: {fileID: 6266613924382695138, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: gameDurationSeconds
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670522834811138239, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670522834811138239, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
