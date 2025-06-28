@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+    - {fileID: 2800000, guid: 56e4d806cf8d02849a024b6946b9065e, type: 3}
+    - {fileID: 2800000, guid: 698479ec9c679db4589d123e27056351, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 56e4d806cf8d02849a024b6946b9065e: 21300000
+    - 969a1146511197b4fb287235f04b32f8: -761808565
+    - 969a1146511197b4fb287235f04b32f8: 1969957429
+    - 969a1146511197b4fb287235f04b32f8: -935502241
+    - 969a1146511197b4fb287235f04b32f8: -706284654
+    - 969a1146511197b4fb287235f04b32f8: -1477247683
+    - 969a1146511197b4fb287235f04b32f8: 1130719582
+    - 969a1146511197b4fb287235f04b32f8: 794713882
+    - 969a1146511197b4fb287235f04b32f8: -61886933
+    - 698479ec9c679db4589d123e27056351: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 56e4d806cf8d02849a024b6946b9065e, type: 3}
+  - {fileID: -761808565, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: 1969957429, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: -935502241, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: -706284654, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: -1477247683, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: 1130719582, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: 794713882, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: -61886933, guid: 969a1146511197b4fb287235f04b32f8, type: 3}
+  - {fileID: 21300000, guid: 698479ec9c679db4589d123e27056351, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Burguer Controllers png Fixed
+  - 2DAssets_Cheese
+  - 2DAssets_BreadBottom
+  - 2DAssets_Patty
+  - 2DAssets_KnifeButton
+  - 2DAssets_Lettuce
+  - 2DAssets_BreadTop
+  - 2DAssets_KetchupButton
+  - 2DAssets_Tomato
+  - CrazyBurgerLogoNoBG
+  m_RenderDataMap: {}
+  m_Tag: UI Atlas
+  m_IsVariant: 0
