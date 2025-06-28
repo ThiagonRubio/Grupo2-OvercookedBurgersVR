@@ -6,15 +6,11 @@ using UnityEngine.Events;
 
 public class VRButton : MonoBehaviour
 {
-    [SerializeField] private float deadTime = 1.0f;
-
-    private bool _deadTimeActive = false;
-
     [SerializeField] private UnityEvent onPressed, onReleased;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Button") && !_deadTimeActive)
+        if (other.CompareTag("Button"))
         {
             onPressed?.Invoke();
         }
@@ -22,17 +18,9 @@ public class VRButton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Button") && !_deadTimeActive)
+        if (other.CompareTag("Button"))
         {
             onReleased?.Invoke();
-            StartCoroutine(WaitForDeadTime());
         }
-    }
-
-    IEnumerator WaitForDeadTime()
-    {
-        _deadTimeActive = true;
-        yield return new WaitForSeconds(deadTime);
-        _deadTimeActive = false;
     }
 }

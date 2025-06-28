@@ -1,10 +1,11 @@
 using UnityEngine;
 public class Knife : MonoBehaviour
 {
+    private ISliceable _auxSliceable;
     void OnCollisionEnter(Collision collision)
     {
-        ISliceable sliceable = collision.gameObject.GetComponent<ISliceable>();
-        if (sliceable != null)
-            sliceable.Slice();
+        _auxSliceable = collision.gameObject.GetComponent<ISliceable>();
+        if (_auxSliceable != null)
+            _auxSliceable.Slice();
     }
 }

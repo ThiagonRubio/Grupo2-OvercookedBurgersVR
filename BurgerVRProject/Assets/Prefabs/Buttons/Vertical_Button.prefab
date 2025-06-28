@@ -259,7 +259,7 @@ ConfigurableJoint:
   serializedVersion: 4
   m_ConnectedBody: {fileID: 5332346213651283689}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.5, z: 0}
+  m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -303,8 +303,8 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 75
-    positionDamper: 10
+    positionSpring: 25
+    positionDamper: 15
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
@@ -506,7 +506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88e49c9173fe9649bd96586814e9535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadTime: 1
   onPressed:
     m_PersistentCalls:
       m_Calls:
