@@ -10,10 +10,12 @@ public class ItemDispenser : MonoBehaviour
     [SerializeField] protected ObjectPool itemPool;
     [SerializeField] protected SpawnableObject itemToSpawn;
     [SerializeField] protected Transform itemSpawnPosition;
+    private AudioSource cachedAudioSource;
 
     private void Awake()
     {
         PoolableFactory.InitPool(itemPool, itemToSpawn, itemPool.PoolMaxSize);
+        cachedAudioSource = GetComponent<AudioSource>();
     }
 
     public virtual void SpawnItem()
@@ -28,6 +30,7 @@ public class ItemDispenser : MonoBehaviour
         }
         else
         {
+            cachedAudioSource.Play();
 #if UNITY_EDITOR
             Debug.Log("Usá los items spawneados, vos podés."); //Acá iría un feedback de que ya no se puede
 #endif
