@@ -17,6 +17,5 @@ public class Knife : MonoBehaviour
             _auxSliceable.Slice();
             cachedAudioSource.Play();
         }
-
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class MeatPatty : BurgerItem, IUpdatable
 {
     private Renderer rend;
+    private AudioSource cachedAudioSource;
 
     [SerializeField] float cookingTimeRequired = 5f;
     [SerializeField] float burnTimeAfterCooked = 3f;

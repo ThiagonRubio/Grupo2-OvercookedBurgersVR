@@ -164,7 +164,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: cc68939b2425c334b9f163a56f3f7bc7, type: 3}
   m_Resource: {fileID: 8300000, guid: cc68939b2425c334b9f163a56f3f7bc7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.11
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -541,7 +541,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 4ecd7438ed7bfe941b349b4a8a7496f4, type: 3}
   m_Resource: {fileID: 8300000, guid: 4ecd7438ed7bfe941b349b4a8a7496f4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.14
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2096,7 +2096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539019631}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: GlobalAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

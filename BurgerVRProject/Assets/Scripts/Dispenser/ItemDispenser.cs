@@ -30,10 +30,8 @@ public class ItemDispenser : MonoBehaviour
         }
         else
         {
+            // Va a tirar sonidito de error cuando la pool este llena y dichos poolables esten activos (no se puede spawnear mas)
             cachedAudioSource.Play();
-#if UNITY_EDITOR
-            Debug.Log("Usá los items spawneados, vos podés."); //Acá iría un feedback de que ya no se puede
-#endif
         }
     }
 }

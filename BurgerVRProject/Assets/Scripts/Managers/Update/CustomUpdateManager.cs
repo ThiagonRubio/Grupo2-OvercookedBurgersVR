@@ -33,7 +33,6 @@ public class CustomUpdateManager : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void OnDestroy()
