@@ -21,33 +21,23 @@ public class PoolReturnManager : MonoBehaviour
                     slicedItem.ReattachToOriginalParent();
             }
         }
-        var managerPoolable = manager.GetComponent<IPoolable>();
-        if (managerPoolable != null)
-            managerPoolable.OnPoolableObjectDisable();
-        else
-            manager.gameObject.SetActive(false);
+        DisablePoolable(manager.gameObject);
     }
 
     protected virtual void ReturnToPool(SlicedItem item)
     {
         item.ReattachToOriginalParent();
-        var poolable = item.GetComponent<IPoolable>();
-        if (poolable != null)
-            poolable.OnPoolableObjectDisable();
-        else
-            item.gameObject.SetActive(false);
+        DisablePoolable(item.gameObject);
     }
-
     protected virtual void ReturnToPool(SliceableItem item)
     {
-        var poolable = item.GetComponent<IPoolable>();
-        if (poolable != null)
-            poolable.OnPoolableObjectDisable();
-        else
-            item.gameObject.SetActive(false);
+        DisablePoolable(item.gameObject);
     }
-    
     protected virtual void ReturnToPool(SpawnableObject item)
+    {
+        DisablePoolable(item.gameObject);
+    }
+    private void DisablePoolable(GameObject item)
     {
         var poolable = item.GetComponent<IPoolable>();
         if (poolable != null)

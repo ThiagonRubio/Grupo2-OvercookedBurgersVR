@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class TrashCan : PoolReturnManager
 {
+    private AudioSource cachedAudioSource;
+
+    private void Awake()
+    {
+        cachedAudioSource = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
 #if UNITY_EDITOR
@@ -14,6 +21,7 @@ public class TrashCan : PoolReturnManager
         if (manager != null)
         {
             ReturnToPool(manager);
+            cachedAudioSource.Play();
             return;
         }
 
@@ -21,6 +29,7 @@ public class TrashCan : PoolReturnManager
         if (slicedItem != null)
         {
             ReturnToPool(slicedItem);
+            cachedAudioSource.Play();
             return;
         }
 
@@ -28,6 +37,7 @@ public class TrashCan : PoolReturnManager
         if (sliceableItem != null)
         {
             ReturnToPool(sliceableItem);
+            cachedAudioSource.Play();
             return;
         }
         
@@ -35,6 +45,7 @@ public class TrashCan : PoolReturnManager
         if (spawnableItem != null)
         {
             ReturnToPool(spawnableItem);
+            cachedAudioSource.Play();
             return;
         }
     }
