@@ -42,6 +42,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    //-------------------------------------------------------------------------//
     public void InitPool(IPoolable objectToPool, int poolMaxSize = 10)
     {
         if (objectPool != null)

@@ -28,7 +28,9 @@ public class ItemDispenser : MonoBehaviour
         }
         else
         {
+#if UNITY_EDITOR
             Debug.Log("Usá los items spawneados, vos podés."); //Acá iría un feedback de que ya no se puede
+#endif
         }
     }
 }

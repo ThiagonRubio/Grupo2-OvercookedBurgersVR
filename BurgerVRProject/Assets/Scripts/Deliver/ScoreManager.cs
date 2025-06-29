@@ -89,7 +89,9 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateScoreDisplay()
     {
+#if UNITY_EDITOR
         Debug.Log("score actual: " + currentScore);
+#endif
 
         if (scoreText != null)
             scoreText.text = "$" + currentScore.ToString();

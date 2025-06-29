@@ -51,7 +51,9 @@ public class OrderUIManager : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("No hay más espacios libres para mostrar nuevas órdenes.");
+#if UNITY_EDITOR
+        Debug.LogWarning("No hay mas espacios libres para mostrar nuevas ordenes.");
+#endif
     }
 
     private void OnOrderRemoved(int orderId)

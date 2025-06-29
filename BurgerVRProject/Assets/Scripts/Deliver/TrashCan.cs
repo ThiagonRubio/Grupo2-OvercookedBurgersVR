@@ -6,8 +6,10 @@ public class TrashCan : PoolReturnManager
 {
     private void OnCollisionEnter(Collision collision)
     {
+#if UNITY_EDITOR
         Debug.Log("Colision con tacho");
-        
+#endif
+
         var manager = collision.gameObject.GetComponent<BurgerManager>();
         if (manager != null)
         {

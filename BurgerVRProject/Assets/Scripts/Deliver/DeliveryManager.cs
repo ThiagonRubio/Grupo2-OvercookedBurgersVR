@@ -23,7 +23,9 @@ public class DeliveryManager : PoolReturnManager
         }
         else
         {
+#if UNITY_EDITOR
             Debug.Log("Pedido no válido o inexistente");
+#endif
         }
     }
 }
