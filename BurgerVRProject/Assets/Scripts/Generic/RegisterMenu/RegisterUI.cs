@@ -19,10 +19,11 @@ public class RegisterUI : MonoBehaviour
     public void ToggleMenu()
     {
         _registerUIAnimator.SetTrigger("ButtonPressed");
+        cachedAudioSource.Play();
+
         if (!hasToggled)
         {
             OnRegisterUIToggled?.Invoke();
-            cachedAudioSource.Play();
             hasToggled = true;
         }
     }

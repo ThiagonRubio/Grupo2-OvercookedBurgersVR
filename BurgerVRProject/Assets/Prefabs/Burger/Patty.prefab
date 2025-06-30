@@ -308,11 +308,11 @@ MonoBehaviour:
   heightCorrection: 0.0025
   canBeUsed: 0
   cookingTimeRequired: 5
-  burnTimeAfterCooked: 45
+  burnTimeAfterCooked: 40
   isCooked: 0
   isBurnt: 0
-  onCookingFinishedClip: {fileID: 8300000, guid: 7a5fc586b02493247bc1133235f450eb, type: 3}
-  whileBeingCookedClip: {fileID: 8300000, guid: d2980476efe655449bbd82c2ffd88d65, type: 3}
+  onCookingSuccessfulClip: {fileID: 8300000, guid: 7a5fc586b02493247bc1133235f450eb, type: 3}
+  onCookingUnsuccessfulClip: {fileID: 8300000, guid: 13712002f917cc0419ce454dec5e90f3, type: 3}
 --- !u!54 &5206191353590734792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -418,7 +418,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0

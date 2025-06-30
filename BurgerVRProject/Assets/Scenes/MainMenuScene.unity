@@ -529,6 +529,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 911769663}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayConfirmSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &421026193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e580dcf455630744f8e903084efb430d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmSfx: {fileID: 0}
+  cancelSfx: {fileID: 0}
 --- !u!224 &633476148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1644,6 +1658,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 911769663}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayCancelSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &853543301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e580dcf455630744f8e903084efb430d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmSfx: {fileID: 0}
+  cancelSfx: {fileID: 0}
 --- !u!1 &980774717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,6 +4006,18 @@ MonoBehaviour:
       - m_Target: {fileID: 911769663}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 911769663}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayConfirmSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

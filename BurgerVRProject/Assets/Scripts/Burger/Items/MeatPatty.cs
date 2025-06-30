@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeatPatty : BurgerItem, IUpdatable
+public class MeatPatty : BurgerItem
 {
     private Renderer rend;
 
@@ -17,7 +17,8 @@ public class MeatPatty : BurgerItem, IUpdatable
     [SerializeField] private bool isBurnt = false;
     [SerializeField] private AudioClip onCookingSuccessfulClip;
     [SerializeField] private AudioClip onCookingUnsuccessfulClip;
-    [SerializeField] private AudioClip whileBeingCookedClip;
+
+    private Coroutine cookingCoroutine;
 
     private void Awake()
     {
@@ -31,13 +32,11 @@ public class MeatPatty : BurgerItem, IUpdatable
         canBeUsed = false;
     }
 
-    // TODO: Repensar - por ahora lo optimizo un poco haciendo que se salga de la lista de updatables cuando termine de cocinarse
-    public void OnUpdate()
+    private IEnumerator CookRoutine()
     {
-        if (isBurnt)
-            return;
+        currentCookingTime = 0f;
 
-        if (isInCookingZone)
+        while (!isBurnt)
         {
             currentCookingTime += Time.deltaTime;
 
@@ -48,8 +47,11 @@ public class MeatPatty : BurgerItem, IUpdatable
 
             if (isCooked && currentCookingTime >= cookingTimeRequired + burnTimeAfterCooked)
             {
-                TriggerSuccessfulCooking();
+                TriggerUnsuccessfulCooking();
+                yield break;
             }
+
+            yield return null;
         }
     }
 
@@ -61,6 +63,12 @@ public class MeatPatty : BurgerItem, IUpdatable
     public override void OnPoolableObjectDisable()
     {
         Detach();
+
+        if (cookingCoroutine != null)
+        {
+            StopCoroutine(cookingCoroutine);
+            cookingCoroutine = null;
+        }
 
         IsAvailable = true;
 
@@ -86,26 +94,14 @@ public class MeatPatty : BurgerItem, IUpdatable
         isCooked = true;
         canBeUsed = true;
         rend.material.SetColor("_BaseColor", new Color(0.6f, 0.3f, 0.1f));
-
-        cachedAudioSource.Stop();
-        cachedAudioSource.clip = onCookingSuccessfulClip;
-        cachedAudioSource.loop = false;
         cachedAudioSource.PlayOneShot(onCookingSuccessfulClip);
-
-        CustomUpdateManager.Instance.Unregister(this);
     }
     private void TriggerUnsuccessfulCooking()
     {
         isBurnt = true;
         canBeUsed = false;
         rend.material.SetColor("_BaseColor", Color.black);
-
-        cachedAudioSource.Stop();
-        cachedAudioSource.clip = onCookingSuccessfulClip;
-        cachedAudioSource.loop = false;
         cachedAudioSource.PlayOneShot(onCookingUnsuccessfulClip);
-
-        CustomUpdateManager.Instance.Unregister(this);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -113,10 +109,10 @@ public class MeatPatty : BurgerItem, IUpdatable
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = true;
-
-            cachedAudioSource.clip = whileBeingCookedClip;
-            cachedAudioSource.loop = true;
-            cachedAudioSource.Play();
+            if (cookingCoroutine == null)
+            {
+                cookingCoroutine = StartCoroutine(CookRoutine());
+            }
         }
     }
 
@@ -125,7 +121,11 @@ public class MeatPatty : BurgerItem, IUpdatable
         if (other.CompareTag("CookingZone"))
         {
             isInCookingZone = false;
-            cachedAudioSource.Stop();
+            if (cookingCoroutine != null)
+            {
+                StopCoroutine(cookingCoroutine);
+                cookingCoroutine = null;
+            }
         }
     }
 }

@@ -28,10 +28,5 @@ public class ItemDispenser : MonoBehaviour
         {
             item.SetPoolablePositionAndRotation(itemSpawnPosition);
         }
-        else
-        {
-            // Va a tirar sonidito de error cuando la pool este llena y dichos poolables esten activos (no se puede spawnear mas)
-            cachedAudioSource.Play();
-        }
     }
 }
