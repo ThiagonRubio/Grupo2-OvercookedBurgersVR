@@ -58,7 +58,6 @@ public class MeatPatty : BurgerItem
     public override void OnPoolableObjectEnable()
     {
         base.OnPoolableObjectEnable();
-        CustomUpdateManager.Instance.Register(this);
     }
     public override void OnPoolableObjectDisable()
     {
@@ -80,7 +79,6 @@ public class MeatPatty : BurgerItem
         isCooked = false;
         isBurnt = false;
         canBeUsed = false;
-        CustomUpdateManager.Instance.Unregister(this);
         base.OnPoolableObjectDisable();
     }
 
