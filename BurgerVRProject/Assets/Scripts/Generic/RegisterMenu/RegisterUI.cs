@@ -6,12 +6,14 @@ using UnityEngine;
 public class RegisterUI : MonoBehaviour
 {
     private Animator _registerUIAnimator;
+    private AudioSource cachedAudioSource;
     public static event Action OnRegisterUIToggled;
     private bool hasToggled = false;
 
-    void Start()
+    void Awake()
     {
         _registerUIAnimator = GetComponent<Animator>();
+        cachedAudioSource = GetComponent<AudioSource>();
     }
 
     public void ToggleMenu()
@@ -20,6 +22,7 @@ public class RegisterUI : MonoBehaviour
         if (!hasToggled)
         {
             OnRegisterUIToggled?.Invoke();
+            cachedAudioSource.Play();
             hasToggled = true;
         }
     }

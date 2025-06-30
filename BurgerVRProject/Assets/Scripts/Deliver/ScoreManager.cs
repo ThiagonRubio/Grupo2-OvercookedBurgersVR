@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float gameDurationSeconds = 300f;
     [SerializeField] private GameObject gamePanel, finishPanel;
+    private AudioSource cachedAudioSource;
 
     private int currentScore;
     private int currentsOrdersDelivered;
@@ -22,6 +23,11 @@ public class ScoreManager : MonoBehaviour
 
     public static event Action OnTimerEnded;
     public event Action<float> OnTimerTick;
+
+    private void Awake()
+    {
+        cachedAudioSource = GetComponent<AudioSource>();
+    }
 
     private void OnEnable()
     {
@@ -37,7 +43,6 @@ public class ScoreManager : MonoBehaviour
         DeliveryManager.OnOrderDelivered -= HandleOrderDelivered;
         OrderUI.OnOrderExpired -= ReduceScore;
         RegisterUI.OnRegisterUIToggled -= StartTimer;
-
     }
 
     private void StartTimer()
@@ -76,6 +81,7 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore += isOrdered ? normalScore : perfectScore;
         currentsOrdersDelivered++;
+        cachedAudioSource.Play();
         UpdateScoreDisplay();
     }
 

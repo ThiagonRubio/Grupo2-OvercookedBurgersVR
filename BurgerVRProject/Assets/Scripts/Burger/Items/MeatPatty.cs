@@ -27,6 +27,7 @@ public class MeatPatty : BurgerItem, IUpdatable
         canBeUsed = false;
     }
 
+    // TODO: Repensar
     public void OnUpdate()
     {
         if (isBurnt)

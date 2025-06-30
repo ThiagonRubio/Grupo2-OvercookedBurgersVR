@@ -1701,8 +1701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 3811631184778348621, guid: af3d4637bdc819f46986a63b39f6343c, type: 3}
 --- !u!1 &480500449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,8 +1746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 5260222646837750196, guid: 3ed831c889dae6c46aeb4942f304c0df, type: 3}
 --- !u!1001 &490181479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6238,8 +6234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 8160467744593963268, guid: cd6b06560139b374eb46b987b94cc353, type: 3}
 --- !u!1 &1307773259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6285,8 +6279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 6671468022598303287, guid: 7559538dba4f3e3468c82a6991cca0b3, type: 3}
 --- !u!1 &1365010542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,8 +6368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 5809359361346170471, guid: afe36cf595a96744baf126121e541f47, type: 3}
 --- !u!1 &1414650917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8450,8 +8440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 5
-  initAllSpawnablesOnAwake: 1
-  onAwakePoolPrefabOverride: {fileID: 5879115805230833201, guid: cf22cd394175fcf41a0deb4cbe9c496e, type: 3}
 --- !u!1 &1900415630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10768,6 +10756,10 @@ PrefabInstance:
       propertyPath: gameDurationSeconds
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 3121724876554273514, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9157750b3424434ab828dee57503e3b, type: 3}
     - target: {fileID: 3304031114744683427, guid: d153f8db847d50c4d9ebd7d24fd0ea8c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
