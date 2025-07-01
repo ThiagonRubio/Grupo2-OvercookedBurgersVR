@@ -7,8 +7,6 @@ public class WristOrderUI : MonoBehaviour
 {
     [SerializeField] private IngredientImages ingredientImages;
     [SerializeField] private Transform imagesLayoutGroup;
-    [SerializeField] private GameObject progressBar;
-    [SerializeField] private Image timerFillImage;
 
     public Order currentOrder;
     private OrderUI trackedOrderUI;
@@ -30,7 +28,6 @@ public class WristOrderUI : MonoBehaviour
     public void SetOrder(Order order, OrderUI orderUI)
     {
         imagesLayoutGroup.gameObject.SetActive(true);
-        progressBar.SetActive(true);
 
         currentOrder = order;
         trackedOrderUI = orderUI;
@@ -51,31 +48,6 @@ public class WristOrderUI : MonoBehaviour
         }
 
         totalDuration = baseOrderDuration + order.ingredients.Count * extraOrderDuration;
-
-        if (uiRoutine != null)
-            StopCoroutine(uiRoutine);
-        uiRoutine = StartCoroutine(UpdateBarRoutine());
-    }
-
-    private IEnumerator UpdateBarRoutine()
-    {
-        while (trackedOrderUI != null && trackedOrderUI.CurrentTimeLeft > 0f)
-        {
-            float percent = trackedOrderUI.TotalDuration > 0f
-                ? Mathf.Clamp01(trackedOrderUI.CurrentTimeLeft / trackedOrderUI.TotalDuration)
-                : 0f;
-            if (timerFillImage != null)
-            {
-                timerFillImage.fillAmount = percent;
-                timerFillImage.color = GetColorForPercent(percent);
-            }
-            yield return new WaitForSeconds(0.05f);
-        }
-        if (timerFillImage != null)
-        {
-            timerFillImage.fillAmount = 0f;
-            timerFillImage.color = GetColorForPercent(0f);
-        }
     }
 
     public bool HasCurrentOrder()
@@ -89,21 +61,8 @@ public class WristOrderUI : MonoBehaviour
         return trackedOrderUI.CurrentTimeLeft;
     }
 
-    private Color GetColorForPercent(float percent)
-    {
-        if (percent > 0.75f)
-            return Color.green;
-        else if (percent > 0.5f)
-            return Color.yellow;
-        else if (percent > 0.25f)
-            return new Color(1f, 0.5f, 0f);
-        else
-            return Color.red;
-    }
-
     private void HandleTimerEnded()
     {
         imagesLayoutGroup.gameObject.SetActive(false);
-        progressBar.SetActive(false);
     }
 }
