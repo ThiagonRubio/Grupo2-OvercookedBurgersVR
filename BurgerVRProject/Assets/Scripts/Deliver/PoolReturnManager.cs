@@ -9,40 +9,41 @@ public class PoolReturnManager : MonoBehaviour
         for (int i = manager.transform.childCount - 1; i >= 0; i--)
         {
             Transform child = manager.transform.GetChild(i);
-            var poolable = child.GetComponent<IPoolable>();
-            if (poolable != null)
+
+            if (child.TryGetComponent<IPoolable>(out var poolable))
             {
                 poolable.OnPoolableObjectDisable();
             }
-            else
+            else if (child.TryGetComponent<SlicedItem>(out var sliced))
             {
-                var slicedItem = child.GetComponent<SlicedItem>();
-                if (slicedItem != null)
-                    slicedItem.ReattachToOriginalParent();
+                sliced.ReattachToOriginalParent();
             }
         }
-        DisablePoolable(manager.gameObject);
+
+        DisablePoolableObject(manager.gameObject);
     }
 
     protected virtual void ReturnToPool(SlicedItem item)
     {
         item.ReattachToOriginalParent();
-        DisablePoolable(item.gameObject);
+        DisablePoolableObject(item.gameObject);
     }
+
     protected virtual void ReturnToPool(SliceableItem item)
     {
-        DisablePoolable(item.gameObject);
+        DisablePoolableObject(item.gameObject);
     }
+
     protected virtual void ReturnToPool(SpawnableObject item)
     {
-        DisablePoolable(item.gameObject);
+        DisablePoolableObject(item.gameObject);
     }
-    private void DisablePoolable(GameObject item)
+
+    protected void DisablePoolableObject(GameObject obj)
     {
-        var poolable = item.GetComponent<IPoolable>();
-        if (poolable != null)
+        if (obj.TryGetComponent<IPoolable>(out var poolable))
             poolable.OnPoolableObjectDisable();
         else
-            item.gameObject.SetActive(false);
+            obj.SetActive(false);
     }
 }
