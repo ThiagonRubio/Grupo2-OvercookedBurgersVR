@@ -81,16 +81,12 @@ public class MeatPatty : BurgerItem
         canBeUsed = false;
         base.OnPoolableObjectDisable();
     }
-
-    public override void Attach(Transform parent, Vector3 pos, Quaternion rot)
-    {
-        base.Attach(parent, pos, rot);
-        IsAvailable = false;
-    }
+   
     private void TriggerSuccessfulCooking()
     {
         isCooked = true;
         canBeUsed = true;
+        IsAvailable = false;
         rend.material.SetColor("_BaseColor", new Color(0.6f, 0.3f, 0.1f));
         cachedAudioSource.PlayOneShot(onCookingSuccessfulClip);
     }
@@ -98,6 +94,7 @@ public class MeatPatty : BurgerItem
     {
         isBurnt = true;
         canBeUsed = false;
+        IsAvailable = false;
         rend.material.SetColor("_BaseColor", Color.black);
         cachedAudioSource.PlayOneShot(onCookingUnsuccessfulClip);
     }
