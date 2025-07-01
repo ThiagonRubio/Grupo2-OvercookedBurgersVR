@@ -10,13 +10,13 @@ public class PoolReturnManager : MonoBehaviour
         {
             Transform child = manager.transform.GetChild(i);
 
-            if (child.TryGetComponent<IPoolable>(out var poolable))
-            {
-                poolable.OnPoolableObjectDisable();
-            }
-            else if (child.TryGetComponent<SlicedItem>(out var sliced))
+            if (child.TryGetComponent<SlicedItem>(out var sliced))
             {
                 sliced.ReattachToOriginalParent();
+            }
+            else if (child.TryGetComponent<IPoolable>(out var poolable))
+            {
+                poolable.OnPoolableObjectDisable();
             }
         }
 
