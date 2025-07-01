@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Linq;
 using UnityEngine;
 
@@ -62,7 +63,10 @@ public class OrderUIManager : MonoBehaviour
         {
             if (orderUIs[i].CurrentOrderId == orderId)
             {
-                if(wristOrderUI != null)
+                orderUIs[i].gameObject.SetActive(false);
+                orderUIs[i].transform.SetAsLastSibling();
+
+                if (wristOrderUI != null)
                 {
                     bool wasWristOrder = wristOrderUI.currentOrder.id == orderUIs[i].CurrentOrderId;
 
@@ -93,9 +97,6 @@ public class OrderUIManager : MonoBehaviour
                         }
                     }
                 }
-
-                orderUIs[i].gameObject.SetActive(false);
-                orderUIs[i].transform.SetAsLastSibling();
                 return;
             }
         }
