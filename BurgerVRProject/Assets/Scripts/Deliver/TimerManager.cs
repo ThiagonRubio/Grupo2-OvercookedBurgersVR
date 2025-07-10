@@ -16,6 +16,7 @@ public class TimerManager : MonoBehaviour, IUpdatable
     private void OnEnable()
     {
         RegisterUI.OnRegisterUIToggled += StartTimer;
+        CustomUpdateManager.Instance.Register(this);
     }
 
     private void OnDisable()
@@ -30,7 +31,6 @@ public class TimerManager : MonoBehaviour, IUpdatable
         remainingTime = gameDurationSeconds;
         timerActive = true;
         lastDisplayedSeconds = Mathf.CeilToInt(remainingTime);
-        CustomUpdateManager.Instance.Register(this);
         UpdateTimerDisplay();
     }
 
@@ -50,7 +50,6 @@ public class TimerManager : MonoBehaviour, IUpdatable
         if (remainingTime <= 0f)
         {
             timerActive = false;
-            CustomUpdateManager.Instance.Unregister(this);
             remainingTime = 0f;
             UpdateTimerDisplay();
             OnTimerEnded?.Invoke();
