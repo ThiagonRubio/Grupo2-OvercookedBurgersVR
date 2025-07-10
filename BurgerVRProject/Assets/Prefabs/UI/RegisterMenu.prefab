@@ -857,6 +857,8 @@ GameObject:
   - component: {fileID: 1545371988584039927}
   - component: {fileID: 8575401203790806531}
   - component: {fileID: 7472280757930994920}
+  - component: {fileID: 1114689077463736703}
+  - component: {fileID: 3536896295463857135}
   - component: {fileID: 2736318094436158278}
   m_Layer: 5
   m_Name: RegisterCanvas
@@ -947,14 +949,40 @@ MonoBehaviour:
   normalScore: 10
   perfectScore: 5
   scoreText: {fileID: 5825671774967500457}
-  finalScoreText: {fileID: 8136984280897537075}
   ordersDeliveredText: {fileID: 9098461899052812092}
-  finalOrdersDeliveredText: {fileID: 7158264627801098469}
   angryCustomersText: {fileID: 2199568693923238489}
-  timerText: {fileID: 4590431877352695305}
+--- !u!114 &1114689077463736703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763594073445083930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708b1032efd7c264dbea00b102c64682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   gameDurationSeconds: 300
+  timerText: {fileID: 4590431877352695305}
+--- !u!114 &3536896295463857135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763594073445083930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651010032017f9b47ae58f196ca13adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   gamePanel: {fileID: 6998553614452362701}
   finishPanel: {fileID: 4500896503049402303}
+  finalScoreText: {fileID: 8136984280897537075}
+  finalOrdersDeliveredText: {fileID: 7158264627801098469}
+  finalAngryCustomersText: {fileID: 2199568693923238489}
+  scoreManager: {fileID: 7472280757930994920}
 --- !u!82 &2736318094436158278
 AudioSource:
   m_ObjectHideFlags: 0

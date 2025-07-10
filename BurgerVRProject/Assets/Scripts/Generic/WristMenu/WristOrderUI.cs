@@ -17,12 +17,12 @@ public class WristOrderUI : MonoBehaviour
 
     private void OnEnable()
     {
-        ScoreManager.OnTimerEnded += HandleTimerEnded;
+        TimerManager.OnTimerEnded += HandleTimerEnded;
     }
 
     private void OnDisable()
     {
-        ScoreManager.OnTimerEnded -= HandleTimerEnded;
+        TimerManager.OnTimerEnded -= HandleTimerEnded;
     }
 
     public void SetOrder(Order order, OrderUI orderUI)

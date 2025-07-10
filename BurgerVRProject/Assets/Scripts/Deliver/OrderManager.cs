@@ -28,14 +28,14 @@ public class OrderManager : MonoBehaviour
     private void OnEnable()
     {
         RegisterUI.OnRegisterUIToggled += StartGeneratingOrders;
-        ScoreManager.OnTimerEnded += StopGeneratingOrders;
+        TimerManager.OnTimerEnded += StopGeneratingOrders;
 
     }
 
     private void OnDisable()
     {
         RegisterUI.OnRegisterUIToggled -= StartGeneratingOrders;
-        ScoreManager.OnTimerEnded -= StopGeneratingOrders;
+        TimerManager.OnTimerEnded -= StopGeneratingOrders;
 
     }
 
