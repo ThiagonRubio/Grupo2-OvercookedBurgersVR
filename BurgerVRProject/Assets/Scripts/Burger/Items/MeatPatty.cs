@@ -12,7 +12,7 @@ public class MeatPatty : BurgerItem
 
     private AudioSource cachedAudioSource;
     private float currentCookingTime = 0f;
-    private bool isInCookingZone = false;
+    
     [SerializeField] private bool isCooked = false;
     [SerializeField] private bool isBurnt = false;
     [SerializeField] private AudioClip onCookingSuccessfulClip;
@@ -54,11 +54,7 @@ public class MeatPatty : BurgerItem
             yield return null;
         }
     }
-
-    public override void OnPoolableObjectEnable()
-    {
-        base.OnPoolableObjectEnable();
-    }
+    
     public override void OnPoolableObjectDisable()
     {
         Detach();
@@ -75,7 +71,6 @@ public class MeatPatty : BurgerItem
             rend.material.SetColor("_BaseColor", Color.white);
 
         currentCookingTime = 0f;
-        isInCookingZone = false;
         isCooked = false;
         isBurnt = false;
         canBeUsed = false;
@@ -103,7 +98,6 @@ public class MeatPatty : BurgerItem
     {
         if (other.CompareTag("CookingZone"))
         {
-            isInCookingZone = true;
             if (cookingCoroutine == null)
             {
                 cookingCoroutine = StartCoroutine(CookRoutine());
@@ -115,7 +109,6 @@ public class MeatPatty : BurgerItem
     {
         if (other.CompareTag("CookingZone"))
         {
-            isInCookingZone = false;
             if (cookingCoroutine != null)
             {
                 StopCoroutine(cookingCoroutine);

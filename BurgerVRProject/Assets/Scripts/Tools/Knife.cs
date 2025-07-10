@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Knife : MonoBehaviour
 {
-    private ISliceable _auxSliceable;
+    private SliceableItem _auxSliceable;
     private AudioSource cachedAudioSource;
 
     private void Awake()
@@ -11,7 +11,7 @@ public class Knife : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        _auxSliceable = collision.gameObject.GetComponent<ISliceable>();
+        _auxSliceable = collision.gameObject.GetComponent<SliceableItem>();
         if (_auxSliceable != null)
         {
             _auxSliceable.Slice();

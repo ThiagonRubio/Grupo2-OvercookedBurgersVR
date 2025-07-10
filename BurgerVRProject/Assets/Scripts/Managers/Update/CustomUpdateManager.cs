@@ -19,8 +19,6 @@ public class CustomUpdateManager : MonoBehaviour
     private static CustomUpdateManager instance;
 
     private readonly List<IUpdatable> updatables = new List<IUpdatable>();
-    private readonly List<IFixedUpdatable> fixedUpdatables = new List<IFixedUpdatable>();
-    private readonly List<ILateUpdatable> lateUpdatables = new List<ILateUpdatable>();
 
     //---------------------------------//
 
@@ -51,23 +49,6 @@ public class CustomUpdateManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        foreach (IFixedUpdatable fixedUpdatable in fixedUpdatables)
-        {
-            fixedUpdatable.OnFixedUpdate();
-        }
-    }
-
-    private void LateUpdate()
-    {
-        foreach (ILateUpdatable lateUpdatable in lateUpdatables)
-        {
-            lateUpdatable.OnLateUpdate();
-        }
-    }
-
-
     //---------------------------------//
 
     public void Register(object obj)
@@ -76,14 +57,6 @@ public class CustomUpdateManager : MonoBehaviour
         {
             updatables.Add(updatable);
         }
-        if (obj is IFixedUpdatable fixedUpdatable)
-        {
-            fixedUpdatables.Add(fixedUpdatable);
-        }
-        if (obj is ILateUpdatable lateUpdatable)
-        {
-            lateUpdatables.Add(lateUpdatable);
-        }
     }
 
     public void Unregister(object obj)
@@ -91,14 +64,6 @@ public class CustomUpdateManager : MonoBehaviour
         if (obj is IUpdatable updatable)
         {
             updatables.Remove(updatable);
-        }
-        if (obj is IFixedUpdatable fixedUpdatable)
-        {
-            fixedUpdatables.Remove(fixedUpdatable);
-        }
-        if (obj is ILateUpdatable lateUpdatable)
-        {
-            lateUpdatables.Remove(lateUpdatable);
         }
     }
 }

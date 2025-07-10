@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-public class SliceableItem : MonoBehaviour, ISliceable
+public class SliceableItem : MonoBehaviour
 {
     [SerializeField] private GameObject[] cutParts;
 
