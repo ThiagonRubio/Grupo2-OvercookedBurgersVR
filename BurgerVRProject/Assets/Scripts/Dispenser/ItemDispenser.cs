@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemDispenser : MonoBehaviour
@@ -14,18 +15,18 @@ public class ItemDispenser : MonoBehaviour
 
     private void Awake()
     {
-        PoolableFactory.InitPool(itemPool, itemToSpawn, itemPool.PoolMaxSize);
+        itemPool.InitPool(itemToSpawn, itemPool.PoolMaxSize);
         cachedAudioSource = GetComponent<AudioSource>();
     }
 
     public virtual void SpawnItem()
     {
         bool spawnSuccess = false;
-        
-        IPoolable item = PoolableFactory.TryRetrieveObject(itemPool, out spawnSuccess);
+        IPoolable item = itemPool.TryGetPooledObject(out spawnSuccess);
         
         if (spawnSuccess)
         {
+            item.OnPoolableObjectEnable();
             item.SetPoolablePositionAndRotation(itemSpawnPosition);
         }
     }
