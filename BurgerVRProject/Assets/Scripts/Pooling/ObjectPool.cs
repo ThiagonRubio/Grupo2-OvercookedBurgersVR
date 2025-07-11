@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class ObjectPool
 {
-    private Queue<IPoolable> poolQueue = new Queue<IPoolable>();
-    private IPoolable objectToPool;
-    private int poolSize = 10;
+    private readonly Queue<IPoolable> poolQueue;
+    private readonly IPoolable objectToPool;
+    private readonly int poolSize = 10;
 
     public ObjectPool(IPoolable objectToPool, int poolMaxSize = 10)
     {
-        if (poolQueue != null)
-        {
-            this.objectToPool = objectToPool;
-            this.poolSize = poolMaxSize;
-        }
-        else
-        {
-#if UNITY_EDITOR
-            Debug.LogWarning("Object is not a poolable object.");
-#endif
-        }
+        poolQueue = new Queue<IPoolable>();
+        this.objectToPool = objectToPool;
+        this.poolSize = poolMaxSize;
     }
 
     //-----------------------METHODS----------------------------------
