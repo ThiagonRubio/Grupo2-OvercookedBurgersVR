@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 
 public abstract class SpawnableObject : MonoBehaviour, IPoolable
 {
-    public GameObject GameObject => this.gameObject;
     public bool IsAvailable { get { return isAvailable; } set { isAvailable = value; } }
 
     private Transform parentTransform;

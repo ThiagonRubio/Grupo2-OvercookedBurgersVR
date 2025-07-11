@@ -1636,96 +1636,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &412669510
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 412669511}
-  - component: {fileID: 412669512}
-  m_Layer: 0
-  m_Name: MeatPattyPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &412669511
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412669510}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &412669512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412669510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 10
---- !u!1 &480500449
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480500450}
-  - component: {fileID: 480500451}
-  m_Layer: 0
-  m_Name: LettucePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &480500450
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480500449}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480500451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480500449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 10
 --- !u!1001 &490181479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2351,7 +2261,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1742632969}
   - {fileID: 1540995044}
   - {fileID: 621647028}
   - {fileID: 1623656262}
@@ -6169,96 +6078,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1636515391019944688, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
---- !u!1 &1291722924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1291722925}
-  - component: {fileID: 1291722926}
-  m_Layer: 0
-  m_Name: CheesePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1291722925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291722924}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1291722926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291722924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 10
---- !u!1 &1307773259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1307773260}
-  - component: {fileID: 1307773261}
-  m_Layer: 0
-  m_Name: TomatoPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1307773260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307773259}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1307773261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307773259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 10
 --- !u!1 &1361379955
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,51 +6239,6 @@ Transform:
   - {fileID: 1587999598}
   m_Father: {fileID: 1900415631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1410171957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1410171958}
-  - component: {fileID: 1410171959}
-  m_Layer: 0
-  m_Name: BreadPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1410171958
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410171957}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1410171959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410171957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 10
 --- !u!1 &1414650917
 GameObject:
   m_ObjectHideFlags: 0
@@ -7873,43 +7647,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8000004, y: 1.0406345, z: 0.76701486}
   m_Center: {x: 0.00000007138281, y: 0.51359695, z: -0.016492656}
---- !u!1 &1742632968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1742632969}
-  m_Layer: 0
-  m_Name: ItemPools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1742632969
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742632968}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1410171958}
-  - {fileID: 1866947878}
-  - {fileID: 412669511}
-  - {fileID: 1291722925}
-  - {fileID: 480500450}
-  - {fileID: 1307773260}
-  m_Father: {fileID: 830715345}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792289496
 GameObject:
   m_ObjectHideFlags: 0
@@ -8722,51 +8459,6 @@ Transform:
   - {fileID: 539019631}
   m_Father: {fileID: 830715345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1866947877
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1866947878}
-  - component: {fileID: 1866947879}
-  m_Layer: 0
-  m_Name: TrayPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1866947878
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866947877}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1742632969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1866947879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866947877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7660d28383e1b1942b49a9c7d9cbba7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
 --- !u!1 &1900415630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10804,7 +10496,7 @@ PrefabInstance:
     - target: {fileID: 2694755914287513355, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 412669512}
+      objectReference: {fileID: 0}
     - target: {fileID: 3891279096485680343, guid: 9ef5c4da7e258234bb6fc048eced49b0, type: 3}
       propertyPath: m_XMotion
       value: 0
@@ -10873,7 +10565,7 @@ PrefabInstance:
     - target: {fileID: 3137092790838717447, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 1307773261}
+      objectReference: {fileID: 0}
     - target: {fileID: 3538604043899695753, guid: 22e62c124299a1a4d8e43ba111180af1, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tomato
@@ -11057,7 +10749,7 @@ PrefabInstance:
     - target: {fileID: 7247264628652223893, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 1866947879}
+      objectReference: {fileID: 0}
     - target: {fileID: 7319312296038382420, guid: ebe34ef639ed00748a4eb444c1fce3e7, type: 3}
       propertyPath: m_Name
       value: Dispenser_Tray
@@ -11211,7 +10903,7 @@ PrefabInstance:
     - target: {fileID: 5454330856863358300, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 480500451}
+      objectReference: {fileID: 0}
     - target: {fileID: 7696644778971216765, guid: b652c7df2ef737f4ebf12858d5ed2782, type: 3}
       propertyPath: m_Name
       value: Dispenser_Lettuce
@@ -11244,7 +10936,7 @@ PrefabInstance:
     - target: {fileID: 3588696867921158540, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 1291722926}
+      objectReference: {fileID: 0}
     - target: {fileID: 7025693864571494461, guid: 99947a14afb039a46a07f41f41ca6437, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.65
@@ -11329,7 +11021,7 @@ PrefabInstance:
     - target: {fileID: 4842973756277694438, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: itemPool
       value: 
-      objectReference: {fileID: 1410171959}
+      objectReference: {fileID: 0}
     - target: {fileID: 7545464644614118522, guid: a6f38fba0c26aa94eaa5688374cc0401, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.026

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public interface IPoolable
 {
-    GameObject GameObject { get; }
     bool IsAvailable { get; set; }
     void OnPoolableObjectEnable();
     void OnPoolableObjectDisable();

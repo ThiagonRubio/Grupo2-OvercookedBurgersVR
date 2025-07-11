@@ -2,42 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour 
+public class ObjectPool
 {
-    public int PoolMaxSize => poolSize;
-    public Queue<IPoolable> ObjectsInPool => objectPool;
-
-    private Queue<IPoolable> objectPool = new Queue<IPoolable>();
+    private Queue<IPoolable> poolQueue = new Queue<IPoolable>();
     private IPoolable objectToPool;
-    [SerializeField] private int poolSize = 10;
+    private int poolSize = 10;
 
-
-    //-----------------------METHODS----------------------------------
-
-    public void InitPool(IPoolable objectToPool, int poolMaxSize = 10)
+    public ObjectPool(IPoolable objectToPool, int poolMaxSize = 10)
     {
-        if (objectPool != null)
+        if (poolQueue != null)
         {
             this.objectToPool = objectToPool;
             this.poolSize = poolMaxSize;
         }
-        else 
+        else
         {
 #if UNITY_EDITOR
-            Debug.LogWarning("Object is not a poolable object bro.");
+            Debug.LogWarning("Object is not a poolable object.");
 #endif
         }
-
     }
+
+    //-----------------------METHODS----------------------------------
 
     public IPoolable TryGetPooledObject(out bool success)
     {
         IPoolable pooledObject = null;
 
-        if (objectPool.Count < poolSize)
+        if (poolQueue.Count < poolSize)
         {
-            pooledObject = NewObject();
-            success = true;
+            success = false;
         }
         else
         {
@@ -46,31 +40,22 @@ public class ObjectPool : MonoBehaviour
 
         if (success)
         {
-            objectPool.Enqueue(pooledObject);
+            poolQueue.Enqueue(pooledObject);
         }
 
         return pooledObject;
     }
 
-    private IPoolable NewObject()
-    {
-        GameObject newObject = Instantiate(objectToPool.GameObject, transform.position, transform.rotation);
-        IPoolable pooledObject = newObject.GetComponent<IPoolable>();
-        pooledObject.GameObject.name = transform.root.name + "_" + objectToPool.GameObject.name + "_" + objectPool.Count;
-        pooledObject.GameObject.transform.SetParent(gameObject.transform);
-
-        return pooledObject;
-    }
     private IPoolable ReuseObject(out bool success)
     {
         // Solo vamos a intentar reusar cuantos objetos haya en la pool
-        int maxAttempts = objectPool.Count;
+        int maxAttempts = poolQueue.Count;
         int attemptCount = 0;
 
-        while (objectPool.Count > 0 && attemptCount < maxAttempts)
+        while (poolQueue.Count > 0 && attemptCount < maxAttempts)
         {
             attemptCount++;
-            IPoolable pooledObject = objectPool.Dequeue();
+            IPoolable pooledObject = poolQueue.Dequeue();
 
             if (pooledObject.IsAvailable)
             {
@@ -79,7 +64,7 @@ public class ObjectPool : MonoBehaviour
             }
             else
             {
-                objectPool.Enqueue(pooledObject);
+                poolQueue.Enqueue(pooledObject);
             }
         }
 
@@ -89,36 +74,18 @@ public class ObjectPool : MonoBehaviour
 
     }
 
-    // --- AUX HELPER METHODS ---- (Por si las dudas porque los conozco)
+    // --- AUX HELPER METHODS ----
 
-    public int GetNumberOfActivePoolObjects()
+    public bool IsPoolFull()
     {
-        int activeCount = 0;
-
-        foreach (IPoolable poolable in objectPool)
-        {
-            if (poolable.GameObject.activeSelf)
-            {
-                activeCount++;
-            }
-        }
-        return activeCount;
+        return poolQueue.Count >= poolSize;
     }
-    public List<GameObject> GetAllActiveObjects()
+    public int GetQueueCount()
     {
-        List<GameObject> activeObjects = new List<GameObject>();
-
-        foreach (IPoolable poolable in objectPool)
-        {
-            if (poolable.GameObject.activeSelf)
-            {
-                activeObjects.Add(poolable.GameObject);
-            }
-        }
-        return activeObjects;
+        return poolQueue.Count;
     }
-    public bool CheckIfPoolObjectIsAlreadyActive(IPoolable objectToCheck)
+    public void EnqueuePoolable(IPoolable toEnqueue)
     {
-        return objectToCheck.GameObject.activeSelf;
+        poolQueue.Enqueue(toEnqueue);
     }
 }
