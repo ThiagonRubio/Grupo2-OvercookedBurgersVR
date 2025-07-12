@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashCan : PoolReturnManager
+public class TrashCan : MonoBehaviour
 {
     private AudioSource cachedAudioSource;
+    private ObjectReturner cachedObjectReturner;
 
     private void Awake()
     {
         cachedAudioSource = GetComponent<AudioSource>();
+        cachedObjectReturner = new ObjectReturner();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -17,10 +19,10 @@ public class TrashCan : PoolReturnManager
         Debug.Log("Colision con tacho");
 #endif
 
-        var manager = collision.gameObject.GetComponent<BurgerManager>();
-        if (manager != null)
+        var tray = collision.gameObject.GetComponent<Tray>();
+        if (tray != null)
         {
-            ReturnToPool(manager);
+            cachedObjectReturner.ReturnToPool(tray);
             cachedAudioSource.Play();
             return;
         }
@@ -28,7 +30,7 @@ public class TrashCan : PoolReturnManager
         var slicedItem = collision.gameObject.GetComponent<SlicedItem>();
         if (slicedItem != null)
         {
-            ReturnToPool(slicedItem);
+            cachedObjectReturner.ReturnToPool(slicedItem);
             cachedAudioSource.Play();
             return;
         }
@@ -36,7 +38,7 @@ public class TrashCan : PoolReturnManager
         var sliceableItem = collision.gameObject.GetComponent<SliceableItem>();
         if (sliceableItem != null)
         {
-            ReturnToPool(sliceableItem);
+            cachedObjectReturner.ReturnToPool(sliceableItem);
             cachedAudioSource.Play();
             return;
         }
@@ -44,7 +46,7 @@ public class TrashCan : PoolReturnManager
         var spawnableItem = collision.gameObject.GetComponent<SpawnableObject>();
         if (spawnableItem != null)
         {
-            ReturnToPool(spawnableItem);
+            cachedObjectReturner.ReturnToPool(spawnableItem);
             cachedAudioSource.Play();
             return;
         }

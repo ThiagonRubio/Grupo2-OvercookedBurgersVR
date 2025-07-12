@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolReturnManager : MonoBehaviour
+public class ObjectReturner
 {
-    protected virtual void ReturnToPool(BurgerManager manager)
+    public virtual void ReturnToPool(Tray tray)
     {
-        for (int i = manager.transform.childCount - 1; i >= 0; i--)
+        for (int i = tray.transform.childCount - 1; i >= 0; i--)
         {
-            Transform child = manager.transform.GetChild(i);
+            Transform child = tray.transform.GetChild(i);
 
             if (child.TryGetComponent<SlicedItem>(out var sliced))
             {
@@ -20,26 +20,26 @@ public class PoolReturnManager : MonoBehaviour
             }
         }
 
-        DisablePoolableObject(manager.gameObject);
+        DisablePoolableObject(tray.gameObject);
     }
 
-    protected virtual void ReturnToPool(SlicedItem item)
+    public virtual void ReturnToPool(SlicedItem item)
     {
         item.ReattachToOriginalParent();
         DisablePoolableObject(item.gameObject);
     }
 
-    protected virtual void ReturnToPool(SliceableItem item)
+    public virtual void ReturnToPool(SliceableItem item)
     {
         DisablePoolableObject(item.gameObject);
     }
 
-    protected virtual void ReturnToPool(SpawnableObject item)
+    public virtual void ReturnToPool(SpawnableObject item)
     {
         DisablePoolableObject(item.gameObject);
     }
 
-    protected void DisablePoolableObject(GameObject obj)
+    public void DisablePoolableObject(GameObject obj)
     {
         if (obj.TryGetComponent<IPoolable>(out var poolable))
             poolable.OnPoolableObjectDisable();

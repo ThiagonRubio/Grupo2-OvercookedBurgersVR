@@ -2,16 +2,22 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeliveryManager : PoolReturnManager
+public class DeliveryManager : MonoBehaviour
 {
     [SerializeField] private OrderManager orderManager;
+    private ObjectReturner cachedObjectReturner;
     public static event Action<bool> OnOrderDelivered;
+
+    private void Awake()
+    {
+        cachedObjectReturner = new ObjectReturner();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        var manager = collision.gameObject.GetComponent<BurgerManager>();
-        if (manager == null) return;
-        List<IngredientType> ingredients = new List<IngredientType>(manager.AttachedIngredients.Values);
+        var tray = collision.gameObject.GetComponent<Tray>();
+        if (tray == null) return;
+        List<IngredientType> ingredients = new List<IngredientType>(tray.AttachedIngredients.Values);
 
         int orderId;
         bool isOrdered;
@@ -19,7 +25,7 @@ public class DeliveryManager : PoolReturnManager
         {
             OnOrderDelivered?.Invoke(isOrdered);
             orderManager.RemoveOrderById(orderId);
-            ReturnToPool(manager);
+            cachedObjectReturner.ReturnToPool(tray);
         }
         else
         {

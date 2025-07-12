@@ -7,17 +7,16 @@ using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class BurgerManager : SpawnableObject
+public class Tray : SpawnableObject
 {
     //Attach variables
     public Transform initialAttachPoint;
-    public float stackHeight;
+    private float stackHeight;
     
     public Dictionary<BurgerItem, IngredientType> AttachedIngredients = new Dictionary<BurgerItem, IngredientType>();
     
-    //Bools
-    public bool preparingBurger = false;
-    public bool burgerReady = false;
+    private bool preparingBurger = false;
+    private bool burgerReady = false;
 
     void OnCollisionEnter(Collision collision)
     {
