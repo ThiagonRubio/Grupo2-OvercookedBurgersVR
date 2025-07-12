@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1864390315748733583}
   - component: {fileID: -3114310875572283475}
   m_Layer: 7
-  m_Name: Bandeja
+  m_Name: Tray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
