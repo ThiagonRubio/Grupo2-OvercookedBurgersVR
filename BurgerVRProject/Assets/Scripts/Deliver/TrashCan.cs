@@ -35,7 +35,7 @@ public class TrashCan : MonoBehaviour
             return;
         }
 
-        var sliceableItem = collision.gameObject.GetComponent<SliceableItem>();
+        var sliceableItem = collision.gameObject.GetComponent<SliceableObject>();
         if (sliceableItem != null)
         {
             cachedObjectReturner.ReturnToPool(sliceableItem);

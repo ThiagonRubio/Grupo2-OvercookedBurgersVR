@@ -29,7 +29,7 @@ public class ObjectReturner
         DisablePoolableObject(item.gameObject);
     }
 
-    public virtual void ReturnToPool(SliceableItem item)
+    public virtual void ReturnToPool(SliceableObject item)
     {
         DisablePoolableObject(item.gameObject);
     }

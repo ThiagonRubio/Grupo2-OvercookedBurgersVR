@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SliceableSpawnableObject : SpawnableObject
+public class SliceableObject : SpawnableObject
 {
+    public bool Cut => _cut;
+    
     [SerializeField] private GameObject fullVersion;
     [SerializeField] private SlicedItem[] cutParts;
+
+    private bool _cut;
     
     public override void OnPoolableObjectEnable()
     {
@@ -24,6 +29,8 @@ public class SliceableSpawnableObject : SpawnableObject
         fullVersion.transform.localPosition = Vector3.zero;
         fullVersion.transform.localRotation = Quaternion.Euler(0,0,0);
         fullVersion.SetActive(true);
+        
+        _cut = false;
     }
 
     public override void OnPoolableObjectDisable()
@@ -35,6 +42,8 @@ public class SliceableSpawnableObject : SpawnableObject
             cutParts[i].OnSlicedItemAttached -= OnChildDetached;
             cutParts[i].OnSlicedItemReattachedToOriginalParent -= CheckPoolAvailability;
         }
+
+        _cut = false;
     }
 
     private void OnChildDetached()
@@ -55,5 +64,16 @@ public class SliceableSpawnableObject : SpawnableObject
                 IsAvailable = false;
             }
         }
+    }
+    
+    public void Slice()
+    {
+        for (int i = 0; i < cutParts.Length; i++)
+        {
+            cutParts[i].transform.localPosition = new Vector3(fullVersion.transform.localPosition.x, (fullVersion.transform.localPosition.y + (i * 0.015f)), fullVersion.transform.localPosition.z);
+            cutParts[i].gameObject.SetActive(true);
+        }
+        fullVersion.SetActive(false);
+        _cut = true;
     }
 }
